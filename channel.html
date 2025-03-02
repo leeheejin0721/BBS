@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/channel.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <title>주파수/채널</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="mainnav-submenu">
+                <nav class="main-nav">
+                    <a href="/index.html"><img src="./images/sublogo.png" alt="bbsci"></a>
+                    <ul class="mainmenu">
+                        <li class="dropdown">
+                            <a href="/onair.html">ON AIR <span class="triangle"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/onair.html">TV</a></li>
+                                <li><a href="#">라디오</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/tvmain.html">TV</a></li>
+                        <li><a href="/radiomain.html">라디오</a></li>
+                        <li><a href="#">뉴스</a></li>
+                        <li><a href="/dharma.html">법회</a></li>
+                        <li><a href="#">후원</a></li>
+                        <li><a href="/schedule.html">편성표</a></li>
+                    </ul>
+                </nav>
+                <div class="submenu-box">
+                    <ul class="submenu">
+                        <li><a href="/login.html">로그인</a></li>
+                        <li><a href="/channel.html">주파수/채널</a></li>
+                        <li>
+                            <form class="search-form">
+                                <button type="submit">
+                                    <img src="./images/search-black.png" alt="검색">
+                                </button>
+                                <input type="text" placeholder="">
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="gradationline">
+    </header>
+
+    <main>
+        <section class="channel">
+            <div class="container">
+                <div class="channel-title">
+                    <h3>주파수/채널</h3>
+                    <div class="search-box">
+                        <input type="text" placeholder="검색어 입력">
+                        <button>검색</button>
+                    </div>
+                </div>
+                <div class="channel-content">
+                    <h4>라디오 주파수(FM)</h4>
+                    <table class="frequency-table">
+                        <thead>
+                            <tr>
+                                <th>서울·경기</th>
+                                <th>인천</th>
+                                <th>부산</th>
+                                <th>창원</th>
+                                <th>진주</th>
+                                <th>광주</th>
+                                <th>광양</th>
+                                <th>여수</th>
+                                <th>포항</th>
+                                <th>대구</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>101.9</td>
+                                <td>88.1</td>
+                                <td>89.9</td>
+                                <td>89.5</td>
+                                <td>88.1</td>
+                                <td>89.7</td>
+                                <td>105.7</td>
+                                <td>105.1</td>
+                                <td>105.5</td>
+                                <td>94.5</td>
+                            </tr>
+                            <tr>
+                                <th>안동</th>
+                                <th>청주</th>
+                                <th>충주</th>
+                                <th>춘천</th>
+                                <th>속초</th>
+                                <th>강릉</th>
+                                <th>양양</th>
+                                <th>울산</th>
+                                <th>제주</th>
+                                <th>서귀포</th>
+                            </tr>
+                            <tr>
+                                <td>97.7</td>
+                                <td>96.7</td>
+                                <td>106.7</td>
+                                <td>100.1</td>
+                                <td>93.5</td>
+                                <td>104.3</td>
+                                <td>97.1</td>
+                                <td>88.3</td>
+                                <td>94.9</td>
+                                <td>100.5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>위성방송·IPTV 채널</h4>
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="4" class="wide">전국</td>
+                                <td class="district-column">스카이라이프</td>
+                                <td class="channel-number">180</td>
+                                <td class="phone-number">1588-3002</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">KT(Genie TV)</td>
+                                <td class="channel-number">232</td>
+                                <td class="phone-number">100</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">SKB(B TV)</td>
+                                <td class="channel-number">296</td>
+                                <td class="phone-number">106</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">LG U+(U+ TV)</td>
+                                <td class="channel-number">276</td>
+                                <td class="phone-number">101</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>케이블 TV 채널</h4>
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="5" class="wide">서울</td>
+                                <td class="district-column">양천구, 은평구</td>
+                                <td class="provider-column">LG헬로</td>
+                                <td class="channel-number">284</td>
+                                <td class="phone-number">1855-1000</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">강북구,강서구, 광진구, 노원구, 도봉구, 동대문구, 성동구, 서대문구, 
+                                    종로구, 중구</td>
+                                <td class="provider-column">B TV 케이블</td>
+                                <td class="channel-number">226</td>
+                                <td class="phone-number">146600</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">서초구,관악구,동작구</td>
+                                <td class="provider-column">HCN</td>
+                                <td class="channel-number">547</td>
+                                <td class="phone-number">1877-8000</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">강남구,강동구,구로구, 금천구, 노원구, 성북구, 송파구, 마포구, 
+                                    서대문구, 용산구, 서초구, 종로구, 중구, 중랑구, 성동구, 광진구  </td>
+                                <td class="provider-column">딜라이브</td>
+                                <td class="channel-number">307</td>
+                                <td class="phone-number">1644-1100</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">영등포구, 동대문구</td>
+                                <td class="provider-column">CMB</td>
+                                <td class="channel-number">99-3</td>
+                                <td class="phone-number">1544-3434</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="3" class="wide">경기</td>
+                                <td class="district-column">부천시, 김포시, 의정부시, 양주시, 포천시, 동두천시, 연천군</td>
+                                <td class="provider-column">LG헬로</td>
+                                <td class="channel-number">284</td>
+                                <td class="phone-number">1855-1000</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">과천시, 광명시, 군포시, 수원시, 시흥시, 안산시, 안성시, 안양시, 
+                                    오산시, 용인시, 의왕시, 이천시, 평택시, 화성시</td>
+                                <td class="provider-column">B TV 케이블</td>
+                                <td class="channel-number">226</td>
+                                <td class="phone-number">146600</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">동두천시, 의정부시, 양주시, 포천시, 연천군, 파주시, 고양시, 
+                                    광주시, 가평군, 양평군, 여주시, 남양주시, 구리시, 하남시</td>
+                                <td class="provider-column">딜라이브</td>
+                                <td class="channel-number">307</td>
+                                <td class="phone-number">1644-1100</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="3" class="wide">인천</td>
+                                <td class="district-column">계양구, 부평구</td>
+                                <td class="provider-column">LG헬로</td>
+                                <td class="channel-number">284</td>
+                                <td class="phone-number">1855-1000</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">미추홀구, 연수구, 송도신도시</td>
+                                <td class="provider-column">남인천방송</td>
+                                <td class="channel-number">237</td>
+                                <td class="phone-number">032-875-0307</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">남동구, 동구, 서구, 중구, 강화군, 옹진군</td>
+                                <td class="provider-column">B TV 케이블</td>
+                                <td class="channel-number">226</td>
+                                <td class="phone-number">146600</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="1" class="wide">강원</td>
+                                <td class="district-column">강원 전 지역</td>
+                                <td class="provider-column">LG헬로</td>
+                                <td class="channel-number">284</td>
+                                <td class="phone-number">1855-1000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="1" class="wide">대전</td>
+                                <td class="district-column">대전 전 지역</td>
+                                <td class="provider-column">CMB</td>
+                                <td class="channel-number">99-3</td>
+                                <td class="phone-number">1544-3434</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="3" class="wide">충남</td>
+                                <td class="district-column">세종시, 아산시, 천안시</td>
+                                <td class="provider-column">B TV 케이블</td>
+                                <td class="channel-number">226</td>
+                                <td class="phone-number">146600</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">당진시, 서산시, 예산군, 청양군, 태안군, 홍성군</td>
+                                <td class="provider-column">LG헬로</td>
+                                <td class="channel-number">284</td>
+                                <td class="phone-number">1855-1000</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">계룡시, 공주시, 보령시, 논산시, 세종시, 금산군, 부여군, 서천군</td>
+                                <td class="provider-column">CMB</td>
+                                <td class="channel-number">99-3</td>
+                                <td class="phone-number">1544-3434</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="2" class="wide">충북</td>
+                                <td class="district-column">청주시, 보은군, 영동군, 옥천군 </td>
+                                <td class="provider-column">HCN</td>
+                                <td class="channel-number">547</td>
+                                <td class="phone-number">1877-8000</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">충주시, 단양군, 제천시, 증평군, 진천군, 괴산군, 음성군</td>
+                                <td class="provider-column">CCS충북방송</td>
+                                <td class="channel-number">192</td>
+                                <td class="phone-number">043-850-7000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="2" class="wide">경북</td>
+                                <td class="district-column">안동시, 영주시, 문경시, 의성군, 예천군, 봉화군, 청송군, 영양군,
+                                    경주시, 경산시, 영천시, 청도군</td>
+                                <td class="provider-column">LG헬로</td>
+                                <td class="channel-number">284</td>
+                                <td class="phone-number">1855-1000</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">구미시, 김천시, 상주시, 포항시, 고령군, 성주군, 영덕군, 울릉군,
+                                    울진군, 칠곡군</td>
+                                <td class="provider-column">HCN</td>
+                                <td class="channel-number">547</td>
+                                <td class="phone-number">1877-8000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="3" class="wide">부산</td>
+                                <td class="district-column">영도구, 동구, 중구, 부산진구, 해운대구, 기장군, 금정구</td>
+                                <td class="provider-column">LG헬로</td>
+                                <td class="channel-number">284</td>
+                                <td class="phone-number">1855-1000</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">강서구, 남구, 북구, 사상구, 사하구, 서구, 수영구</td>
+                                <td class="provider-column">B TV 케이블</td>
+                                <td class="channel-number">226</td>
+                                <td class="phone-number">146600</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">동래구, 연제구</td>
+                                <td class="provider-column">HCN</td>
+                                <td class="channel-number">547</td>
+                                <td class="phone-number">1877-8000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="1" class="wide">울산</td>
+                                <td class="district-column">울산 전 지역</td>
+                                <td class="provider-column">JCN울산중앙</td>
+                                <td class="channel-number">176</td>
+                                <td class="phone-number">1877-9100</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="2" class="wide">경남</td>
+                                <td class="district-column">창원시 의창구, 창원시 성산구, 창원시 진해구, 창원시 마산회원구,
+                                    창원시 마산합포구, 함안군, 의령군, 거제시, 통영시, 고성군, 김해시,
+                                    양산시, 밀양시, 창녕군, 거창군, 합천군 </td>
+                                <td class="provider-column">LG헬로</td>
+                                <td class="channel-number">284</td>
+                                <td class="phone-number">1855-1000</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">사천시, 진주시, 남해군, 산청군, 하동군, 함양군</td>
+                                <td class="provider-column">서경방송</td>
+                                <td class="channel-number">401</td>
+                                <td class="phone-number">1877-6666</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="5" class="wide">대구</td>
+                                <td class="district-column">동구,수성구</td>
+                                <td class="provider-column">LG헬로</td>
+                                <td class="channel-number">284</td>
+                                <td class="phone-number">1855-1000</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">동구,수성구</td>
+                                <td class="provider-column">CMB</td>
+                                <td class="channel-number">99-3</td>
+                                <td class="phone-number">1544-3434</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">남구, 서구, 중구, 달서구, 달성군</td>
+                                <td class="provider-column">B TV 케이블</td>
+                                <td class="channel-number">226</td>
+                                <td class="phone-number">146600</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">북구,군위군</td>
+                                <td class="provider-column">HCN</td>
+                                <td class="channel-number">547</td>
+                                <td class="phone-number">1877-8000</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">달서구, 달성군</td>
+                                <td class="provider-column">푸른방송</td>
+                                <td class="channel-number">156</td>
+                                <td class="phone-number">053-551-2000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="2" class="wide">광주</td>
+                                <td class="district-column">광주 전 지역</td>
+                                <td class="provider-column">CMB</td>
+                                <td class="channel-number">99-3</td>
+                                <td class="phone-number">1544-3434</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">동구,북구</td>
+                                <td class="provider-column">KCTV광주방송</td>
+                                <td class="channel-number">185</td>
+                                <td class="phone-number">062-417-8000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="3" class="wide">전북</td>
+                                <td class="district-column">전주시, 무주군, 완주군, 장수군, 진안군</td>
+                                <td class="provider-column">B TV 케이블</td>
+                                <td class="channel-number">226</td>
+                                <td class="phone-number">146600</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">정읍시,김제시, 남원시, 고창군, 부안군, 순창군, 임실군 </td>
+                                <td class="provider-column">LG헬로</td>
+                                <td class="channel-number">284</td>
+                                <td class="phone-number">1855-1000</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">군산시, 익산시</td>
+                                <td class="provider-column">금강방송</td>
+                                <td class="channel-number">794</td>
+                                <td class="phone-number">1544-5400</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="2" class="wide">전남</td>
+                                <td class="district-column">여수시, 순천시, 광양시, 고흥군, 목포시, 해남군, 무안군, 영암군,
+                                    완도군, 신안군, 장흥군, 강진군, 진도군</td>
+                                <td class="provider-column">LG헬로</td>
+                                <td class="channel-number">284</td>
+                                <td class="phone-number">1855-1000</td>
+                            </tr>
+                            <tr>
+                                <td class="district-column">나주시, 영광군, 함평군, 장성군, 담양군, 곡성군, 구례군, 화순군, 
+                                    보성군</td>
+                                <td class="provider-column">CMB</td>
+                                <td class="channel-number">99-3</td>
+                                <td class="phone-number">1544-3434</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tv-channel-table">
+                        <tbody>
+                            <tr>
+                                <td rowspan="1" class="wide">제주</td>
+                                <td class="district-column">제주 전 지역</td>
+                                <td class="provider-column">KCTV제주방송</td>
+                                <td class="channel-number">376</td>
+                                <td class="phone-number">064-741-7777</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="banner">
+            <div class="container">
+                <div class="banner-img">
+                    <div class="left-banner">
+                        <img id="left-img" src="./images/mainbanner1.png" alt="mainbanner1">
+                        <div class="indicator-container left-indicators">
+                            <div class="indicator active" id="left-dot1"></div>
+                            <div class="indicator" id="left-dot2"></div>
+                        </div>
+                    </div>
+                    <div class="right-banner">
+                        <img id="right-img" src="./images/mainbanner3.png" alt="mainbanner2">
+                        <div class="indicator-container right-indicators">
+                            <div class="indicator active" id="right-dot1"></div>
+                            <div class="indicator" id="right-dot2"></div>
+                            <div class="indicator" id="right-dot3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="notice">
+            <div class="container">
+                <div class="notice-content">
+                    <div class="notice-contentbox">
+                        <strong>공지사항</strong>
+                        <p>2025 BBS불교방송 홈페이지 리뉴얼 안내</p>
+                    </div>
+                    <span>전체보기</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="menu">
+            <div class="container">
+                <nav class="footer-menu">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li>|</li>
+                        <li><a href="#">광고문의</a></li>
+                        <li>|</li>
+                        <li><a href="#">시청자 마당</a></li>
+                        <li>|</li>
+                        <li><a href="#">윤리경영제보</a></li>
+                        <li>|</li>
+                        <li><a href="#">이용약관</a></li>
+                        <li>|</li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li>|</li>
+                        <li><a href="#">사이트맵</a></li>
+                        <li>|</li>
+                        <li><a href="#">음원심의</a></li>
+                    </ul>
+                    <div class="dropdown2">
+                        <a href="#" id="toggleDropdown">
+                            BBS 지역방송 
+                            <img src="./images/footer-arrow.png" alt="footer-arrow" id="dropdownArrow">
+                        </a>
+                        <ul class="dropdown-menu2">
+                            <li><a href="#">서울 FM 101.9</a></li>
+                            <li><a href="#">인천 FM 88.1</a></li>
+                            <li><a href="#">부산 FM 89.9</a></li>
+                            <li><a href="#">창원 FM 89.5</a></li>
+                            <li><a href="#">진주 FM 88.1</a></li>
+                            <li><a href="#">광주 FM 89.7</a></li>
+                            <li><a href="#">광양 FM 105.7</a></li>
+                            <li><a href="#">여수 FM 105.1</a></li>
+                            <li><a href="#">대구 FM 94.5</a></li>
+                            <li><a href="#">포항 FM 105.5</a></li>
+                            <li><a href="#">안동 FM 97.7</a></li>
+                            <li><a href="#">청주 FM 96.7</a></li>
+                            <li><a href="#">춘천 FM 100.1</a></li>
+                            <li><a href="#">속초 FM 93.5</a></li>
+                            <li><a href="#">강릉 FM 104.3</a></li>
+                            <li><a href="#">양양 FM 97.1</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="footer-logo-contents">
+                    <div class="footer-logo">
+                        <img src="./images/footerci.png" alt="bbsci">
+                    </div>
+                    <div class="info">
+                        <p>04175 서울시 마포구 마포대로 20 다보빌딩  |  대표전화: 02-705-5114   |  후원전화: 1855-3000<br>
+                            팩스: 02-705-5229  |  이메일: webmaster@bbsi.co.kr  |  사업자등록번호: 105-82-04476</p>
+                    </div>
+                </div>
+                <p class="copyright">&copy; 2024 BBS 불교방송. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/index.js"></script>
+</body>
+</html>

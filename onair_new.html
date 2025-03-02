@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/onair_new.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <title>온에어 새창</title>
+</head>
+<body>
+    <main>
+        <section class="onair-video">
+            <div class="modal2" id="newModal">
+                <div class="dharma-title">
+                    <ul class="dharma-menu">
+                        <li class="active">TV</li>
+                        <li>라디오</li>
+                    </ul>
+                </div>
+                <div class="video-container">
+                    <img src="./images/onair-img.png" alt="onair" class="onair">
+                    <div class="pause-icon"><img src="./images/big-pause.png" alt="pause"></div>
+                    <div class="play-icon"><img src="./images/play-icon.png" alt="play"></div>
+                    <div class="video-controls">
+                        <div class="progress-bar"></div>
+                        <div class="icons">
+                            <img src="./images/small-pause.png" alt="pause" class="control-pause">
+                            <img src="./images/play-icon.png" alt="play" class="control-play">
+                            <img src="./images/sound.png" alt="sound" class="control-sound">
+                            <img src="./images/sound-mute.png" alt="mute" class="control-mute" style="display: none;">
+                            <span class="time-display">0:00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="onair-vidio-text">
+                    <div class="onair-vidio-title">
+                        <h4>불수산 법륜사 사시불공</h4>
+                    </div>
+                    <span class="date">(수) 13:00 (토) 09:00 (일) 21:00</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="banner">
+            <div class="banner-img">
+                <div class="left-banner">
+                    <img src="./images/onair-new-img.png" alt="on-air">
+                </div>
+            </div>
+        </section>
+
+    <script src="./js/onair_new.js"></script>
+</body>
+</html>

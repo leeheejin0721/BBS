@@ -1,0 +1,976 @@
+@charset "utf-8";
+
+.container {
+    position: relative;
+    width: 1500px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+header {
+    position: relative; /* 부모 요소에 relative 추가 */
+    width: 100%;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    z-index: 2; /* 메뉴와 로고가 그라데이션 아래로 가리지 않도록 z-index 추가 */
+    margin: 15px 0;
+}
+.mainnav-submenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav img {
+    padding-right: 40px;
+}
+
+.main-nav .mainmenu {
+    display: flex;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+/* 드롭다운 컨테이너 수정 */
+.dropdown {
+    position: relative;
+    z-index: 50;
+}
+
+/* 드롭다운 메뉴 수정 */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #BF9A0B;
+    border-radius: 20px;
+    list-style: none;
+    width: 120px;
+    padding-top: 20px;
+}
+
+.dropdown-menu li {
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+.dropdown-menu li a {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    display: block;
+    font-family: "Noto Sans KR", serif;
+}
+.dropdown-menu li a:first-child {
+    padding-bottom: 20px;
+}
+
+/* 드롭다운 활성화 시 */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.dropdown-menu li a:hover {
+    color: #BF9A0B;
+}
+
+/* 메인 메뉴 항목 위치 조정 */
+.main-nav .mainmenu > li {
+    position: relative; /* 추가: 부모 요소 기준 위치 설정 */
+    margin-right: 40px;
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+.main-nav .mainmenu > li > a {
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+.main-nav .mainmenu > li > a:hover {
+    color: #BF9A0B;
+}
+
+/* dropdown 메뉴 밑줄 제거 */
+.main-nav .mainmenu > li.dropdown > a::after {
+    display: none; /* 밑줄 제거 */
+    bottom: 0;
+}
+
+.main-nav .mainmenu > li > a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -26px;
+    width: 0;
+    height: 3px;
+    background-color: #BF9A0B;
+}
+
+.main-nav .mainmenu > li > a:hover::after {
+    width: 100%;
+}
+
+
+/* 드롭다운 활성화 시 삼각형 뒤집기 (▼ → ▲) */
+.mainmenu .dropdown:hover .triangle,
+.mainmenu .dropdown:focus-within .triangle {
+    transform: rotate(180deg);
+}
+
+
+/* 삼각형 ▼ 모양 */
+.triangle {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;  
+    border-right: 8px solid transparent; 
+    border-top: 10px solid black; 
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+/* ON AIR 메뉴 호버 시 텍스트 및 삼각형 색상 변경 */
+.mainmenu .dropdown:hover > a,
+.mainmenu .dropdown:focus-within > a {
+    color: #BF9A0B !important;
+}
+
+.mainmenu .dropdown:hover .triangle,
+.mainmenu .dropdown:focus-within .triangle {
+    border-top: 10px solid #BF9A0B !important;
+}
+
+.main-nav .mainmenu > li {
+    margin-right: 40px;
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+.submenu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
+}
+.submenu > li > a:hover {
+    color: #BF9A0B;
+}
+
+.main-nav ul li {
+    display: inline;
+}
+
+.main-nav > .mainmenu > li > a {
+    font-size: 24px;
+    text-decoration: none;
+}
+.submenu > li > a {
+    margin-left: 40px;
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+}
+.search-form {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.3); /* opacity 대신 사용 */
+    border-radius: 50px;
+    padding: 5px 15px;
+    width: 225px;
+    height: 40px;
+}
+
+.search-form input {
+    border: 1px solid black;
+    border-radius: 50px;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    box-shadow: none; /* 혹시 기본 그림자가 있다면 제거 */
+}
+
+.search-form button {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    right: 30px;
+}
+
+.search-form button img {
+    width: 20px;
+    height: 20px;
+}
+.gradationline {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+}
+
+
+/* main */
+.dharma-title > h2 {
+    font-family: "Noto Sans KR", serif;
+    font-size: 48px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+.dharma-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.dharma-menu li {
+    flex: 1;
+    text-align: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.dharma-menu li.active {
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: none;
+}
+
+.dharma-menu li:not(.active) {
+    border-bottom: 1px solid black;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.onair-video .vidio {
+    margin-top: 50px;
+    width: 100%;
+}
+.onair-vidio-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.onair-vidio-text h4 {
+    font-size: 48px;
+    font-family: "Noto Sans KR", serif;
+}
+
+.onair-vidio-text .date {
+    font-size: 18px;
+    color: #909090;
+    font-family: "Noto Sans KR", serif;
+}
+.onair-vidio-icon {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.onair-vidio-icon .home, .onair-vidio-icon .new, .onair-vidio-icon .share {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.onair-vidio-icon a {
+    margin-top: 5px;
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-family: "Noto Sans KR", serif;
+}
+
+.onair-vidio-icon .share {
+    cursor: pointer;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+.modal-content h3 {
+    font-family: "Noto Sans KR", serif;
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+.share-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+.share-icons img {
+    cursor: pointer;
+}
+.url-box {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.url-box input {
+    border: none;
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+}
+.url-box button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.url-box button:hover {
+    background: #555;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container {
+    position: relative;
+    display: inline-block;
+}
+
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.pause-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.video-container:hover .video-controls,
+.video-container:hover .pause-icon {
+    opacity: 1;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 5px;
+    background: red;
+    margin: 0 10px;
+}
+
+
+/* onair */
+/* 타이틀 스타일 */
+.on-air {
+    margin-top: 30px;
+    position: relative;
+}
+.onairtitle-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.on-air .red-circle {
+    position: absolute;
+    top: 7%; /* 상단에서의 위치 조정 */
+    left: 10.5%; /* 오른쪽에서의 위치 조정 */
+    width: 10px; /* 원의 크기 */
+    height: 10px; /* 원의 크기 */
+    border-radius: 50%; /* 원 모양으로 만들기 위해 반지름을 50%로 설정 */
+    background-color: red; /* 원의 색상 */
+    animation: scaleAnimation 2s infinite; /* 2초 동안 애니메이션을 무한 반복 */
+}
+/* 원의 크기 애니메이션 정의 */
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(0); /* 처음에는 원이 보이지 않음 */
+    }
+    50% {
+        transform: scale(1); /* 원이 크기 1로 커짐 */
+    }
+    100% {
+        transform: scale(0); /* 다시 원이 작아짐 */
+    }
+}
+
+.onair-title {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.onair-title h2 {
+    font-family: "Lato", serif;
+    font-weight: 900;
+    font-size: 40px;
+    margin-right: 20px;
+}
+
+.onair-title span {
+    font-size: 14px;
+    font-family: "Noto Sans KR", serif;
+    color: #969696;
+}
+
+.onair-menu {
+    display: flex;
+}
+.onair-menu > .table, .table2 {
+    display: flex;
+    background-color: #3a3a3a;
+    padding: 10px 30px;
+    border-radius: 50px;
+    color: white;
+}
+.onair-menu > .table > img {
+    margin-right: 10px;
+}
+.onair-menu > .table2 > img {
+    margin-right: 10px;
+}
+.onair-menu p {
+    font-size: 16px;
+    font-family: "Noto Sans KR", serif;
+}
+
+
+.onair-menu > .table2 {
+    margin-left: 10px;
+}
+
+
+
+/* NOW/NEXT 방송 섹션 */
+.now-next-playing {
+    display: flex;
+    width: 100%;
+}
+.now-playing::after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 7px; /* 바의 높이 */
+    background-color: #d60000; /* 빨간색 */
+    position: absolute;
+    bottom: 0.70px;
+    left: 10.5px;
+    border-radius: 0 0 0 5px; /* 모서리 둥글게 */
+}
+
+.now-next-playing > .now-playing {
+    display: flex;
+    align-items: center;
+    background-color: #3a3a3a;
+    border-radius: 10px;
+    padding-left: 25px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 65%;
+}
+.now-playing span {
+    font-weight: bold;
+    font-size: 24px;
+    font-family: "Lato", serif;
+    font-weight: 800;
+    color: red;
+    padding-right: 30px;
+}
+.now-next-playing > .now-playing > small {
+    font-family: "Noto Sans KR", serif; 
+    font-size: 18px;
+    padding-right: 30px;
+}
+.now-next-playing > .now-playing > small, .now-program {
+    color: #fff;
+}
+.now-next-playing > .now-playing > .now-program {
+    font-family: "Noto Sans KR", serif; 
+    font-size: 24px;
+    font-weight: 400;
+}
+.now-next-playing > .now-playing > .program-home {
+    padding-left: 320px;
+    color: white;
+}
+.now-next-playing > .now-playing > .program-home,
+.now-next-playing > .now-playing > .again {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    text-align: center; /* 텍스트도 중앙 정렬 */
+    gap: 5px; /* 이미지와 텍스트 간격 */
+}
+
+.now-next-playing > .now-playing > .program-home > img,
+.now-next-playing > .now-playing > .again > img {
+    width: 24px; /* 아이콘 크기 조절 (필요에 따라 변경) */
+    height: 24px;
+}
+
+.now-next-playing > .now-playing > .program-home > p {
+    font-family: "Noto Sans KR", serif;
+    font-size: 14px; 
+}
+.now-next-playing > .now-playing > .again {
+    padding-left: 30px;
+    color: white;
+}
+.now-next-playing > .now-playing > .again > p {
+    font-family: "Noto Sans KR", serif;
+    font-size: 14px; 
+}
+
+.now-next-playing > .next-playing {
+    padding-top: 32px;
+    background-color: #f8f8f8;
+    margin-left: 10px;
+    border-radius: 10px;
+    width: 35%;
+}
+.now-next-playing > .next-playing > .next-playing-box {
+    padding-left: 40px;
+    position: relative;
+}
+.now-next-playing > .next-playing > .next-playing-box > .next-arrow-box {
+    position: absolute;
+    display: flex;
+    top: 30%;
+}
+.now-next-playing > .next-playing > .next-playing-box > .next-arrow-box > img:first-child {
+    position: absolute;
+    right: -5px;
+}
+.now-next-playing > .next-playing > .next-playing-box > .next-arrow-box > img:last-child {
+    position: absolute;
+    left: 425px;
+}
+
+.now-next-playing > .next-playing span {
+    margin-left: 30px;
+    background-color: #3a3a3a;
+    color: white;
+    width: 60px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 3px 10px;
+    font-family: "Lato", serif;
+    font-weight: 600;
+}
+
+.now-playing span, .next-playing small {
+    font-size: 18px;
+}
+
+.now-program, .next-program {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 30px;
+}
+.next-program > small {
+    font-family: "Noto Sans KR", serif;
+    font-size: 18px; 
+    font-weight: 500;
+    color: #3a3a3a;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+.next-program > p {
+    font-family: "Noto Sans KR", serif;
+    font-size: 18px; 
+    font-weight: 500;
+    color: #3a3a3a;
+    margin-top: 5px;
+}
+
+/* new-video */
+.new-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.new-title > h2 {
+    font-family: "Noto Sans KR", serif;
+    font-weight: 800;
+    display: flex;
+    font-size: 40px;
+    margin-top: 70px;
+    margin-bottom: 25px;
+}
+.new-title > .slider-indicator {
+    margin-top: 70px;
+}
+.new-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4열 */
+    grid-template-rows: repeat(2, auto); /* 2행 */
+    gap: 20px; /* 항목 간 간격 */
+}
+
+.new-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer; /* 마우스를 올리면 클릭 가능하게 변경 */
+    transition: transform 0.3s ease;
+}
+
+.new-grid img:hover {
+    transform: scale(1.05); /* 마우스를 올리면 확대 효과 */
+}
+
+.new-grid p {
+    font-size: 18px;
+    font-family: "Noto Sans KR", serif;
+    margin: 10px 0;
+    width: 100%;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 최대 2줄 */
+    -webkit-box-orient: vertical;
+    transition: all 0.3s ease;
+}
+.new-grid span {
+    font-size: 16px;
+    color: #909090;
+}
+
+/* import */
+.import .import-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.import .import-title > h2 {
+    font-size: 40px;
+    margin-top: 70px;
+    padding-bottom: 25px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 800;
+}
+.import-title > .slider-indicator {
+    margin-top: 70px;
+}
+
+/* 슬라이드 인디케이터 (원 3개) */
+.import-title > .slider-indicator {
+    display: flex;
+    gap: 8px;
+}
+.import-title > .slider-indicator .dot {
+    width: 14px;
+    height: 14px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+.import-title > .slider-indicator .dot.active {
+    background-color: #BF9A0B;
+}
+
+/* 슬라이드 인디케이터 (원 3개) */
+.new-title > .slider-indicator {
+    display: flex;
+    gap: 8px;
+}
+.new-title > .slider-indicator .dot {
+    width: 14px;
+    height: 14px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+.new-title > .slider-indicator .dot.active {
+    background-color: #BF9A0B;
+}
+
+.import .import-grid {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+.import .import-grid p {
+    margin-top: 5px;
+    font-family: "Noto Sans KR", serif;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+.import .import-grid small {
+    font-size: 16px;
+    color: #909090;
+    font-family: "Noto Sans KR", serif;
+}
+
+/* TV, 라디오 카테고리 태그 스타일 */
+.import .import-grid .category {
+    display: flex;
+    position: absolute;
+}
+.import .import-grid .tag {
+    border: 1px solid #ccc;
+    color: #909090;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 500;
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+
+
+/* banner */
+.banner {
+    margin: 90px 0;
+}
+
+.banner .banner-img {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.left-banner, .right-banner {
+    width: 50%;
+    position: relative;
+}
+
+.left-banner img, .right-banner img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.indicator-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.left-banner .indicator {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+.right-banner .indicator {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #BF9A0B;
+}
+
+/* notice */
+.notice {
+    padding: 15px 0;
+    margin-top: 70px;
+    background-color: #3a3a3a;
+}
+.notice .notice-content {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+.notice .notice-content > .notice-contentbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notice .notice-content > .notice-contentbox > strong {
+    font-size: 18px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 500;
+}
+.notice .notice-content > .notice-contentbox > p {
+    margin-left: 50px;
+    font-family: "Noto Sans KR", serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+.notice .notice-content > span {
+    font-family: "Noto Sans KR", serif;
+    font-weight: 300;
+}
+
+/* footer */
+footer {
+    width: 100%;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-menu > ul {
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+}
+.footer-menu > ul > li {
+    margin-right: 30px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 400;
+}
+.footer-menu > ul > li:nth-child(even) {
+    font-size: 12px;  /* 글자 크기는 적당히 조정 */
+}
+
+.dropdown2 {
+    position: relative;
+    border: 1px solid #3a3a3a;
+    padding: 10px 20px;
+    border-radius: 10px; /* 초기 상태는 모든 모서리 둥글게 */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: white;
+    z-index: 1000;
+    width: 200px; /* 고정된 너비 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 너비에 포함 */
+}
+
+.dropdown2 a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-family: "Noto Sans KR", serif;
+}
+
+.dropdown2 img {
+    margin-left: 45px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu2 {
+    position: absolute;
+    bottom: 100%;
+    left: -1px; /* 테두리 두께만큼 보정 */
+    right: -1px; /* 테두리 두께만큼 보정 */
+    background: white;
+    border: 1px solid #3a3a3a;
+    border-bottom: none;
+    padding: 10px 20px; /* 버튼과 동일한 패딩 */
+    list-style: none;
+    display: none;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 0 0;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.dropdown-menu2.open {
+    display: block; /* 메뉴가 열릴 때만 표시 */
+    
+}
+
+.dropdown2.menu-open {
+    border-radius: 0 0 10px 10px;
+    border-top-color: transparent; /* 위쪽 테두리 숨기기 */
+}
+
+.dropdown-menu2 li {
+    padding: 5px 0px;
+}
+
+.dropdown-menu2 li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    z-index: 1000;
+    font-family: "Noto Sans KR", serif;
+}
+.footer-logo-contents {
+    display: flex;
+}
+.footer-logo-contents > .footer-logo {
+    margin-right: 30px;
+}
+.footer-logo-contents > .info {
+    font-family: "Noto Sans KR", serif;
+    margin-bottom: 20px;
+}
+.copyright {
+    margin-left: 248px;
+    font-family: "Noto Sans KR", serif;
+    margin-bottom: 60px;
+}
