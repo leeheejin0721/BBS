@@ -1,0 +1,622 @@
+@charset "utf-8";
+
+.container {
+    position: relative;
+    width: 1500px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+header {
+    position: relative; /* 부모 요소에 relative 추가 */
+    width: 100%;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    z-index: 2; /* 메뉴와 로고가 그라데이션 아래로 가리지 않도록 z-index 추가 */
+    margin: 15px 0;
+}
+.mainnav-submenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav img {
+    padding-right: 40px;
+}
+
+.main-nav .mainmenu {
+    display: flex;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+/* 드롭다운 컨테이너 수정 */
+.dropdown {
+    position: relative;
+    z-index: 50;
+}
+
+/* 드롭다운 메뉴 수정 */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #BF9A0B;
+    border-radius: 20px;
+    list-style: none;
+    width: 120px;
+    padding-top: 20px;
+}
+
+.dropdown-menu li {
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+.dropdown-menu li a {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    display: block;
+    font-family: "Noto Sans KR", serif;
+}
+.dropdown-menu li a:first-child {
+    padding-bottom: 20px;
+}
+
+/* 드롭다운 활성화 시 */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.dropdown-menu li a:hover {
+    color: #BF9A0B;
+}
+
+/* 메인 메뉴 항목 위치 조정 */
+.main-nav .mainmenu > li {
+    position: relative; /* 추가: 부모 요소 기준 위치 설정 */
+    margin-right: 40px;
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+.main-nav .mainmenu > li > a {
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+.main-nav .mainmenu > li > a:hover {
+    color: #BF9A0B;
+}
+
+/* dropdown 메뉴 밑줄 제거 */
+.main-nav .mainmenu > li.dropdown > a::after {
+    display: none; /* 밑줄 제거 */
+    bottom: 0;
+}
+
+.main-nav .mainmenu > li > a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -26px;
+    width: 0;
+    height: 3px;
+    background-color: #BF9A0B;
+}
+
+.main-nav .mainmenu > li > a:hover::after {
+    width: 100%;
+}
+
+
+/* 드롭다운 활성화 시 삼각형 뒤집기 (▼ → ▲) */
+.mainmenu .dropdown:hover .triangle,
+.mainmenu .dropdown:focus-within .triangle {
+    transform: rotate(180deg);
+}
+
+
+/* 삼각형 ▼ 모양 */
+.triangle {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;  
+    border-right: 8px solid transparent; 
+    border-top: 10px solid black; 
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+/* ON AIR 메뉴 호버 시 텍스트 및 삼각형 색상 변경 */
+.mainmenu .dropdown:hover > a,
+.mainmenu .dropdown:focus-within > a {
+    color: #BF9A0B !important;
+}
+
+.mainmenu .dropdown:hover .triangle,
+.mainmenu .dropdown:focus-within .triangle {
+    border-top: 10px solid #BF9A0B !important;
+}
+
+.main-nav .mainmenu > li {
+    margin-right: 40px;
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+.submenu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
+}
+.submenu > li > a:hover {
+    color: #BF9A0B;
+}
+
+.main-nav ul li {
+    display: inline;
+}
+
+.main-nav > .mainmenu > li > a {
+    font-size: 24px;
+    text-decoration: none;
+}
+.submenu > li > a {
+    margin-left: 40px;
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+}
+.search-form {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.3); /* opacity 대신 사용 */
+    border-radius: 50px;
+    padding: 5px 15px;
+    width: 225px;
+    height: 40px;
+}
+
+.search-form input {
+    border: 1px solid black;
+    border-radius: 50px;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    box-shadow: none; /* 혹시 기본 그림자가 있다면 제거 */
+}
+
+.search-form button {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    right: 30px;
+}
+
+.search-form button img {
+    width: 20px;
+    height: 20px;
+}
+.gradationline {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+}
+
+/* main */
+
+.notice-box {
+    margin-top: 70px;
+}
+
+.notice-container {
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.notice-title > .badge {
+    font-family: "Noto Sans KR", serif;
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    display: inline-block; /* 텍스트 크기에 맞춰 박스 크기 조정 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+.notice-title > h3 {
+    margin-top: 10px;
+    font-family: "Noto Sans KR", serif;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+.notice-title > .sub-title {
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+.notice-title > .sub-title > p {
+    font-size: 18px;
+    font-family: "Noto Sans KR", serif;
+    margin-right: 50px;
+}
+.notice-title > .sub-title > p > strong {
+    display: inline-block;
+    margin-right: 10px;
+}
+h2 {
+    font-family: "Noto Sans KR", serif;
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+.notice-title > .boldline {
+    border: 1.5px solid black;
+}
+.notice-detail > .grayline {
+    border: 1px solid #ddd;
+}
+.notice-detail > .file {
+    margin: 30px 0;
+}
+.notice-detail > .file > a {
+    display: flex;
+    font-size: 18px;
+    font-family: "Noto Sans KR", serif;
+}
+.notice-detail > .file > a:first-child {
+    margin-bottom: 20px;
+}
+.notice-detail > .notice-content {
+    margin: 50px 0;
+}
+.notice-detail > .notice-content > p {
+    font-size: 18px;
+    font-family: "Noto Sans KR", serif;
+    margin-bottom: 47px;
+    line-height: 2.3;
+}
+
+.contact {
+    margin-top: 20px;
+    font-size: 14px;
+}
+.button {
+    font-family: "Noto Sans KR", serif;
+    display: block;
+    width: 180px;
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 15px 0;
+    text-decoration: none;
+    margin: 20px auto 0;
+    margin-top: 50px;
+}
+
+.comment-box {
+    display: flex;
+    flex-direction: row; /* 가로 정렬 */
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.comment-box textarea {
+    font-family: "Noto Sans KR", serif;
+    flex: 1; /* 남은 공간 모두 차지 */
+    height: 80px;
+    border: none;
+    font-size: 16px;
+    resize: none;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 10px;
+}
+
+.comment-submit {
+    width: 130px; /* 버튼을 오른쪽에 꽉 채움 */
+    height: 110px; /* 높이를 textarea에 맞춤 */
+    font-family: "Noto Sans KR", serif;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.comment-list {
+    margin-top: 30px;
+}
+
+.comment-item {
+    border-top: 1px solid #ddd;
+    padding: 20px 0;
+    padding-left: 10px;
+}
+.comment-item:last-child {
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+    padding-left: 10px;
+}
+.comment-item-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-author {
+    font-family: "Noto Sans KR", serif;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+.comment-author > .yellow {
+    color: #BF9A0B;
+}
+
+.comment-date {
+    font-family: "Noto Sans KR", serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #909090;
+    margin-left: 30px;
+}
+
+.comment-content {
+    font-family: "Noto Sans KR", serif;
+    margin-top: 3px;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.comment-actions {
+    display: flex;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.comment-actions a {
+    font-family: "Noto Sans KR", serif;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.comment-actions > .bar {
+    margin-left: 10px;
+}
+
+
+.comment-load-more {
+    font-family: "Noto Sans KR", serif;
+    display: block;
+    width: 180px;
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 15px 0;
+    text-decoration: none;
+    margin: 20px auto 0;
+    margin-top: 50px;
+}
+
+
+/* banner */
+.banner {
+    margin: 90px 0;
+}
+
+.banner .banner-img {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.left-banner, .right-banner {
+    width: 50%;
+    position: relative;
+}
+
+.left-banner img, .right-banner img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.indicator-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.left-banner .indicator {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+.right-banner .indicator {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #BF9A0B;
+}
+
+/* notice */
+.notice {
+    padding: 15px 0;
+    margin-top: 70px;
+    background-color: #3a3a3a;
+}
+.notice .notice-content {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+.notice .notice-content > .notice-contentbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notice .notice-content > .notice-contentbox > strong {
+    font-size: 18px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 500;
+}
+.notice .notice-content > .notice-contentbox > p {
+    margin-left: 50px;
+    font-family: "Noto Sans KR", serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+}
+.notice .notice-content > span {
+    font-family: "Noto Sans KR", serif;
+    font-weight: 300;
+}
+
+/* footer */
+footer {
+    width: 100%;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-menu > ul {
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+}
+.footer-menu > ul > li {
+    margin-right: 30px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 400;
+}
+.footer-menu > ul > li:nth-child(even) {
+    font-size: 12px;  /* 글자 크기는 적당히 조정 */
+}
+
+.dropdown2 {
+    position: relative;
+    border: 1px solid #3a3a3a;
+    padding: 10px 20px;
+    border-radius: 10px; /* 초기 상태는 모든 모서리 둥글게 */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: white;
+    z-index: 1000;
+    width: 200px; /* 고정된 너비 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 너비에 포함 */
+}
+
+.dropdown2 a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-family: "Noto Sans KR", serif;
+}
+
+.dropdown2 img {
+    margin-left: 45px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu2 {
+    position: absolute;
+    bottom: 100%;
+    left: -1px; /* 테두리 두께만큼 보정 */
+    right: -1px; /* 테두리 두께만큼 보정 */
+    background: white;
+    border: 1px solid #3a3a3a;
+    border-bottom: none;
+    padding: 10px 20px; /* 버튼과 동일한 패딩 */
+    list-style: none;
+    display: none;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 0 0;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.dropdown-menu2.open {
+    display: block; /* 메뉴가 열릴 때만 표시 */
+    
+}
+
+.dropdown2.menu-open {
+    border-radius: 0 0 10px 10px;
+    border-top-color: transparent; /* 위쪽 테두리 숨기기 */
+}
+
+.dropdown-menu2 li {
+    padding: 5px 0px;
+}
+
+.dropdown-menu2 li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    z-index: 1000;
+    font-family: "Noto Sans KR", serif;
+}
+.footer-logo-contents {
+    display: flex;
+}
+.footer-logo-contents > .footer-logo {
+    margin-right: 30px;
+}
+.footer-logo-contents > .info {
+    font-family: "Noto Sans KR", serif;
+    margin-bottom: 20px;
+}
+.copyright {
+    margin-left: 248px;
+    font-family: "Noto Sans KR", serif;
+    margin-bottom: 60px;
+}

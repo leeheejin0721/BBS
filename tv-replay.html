@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/tv-replay.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <title>티비 다시보기 새창</title>
+</head>
+<body>
+    <main>
+        <section class="onair-video">
+            <div class="modal2" id="newModal">
+                <div class="video-container">
+                    <img src="./images/onair-img.png" alt="onair">
+                    <img src="./images/back.png" alt="back">
+                    <div class="pause-icon"><img src="./images/big-pause.png" alt="pause"></div>
+                    <div class="play-icon"><img src="./images/play-icon.png" alt="play"></div>
+                    <img src="./images/next.png" alt="next">
+                    <div class="video-controls">
+                        <div class="progress-bar"></div>
+                        <div class="icons">
+                            <img src="./images/small-pause.png" alt="pause" class="control-pause">
+                            <img src="./images/play-icon.png" alt="play" class="control-play">
+                            <img src="./images/sound.png" alt="sound" class="control-sound">
+                            <img src="./images/sound-mute.png" alt="mute" class="control-mute" style="display: none;">
+                            <span class="time-display">0:00</span>
+                        </div>
+                    </div>
+                    <div class="speed-container">
+                        <div class="speed-btn" onclick="toggleSpeedMenu()">1x</div>
+                        <div class="speed-menu">
+                            <div class="selected" onclick="changeSpeed(1.0)">✔ 1x</div>
+                            <div onclick="changeSpeed(1.25)">1.25x</div>
+                            <div onclick="changeSpeed(1.5)">1.5x</div>
+                            <div onclick="changeSpeed(1.75)">1.75x</div>
+                            <div onclick="changeSpeed(2.0)">2x</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="onair-vidio-text">
+                    <div class="onair-vidio-title">
+                        <h4>보이는 라디오 장수연의 BBS 초대석 최종회 (용수스님)</h4>
+                        <span class="date">2024-08-02</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="banner">
+            <div class="banner-img">
+                <div class="left-banner">
+                    <img src="./images/onair-new-img.png" alt="on-air">
+                </div>
+            </div>
+        </section>
+
+    <script src="./js/radio-replay.js"></script>
+</body>
+</html>

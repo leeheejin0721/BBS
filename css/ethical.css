@@ -1,0 +1,643 @@
+@charset "utf-8";
+
+.container {
+    position: relative;
+    width: 1500px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+header {
+    position: relative; /* 부모 요소에 relative 추가 */
+    width: 100%;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    z-index: 2; /* 메뉴와 로고가 그라데이션 아래로 가리지 않도록 z-index 추가 */
+    margin: 15px 0;
+}
+.mainnav-submenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav img {
+    padding-right: 40px;
+}
+
+.main-nav .mainmenu {
+    display: flex;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+/* 드롭다운 컨테이너 수정 */
+.dropdown {
+    position: relative;
+    z-index: 50;
+}
+
+/* 드롭다운 메뉴 수정 */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #BF9A0B;
+    border-radius: 20px;
+    list-style: none;
+    width: 120px;
+    padding-top: 20px;
+}
+
+.dropdown-menu li {
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+.dropdown-menu li a {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    display: block;
+    font-family: "Noto Sans KR", serif;
+}
+.dropdown-menu li a:first-child {
+    padding-bottom: 20px;
+}
+
+/* 드롭다운 활성화 시 */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.dropdown-menu li a:hover {
+    color: #BF9A0B;
+}
+
+/* 메인 메뉴 항목 위치 조정 */
+.main-nav .mainmenu > li {
+    position: relative; /* 추가: 부모 요소 기준 위치 설정 */
+    margin-right: 40px;
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+.main-nav .mainmenu > li > a {
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+.main-nav .mainmenu > li > a:hover {
+    color: #BF9A0B;
+}
+
+/* dropdown 메뉴 밑줄 제거 */
+.main-nav .mainmenu > li.dropdown > a::after {
+    display: none; /* 밑줄 제거 */
+    bottom: 0;
+}
+
+.main-nav .mainmenu > li > a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -26px;
+    width: 0;
+    height: 3px;
+    background-color: #BF9A0B;
+}
+
+.main-nav .mainmenu > li > a:hover::after {
+    width: 100%;
+}
+
+
+/* 드롭다운 활성화 시 삼각형 뒤집기 (▼ → ▲) */
+.mainmenu .dropdown:hover .triangle,
+.mainmenu .dropdown:focus-within .triangle {
+    transform: rotate(180deg);
+}
+
+
+/* 삼각형 ▼ 모양 */
+.triangle {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;  
+    border-right: 8px solid transparent; 
+    border-top: 10px solid black; 
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+/* ON AIR 메뉴 호버 시 텍스트 및 삼각형 색상 변경 */
+.mainmenu .dropdown:hover > a,
+.mainmenu .dropdown:focus-within > a {
+    color: #BF9A0B !important;
+}
+
+.mainmenu .dropdown:hover .triangle,
+.mainmenu .dropdown:focus-within .triangle {
+    border-top: 10px solid #BF9A0B !important;
+}
+
+.main-nav .mainmenu > li {
+    margin-right: 40px;
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+.submenu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
+}
+.submenu > li > a:hover {
+    color: #BF9A0B;
+}
+
+.main-nav ul li {
+    display: inline;
+}
+
+.main-nav > .mainmenu > li > a {
+    font-size: 24px;
+    text-decoration: none;
+}
+.submenu > li > a {
+    margin-left: 40px;
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+}
+.search-form {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.3); /* opacity 대신 사용 */
+    border-radius: 50px;
+    padding: 5px 15px;
+    width: 225px;
+    height: 40px;
+}
+
+.search-form input {
+    border: 1px solid black;
+    border-radius: 50px;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    box-shadow: none; /* 혹시 기본 그림자가 있다면 제거 */
+}
+
+.search-form button {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    right: 30px;
+}
+
+.search-form button img {
+    width: 20px;
+    height: 20px;
+}
+.gradationline {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+}
+
+/* main */
+.boldline {
+    border: 1.5px solid black;
+    margin: 10px 0;
+}
+.grayline {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.ethical-box {
+    margin-top: 100px;
+}
+h3 {
+    margin-top: 10px;
+    font-family: "Noto Sans KR", serif;
+    font-size: 36px;
+    margin-bottom: 70px;
+}
+h4 {
+    font-size: 36px;
+    font-family: "Noto Sans KR", serif;
+    margin-bottom: 37px;
+}
+.text1 {
+    margin-bottom: 28px;
+    font-size: 18px;
+    font-family: "Noto Sans KR", serif;
+}
+.text2 {
+    font-size: 18px;
+    font-family: "Noto Sans KR", serif;
+    margin-bottom: 37px;
+}
+em {
+    font-size: 24px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 600;
+}
+
+
+.form-container {
+    margin-top: 100px;
+    background: white;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.form-group label {
+    font-family: "Noto Sans KR", serif;
+    font-size: 18px;
+    width: 15%;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.form-group input, 
+.form-group textarea, 
+.form-group select {
+    flex: 1;
+    padding: 17px;
+    border: 1px solid #ddd;
+    max-width: 80%; /* 입력 필드가 화면 끝까지 확장되지 않도록 설정 */
+}
+
+.email-group span {
+    margin: 0 10px; /* @ 기호와 입력 필드 사이 간격 조정 */
+}
+#email {
+    width: 800px; /* 도메인 입력 필드 크기 줄이기 */
+    max-width: 35%; /* 너무 커지지 않도록 설정 */
+}
+#domain {
+    width: 120px; /* 도메인 입력 필드 크기 줄이기 */
+    max-width: 25%;
+    margin-right: 10px; /* 다른 요소와 여백 맞추기 */
+}
+
+.form-group select {
+    flex: 0;  /* 부모 flex 영향 제거 */
+    width: 140px; /* select 크기 늘리기 */
+    min-width: 16.4%; /* 최소 크기 제한 */
+    margin-left: 10px; /* @ 뒤 여백 */
+    margin-right: 10px; /* 오른쪽 여백 맞추기 */
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+
+.file-upload > .file-attach {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+.file-upload > .file-attach > label {
+    margin-left: 20px;
+    background-color: #3a3a3a;
+    display: block;
+    width: 120px;
+    color: white;
+    font-family: "Noto Sans KR", serif;
+    padding: 5px 10px;
+    margin-right: 35px;
+    font-size: 16px;
+    text-align: center;
+}
+.file-upload > .file-attach > p {
+    font-family: "Noto Sans KR", serif;
+    font-size: 16px;
+}
+.file-list {
+    margin-left: 170px;
+    margin-top: 10px;
+    padding: 10px;
+}
+.file-list p {
+    font-family: "Noto Sans KR", serif;
+    display: flex;
+    align-items: center;
+}
+.file-list p:first-child {
+    margin-bottom: 10px;
+}
+.file-list p > strong {
+    margin-right: 10px;
+}
+.file-list p > button {
+    width: 25px;
+    background: #3a3a3a;
+    border: none;
+    color: white;
+}
+.button-group {
+    display: flex;
+    justify-content: center; /* 버튼을 화면 중앙에 정렬 */
+    align-items: center;
+    margin-top: 40px;
+    width: 100%; /* 부모 요소 기준으로 가운데 정렬 */
+}
+.button-group button {
+    width: 180px; /* 버튼 크기 조정 */
+    height: 50px; /* 높이를 조정하여 직사각형 모양 */
+    cursor: pointer;
+    border-radius: 0; /* 모서리를 직각으로 */
+    font-size: 16px; /* 글씨 크기 조정 */
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.cancell {
+    font-family: "Noto Sans KR", serif;
+    background-color: white;
+    color: #3a3a3a;
+    border: 1px solid #3a3a3a;
+    margin-right: 20px;
+}
+
+.resit {
+    font-family: "Noto Sans KR", serif;
+    background-color: #3a3a3a;
+    color: white;
+    border: 1px solid #3a3a3a;
+}
+
+.file-list p > button {
+    margin-left: 10px;
+    width: 20px; /* 버튼 크기 유지 */
+    height: 20px; /* 정사각형 유지 */
+    background: #3a3a3a;
+    border: none;
+    color: white;
+    font-size: 10px; /* X 글자 크기 줄이기 */
+    border-radius: 0; /* 모서리를 뾰족하게 */
+    display: flex; /* 텍스트 정렬을 위한 flex 설정 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    padding: 0; /* 내부 여백 제거 */
+}
+
+.privacy-policy {
+    background: #f2f2f2;
+    padding: 30px 50px;
+    margin-top: 50px;
+    margin-bottom: 65px;
+}
+
+.privacy-policy p {
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "Noto Sans KR", serif;
+    margin-bottom: 36px;
+}
+
+.privacy-policy ul {
+    font-family: "Noto Sans KR", serif;
+    font-size: 18px;
+    margin-bottom: 33px;
+}
+.large-checkbox {
+    transform: scale(1.3); /* 체크박스 크기 확대 */
+    margin-right: 5px; /* 오른쪽 간격 추가 */
+    margin-top: 3px;
+}
+.privacy-policy label {
+    font-family: "Noto Sans KR", serif;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.privacy-policy input {
+    margin-right: 6px;
+}
+
+
+/* banner */
+.banner {
+    margin: 90px 0;
+}
+
+.banner .banner-img {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.left-banner, .right-banner {
+    width: 50%;
+    position: relative;
+}
+
+.left-banner img, .right-banner img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.indicator-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.left-banner .indicator {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+.right-banner .indicator {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #BF9A0B;
+}
+
+/* notice */
+.notice {
+    padding: 15px 0;
+    margin-top: 70px;
+    background-color: #3a3a3a;
+}
+.notice .notice-content {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+.notice .notice-content > .notice-contentbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notice .notice-content > .notice-contentbox > strong {
+    font-size: 18px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 500;
+}
+.notice .notice-content > .notice-contentbox > p {
+    margin-left: 50px;
+    font-family: "Noto Sans KR", serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+}
+.notice .notice-content > span {
+    font-family: "Noto Sans KR", serif;
+    font-weight: 300;
+}
+
+/* footer */
+footer {
+    width: 100%;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-menu > ul {
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+}
+.footer-menu > ul > li {
+    margin-right: 30px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 400;
+}
+.footer-menu > ul > li:nth-child(even) {
+    font-size: 12px;  /* 글자 크기는 적당히 조정 */
+}
+
+.dropdown2 {
+    position: relative;
+    border: 1px solid #3a3a3a;
+    padding: 10px 20px;
+    border-radius: 10px; /* 초기 상태는 모든 모서리 둥글게 */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: white;
+    z-index: 1000;
+    width: 200px; /* 고정된 너비 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 너비에 포함 */
+}
+
+.dropdown2 a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-family: "Noto Sans KR", serif;
+}
+
+.dropdown2 img {
+    margin-left: 45px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu2 {
+    position: absolute;
+    bottom: 100%;
+    left: -1px; /* 테두리 두께만큼 보정 */
+    right: -1px; /* 테두리 두께만큼 보정 */
+    background: white;
+    border: 1px solid #3a3a3a;
+    border-bottom: none;
+    padding: 10px 20px; /* 버튼과 동일한 패딩 */
+    list-style: none;
+    display: none;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 0 0;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.dropdown-menu2.open {
+    display: block; /* 메뉴가 열릴 때만 표시 */
+    
+}
+
+.dropdown2.menu-open {
+    border-radius: 0 0 10px 10px;
+    border-top-color: transparent; /* 위쪽 테두리 숨기기 */
+}
+
+.dropdown-menu2 li {
+    padding: 5px 0px;
+}
+
+.dropdown-menu2 li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    z-index: 1000;
+    font-family: "Noto Sans KR", serif;
+}
+.footer-logo-contents {
+    display: flex;
+}
+.footer-logo-contents > .footer-logo {
+    margin-right: 30px;
+}
+.footer-logo-contents > .info {
+    font-family: "Noto Sans KR", serif;
+    margin-bottom: 20px;
+}
+.copyright {
+    margin-left: 248px;
+    font-family: "Noto Sans KR", serif;
+    margin-bottom: 60px;
+}

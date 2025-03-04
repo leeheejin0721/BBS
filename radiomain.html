@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/radiomain.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <title>radiomain</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="mainnav-submenu">
+                <nav class="main-nav">
+                    <a href="/index.html"><img src="./images/sublogo.png" alt="bbsci"></a>
+                    <ul class="mainmenu">
+                        <li class="dropdown">
+                            <a href="/onair.html">ON AIR <span class="triangle"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/onair.html">TV</a></li>
+                                <li><a href="#">라디오</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/tvmain.html">TV</a></li>
+                        <li><a href="/radiomain.html">라디오</a></li>
+                        <li><a href="#">뉴스</a></li>
+                        <li><a href="/dharma.html">법회</a></li>
+                        <li><a href="#">후원</a></li>
+                        <li><a href="/schedule.html">편성표</a></li>
+                    </ul>
+                </nav>
+                <div class="submenu-box">
+                    <ul class="submenu">
+                        <li><a href="/login.html">로그인</a></li>
+                        <li><a href="/channel.html">주파수/채널</a></li>
+                        <li>
+                            <form class="search-form">
+                                <button type="submit">
+                                    <img src="./images/search-black.png" alt="검색">
+                                </button>
+                                <input type="text" placeholder="">
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="gradationline">
+
+        <div class="top-banner">
+            <img src="./images/radiobanner.png" alt="달콤한 나의 라디오">
+            <img src="./images/radiobanner.png" alt="배너2" style="display: none;">
+            <img src="./images/radiobanner.png" alt="배너3" style="display: none;">
+            <div class="indicator">
+                <div class="active"></div>
+                <div></div>
+                <div></div>
+            </div>
+            <button class="play-btn">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <hr class="gradationline">
+    </header>
+
+    <main>
+        <section class="on-air">
+            <div class="container">
+                <div class="onairtitle-menu">
+                    <div class="onair-title">
+                        <h2>ON AIR</h2>
+                        <div class="red-circle"></div>
+                        <span>지금 방송 중인 BBS 프로그램을 확인하세요.</span>
+                    </div>
+                    <div class="onair-menu">
+                        <div class="table">
+                            <img src="./images/calender-icon.svg" alt="calender-icon">
+                            <p>편성표 바로가기</p>
+                        </div>
+                        <div class="table2">
+                            <img src="./images/chanel-icon.svg" alt="chanel-icon">
+                            <p>주파수/채널 찾기</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="now-next-playing">
+                    <div class="now-playing">
+                        <span>NOW</span>
+                        <small>
+                            10:30 ~ 11:30
+                        </small>
+                        <p class="now-program">
+                            불수산 법률사 사시불공
+                        </p>
+                        <div class="program-home">
+                            <img src="./images/home-icon.svg" alt="home-icon">
+                            <p>프로그램 홈</p>
+                        </div>
+                        <div class="again">
+                            <img src="./images/reset-icon.svg" alt="reset-icon">
+                            <p>다시보기</p>
+                        </div>
+                    </div>
+        
+                    <div class="next-playing">
+                        <div class="next-playing-box">
+                            <div class="next-arrow-box">
+                                <img src="./images/youtube-leftarrow.svg" alt="leftarrow">
+                                <img src="./images/youtube-rightarrow.svg" alt="rightarrow">
+                            </div>
+                            <span>NEXT</span>
+                            <div class="next-program">
+                                <small>
+                                    15:30
+                                </small>
+                                <p>대한불교조계종 총무원장 진우스님 새해</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="new-video">
+            <div class="container">
+                <div class="new-title">
+                    <h2>보이는 라디오</h2>
+                    <div class="slider-indicator">
+                        <P>유튜브 바로가기</P>
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                <div class="new-grid">
+                    <article>
+                        <a href="https://www.youtube.com/live/hQ1Te7vpIdk?si=o8ye6VZVbTahmcwU" target="_blank">
+                            <img src="https://img.youtube.com/vi/hQ1Te7vpIdk/maxresdefault.jpg" alt="유튜브 썸네일 1">
+                        </a>
+                        <p>[팝스9, 헤이든입니다] 조기준 아버지.. 아니 작가님과 알듣팝🍿 - 250123 보이는 라디오</p>
+                    </article>
+                    <article>
+                        <a href="https://www.youtube.com/live/bwTAp2VrJHE?si=T3s413S39lyWq_0l" target="_blank">
+                            <img src="https://img.youtube.com/vi/bwTAp2VrJHE/maxresdefault.jpg" alt="유튜브 썸네일 2">
+                        </a>
+                        <p>[김희진의 음악편지 📨] 250123 한국의 레드제플린! 김종서와 함께하는 보이는 라디오</p>
+                    </article>
+                    <article>
+                        <a href="https://www.youtube.com/live/sCf0neU4KU8?si=j2ZgGy9pSoQVjjCx" target="_blank">
+                            <img src="https://img.youtube.com/vi/sCf0neU4KU8/maxresdefault.jpg" alt="유튜브 썸네일 3">
+                        </a>
+                        <p>[마가스님의 그래도 괜찮아] with. 뉴진스님!! 보이는 라디오</p>
+                    </article>
+                    <article>
+                        <a href="https://www.youtube.com/live/61tmephd_Sc?si=0v2I3spMwfQKyWGZ" target="_blank">
+                            <img src="https://img.youtube.com/vi/61tmephd_Sc/maxresdefault.jpg" alt="유튜브 썸네일 4">
+                        </a>
+                        <p>월간초대석 이효주의 싱싱 라디오 가을이 왔어요! 공훈도 왔어요!</p>
+                    </article>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="import">
+            <div class="container">
+                <div class="import-title">
+                    <h2>추천 프로그램</h2>
+                    <div class="slider-indicator">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                <div class="import-grid">
+                    <article>
+                        <img src="./images/popular-img1.png" alt="tv1">
+                        <p>보만스님의 불교심리학</p>
+                        <small>(화) 16:00 (수) 07:50 (목) 22:30</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img2.png" alt="tv1">
+                        <p>김희진의 음악편지</p>
+                        <small>매일 16:00~17:00</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img3.png" alt="tv1">
+                        <p>선방클래스</p>
+                        <small>(화) 07:50 (수) 22:30 (금) 16:00</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img4.png" alt="tv1">
+                        <p>두 시엔 스마일</p>
+                        <small>월-금 14:00~16:00</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img5.png" alt="tv1">
+                        <p>용화선원 송담스님의 참선법문
+                        </p>
+                        <small>월~금 07:30</small>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="radio">
+            <div class="container">
+                <div class="radio-title-menu">
+                    <div class="radio-title">
+                        <h2>라디오</h2>
+                    </div>
+                    <ul class="radio-menu">
+                        <li class="active">방영</li>
+                        <li>종영</li>
+                    </ul>
+                    <div class="search">
+                        <ul class="radio-detail-menu">
+                            <li class="active">기본</li>
+                            <li>최신</li>
+                            <li>가나다</li> 
+                        </ul>
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="검색어를 입력하세요">
+                            <button class="search-button">검색</button>
+                        </div>                   
+                    </div>
+                </div>
+    
+                <div class="radio-content-grid">
+                    <article>
+                        <img src="./images/popular-img2.png" alt="tv1">
+                        <p>보만스님의 불교심리학</p>
+                        <small>(화) 16:00 (수) 07:50 (목) 22:30</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img4.png" alt="tv1">
+                        <p>김희진의 음악편지</p>
+                        <small>매일 16:00~17:00</small>
+                    </article>
+                    <article>
+                        <img src="./images/recom-img4.png" alt="tv1">
+                        <p>선방클래스</p>
+                        <small>(화) 07:50 (수) 22:30 (금) 16:00</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img4.png" alt="tv1">
+                        <p>두 시엔 스마일</p>
+                        <small>월-금 14:00~16:00</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img5.png" alt="tv1">
+                        <p>용화선원 송담스님의 참선법문</p>
+                        <small>월~금 07:30</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img1.png" alt="tv1">
+                        <p>보만스님의 불교심리학</p>
+                        <small>(화) 16:00 (수) 07:50 (목) 22:30</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img2.png" alt="tv1">
+                        <p>김희진의 음악편지</p>
+                        <small>매일 16:00~17:00</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img3.png" alt="tv1">
+                        <p>선방클래스</p>
+                        <small>(화) 07:50 (수) 22:30 (금) 16:00</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img4.png" alt="tv1">
+                        <p>두 시엔 스마일</p>
+                        <small>월-금 14:00~16:00</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img5.png" alt="tv1">
+                        <p>용화선원 송담스님의 참선법문</p>
+                        <small>월~금 07:30</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img1.png" alt="tv1">
+                        <p>보만스님의 불교심리학</p>
+                        <small>(화) 16:00 (수) 07:50 (목) 22:30</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img2.png" alt="tv1">
+                        <p>김희진의 음악편지</p>
+                        <small>매일 16:00~17:00</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img3.png" alt="tv1">
+                        <p>선방클래스</p>
+                        <small>(화) 07:50 (수) 22:30 (금) 16:00</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img4.png" alt="tv1">
+                        <p>두 시엔 스마일</p>
+                        <small>월-금 14:00~16:00</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img5.png" alt="tv1">
+                        <p>용화선원 송담스님의 참선법문</p>
+                        <small>월~금 07:30</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img1.png" alt="tv1">
+                        <p>보만스님의 불교심리학</p>
+                        <small>(화) 16:00 (수) 07:50 (목) 22:30</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img2.png" alt="tv1">
+                        <p>김희진의 음악편지</p>
+                        <small>매일 16:00~17:00</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img3.png" alt="tv1">
+                        <p>선방클래스</p>
+                        <small>(화) 07:50 (수) 22:30 (금) 16:00</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img4.png" alt="tv1">
+                        <p>두 시엔 스마일</p>
+                        <small>월-금 14:00~16:00</small>
+                    </article>
+                    <article>
+                        <img src="./images/popular-img5.png" alt="tv1">
+                        <p>용화선원 송담스님의 참선법문</p>
+                        <small>월~금 07:30</small>
+                    </article>
+                </div>
+
+                <div class="replay-grid">
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg1.png" alt="유튜브 썸네일 1">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석- 최종회 (용수스님)</p>
+                        <span>2024-08-02</span>
+                    </article>
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg2.png" alt="유튜브 썸네일 2">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석 (석암스님)</p>
+                        <span>2024-08-02</span>
+                    </article>
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg3.png" alt="유튜브 썸네일 3">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석 (월호스님)</p>
+                        <span>2024-08-02</span>
+                    </article>
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg4.png" alt="유튜브 썸네일 4">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석 (법륜스님)</p>
+                        <span>2024-08-02</span>
+                    </article>
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg5.png" alt="유튜브 썸네일 5">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석 (효산스님)</p>
+                        <span>2024-08-02</span>
+                    </article>
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg6.png" alt="유튜브 썸네일 6">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석 (윤재웅 총장)</p>
+                        <span>2024-08-02</span>
+                    </article>
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg7.png" alt="유튜브 썸네일 7">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석 (성원스님)</p>
+                        <span>2024-08-02</span>
+                    </article>
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg8.png" alt="유튜브 썸네일 8">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석 (이상훈)</p>
+                        <span>2024-08-02</span>
+                    </article>
+
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg1.png" alt="유튜브 썸네일 1">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석- 최종회 (용수스님)</p>
+                        <span>2024-08-02</span>
+                    </article>
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg2.png" alt="유튜브 썸네일 2">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석 (석암스님)</p>
+                        <span>2024-08-02</span>
+                    </article>
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg3.png" alt="유튜브 썸네일 3">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석 (월호스님)</p>
+                        <span>2024-08-02</span>
+                    </article>
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg4.png" alt="유튜브 썸네일 4">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석 (법륜스님)</p>
+                        <span>2024-08-02</span>
+                    </article>
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg5.png" alt="유튜브 썸네일 5">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석 (효산스님)</p>
+                        <span>2024-08-02</span>
+                    </article>
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg6.png" alt="유튜브 썸네일 6">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석 (윤재웅 총장)</p>
+                        <span>2024-08-02</span>
+                    </article>
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg7.png" alt="유튜브 썸네일 7">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석 (성원스님)</p>
+                        <span>2024-08-02</span>
+                    </article>
+                    <article>
+                        <a href="">
+                            <img src="./images/replayimg8.png" alt="유튜브 썸네일 8">
+                        </a>
+                        <p>보이는 라디오 장수연의 BBS 초대석 (이상훈)</p>
+                        <span>2024-08-02</span>
+                    </article>
+                </div>
+                <div class="number">
+                    <div class="left-arrow">
+                        <img src="./images/left-number.png" alt="left-number">
+                        <img src="./images/left-number1.png" alt="left-number1">
+                    </div>
+                    <span class="page-number active">1</span>
+                    <span class="page-number">2</span>
+                    <span class="page-number">3</span>
+                    <span class="page-number">4</span>
+                    <span class="page-number">5</span>
+                    <div class="right-arrow">
+                        <img src="./images/right-number2.png" alt="right-number1">
+                        <img src="./images/right-number.png" alt="right-number">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="banner">
+            <div class="container">
+                <div class="banner-img">
+                    <div class="left-banner">
+                        <img id="left-img" src="./images/mainbanner1.png" alt="mainbanner1">
+                        <div class="indicator-container left-indicators">
+                            <div class="indicator active" id="left-dot1"></div>
+                            <div class="indicator" id="left-dot2"></div>
+                        </div>
+                    </div>
+                    <div class="right-banner">
+                        <img id="right-img" src="./images/mainbanner3.png" alt="mainbanner2">
+                        <div class="indicator-container right-indicators">
+                            <div class="indicator active" id="right-dot1"></div>
+                            <div class="indicator" id="right-dot2"></div>
+                            <div class="indicator" id="right-dot3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="notice">
+            <div class="container">
+                <div class="notice-content">
+                    <div class="notice-contentbox">
+                        <strong>공지사항</strong>
+                        <p>2025 BBS불교방송 홈페이지 리뉴얼 안내</p>
+                    </div>
+                    <span>전체보기</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="menu">
+            <div class="container">
+                <nav class="footer-menu">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li>|</li>
+                        <li><a href="#">광고문의</a></li>
+                        <li>|</li>
+                        <li><a href="#">시청자 마당</a></li>
+                        <li>|</li>
+                        <li><a href="#">윤리경영제보</a></li>
+                        <li>|</li>
+                        <li><a href="#">이용약관</a></li>
+                        <li>|</li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li>|</li>
+                        <li><a href="#">사이트맵</a></li>
+                        <li>|</li>
+                        <li><a href="#">음원심의</a></li>
+                    </ul>
+                    <div class="dropdown2">
+                        <a href="#" id="toggleDropdown">
+                            BBS 지역방송 
+                            <img src="./images/footer-arrow.png" alt="footer-arrow" id="dropdownArrow">
+                        </a>
+                        <ul class="dropdown-menu2">
+                            <li><a href="#">서울 FM 101.9</a></li>
+                            <li><a href="#">인천 FM 88.1</a></li>
+                            <li><a href="#">부산 FM 89.9</a></li>
+                            <li><a href="#">창원 FM 89.5</a></li>
+                            <li><a href="#">진주 FM 88.1</a></li>
+                            <li><a href="#">광주 FM 89.7</a></li>
+                            <li><a href="#">광양 FM 105.7</a></li>
+                            <li><a href="#">여수 FM 105.1</a></li>
+                            <li><a href="#">대구 FM 94.5</a></li>
+                            <li><a href="#">포항 FM 105.5</a></li>
+                            <li><a href="#">안동 FM 97.7</a></li>
+                            <li><a href="#">청주 FM 96.7</a></li>
+                            <li><a href="#">춘천 FM 100.1</a></li>
+                            <li><a href="#">속초 FM 93.5</a></li>
+                            <li><a href="#">강릉 FM 104.3</a></li>
+                            <li><a href="#">양양 FM 97.1</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="footer-logo-contents">
+                    <div class="footer-logo">
+                        <img src="./images/footerci.png" alt="bbsci">
+                    </div>
+                    <div class="info">
+                        <p>04175 서울시 마포구 마포대로 20 다보빌딩  |  대표전화: 02-705-5114   |  후원전화: 1855-3000<br>
+                            팩스: 02-705-5229  |  이메일: webmaster@bbsi.co.kr  |  사업자등록번호: 105-82-04476</p>
+                    </div>
+                </div>
+                <p class="copyright">&copy; 2024 BBS 불교방송. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/radiomain.js"></script>
+</body>
+</html>

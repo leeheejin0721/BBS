@@ -1,0 +1,1132 @@
+@charset "utf-8";
+
+.container {
+    position: relative;
+    width: 1500px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+header {
+    position: relative; /* 부모 요소에 relative 추가 */
+    width: 100%;
+    overflow: hidden;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    z-index: 2; /* 메뉴와 로고가 그라데이션 아래로 가리지 않도록 z-index 추가 */
+    margin: 15px 0;
+}
+.mainnav-submenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav img {
+    padding-right: 40px;
+}
+
+.main-nav .mainmenu {
+    display: flex;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+/* 드롭다운 컨테이너 수정 */
+.dropdown {
+    position: relative;
+    z-index: 50;
+}
+
+/* 드롭다운 메뉴 수정 */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #BF9A0B;
+    border-radius: 20px;
+    list-style: none;
+    width: 120px;
+    padding-top: 20px;
+}
+
+.dropdown-menu li {
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+.dropdown-menu li a {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    display: block;
+    font-family: "Noto Sans KR", serif;
+}
+.dropdown-menu li a:first-child {
+    padding-bottom: 20px;
+}
+
+/* 드롭다운 활성화 시 */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.dropdown-menu li a:hover {
+    color: #BF9A0B;
+}
+
+/* 메인 메뉴 항목 위치 조정 */
+.main-nav .mainmenu > li {
+    position: relative; /* 추가: 부모 요소 기준 위치 설정 */
+    margin-right: 40px;
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+.main-nav .mainmenu > li > a {
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+.main-nav .mainmenu > li > a:hover {
+    color: #BF9A0B;
+}
+
+/* dropdown 메뉴 밑줄 제거 */
+.main-nav .mainmenu > li.dropdown > a::after {
+    display: none; /* 밑줄 제거 */
+    bottom: 0;
+}
+
+.main-nav .mainmenu > li > a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -26px;
+    width: 0;
+    height: 3px;
+    background-color: #BF9A0B;
+}
+
+.main-nav .mainmenu > li > a:hover::after {
+    width: 100%;
+}
+
+
+/* 드롭다운 활성화 시 삼각형 뒤집기 (▼ → ▲) */
+.mainmenu .dropdown:hover .triangle,
+.mainmenu .dropdown:focus-within .triangle {
+    transform: rotate(180deg);
+}
+
+
+/* 삼각형 ▼ 모양 */
+.triangle {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;  
+    border-right: 8px solid transparent; 
+    border-top: 10px solid black; 
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+/* ON AIR 메뉴 호버 시 텍스트 및 삼각형 색상 변경 */
+.mainmenu .dropdown:hover > a,
+.mainmenu .dropdown:focus-within > a {
+    color: #BF9A0B !important;
+}
+
+.mainmenu .dropdown:hover .triangle,
+.mainmenu .dropdown:focus-within .triangle {
+    border-top: 10px solid #BF9A0B !important;
+}
+
+.main-nav .mainmenu > li {
+    margin-right: 40px;
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+.submenu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
+}
+
+.main-nav ul li {
+    display: inline;
+}
+
+.main-nav > .mainmenu > li > a {
+    font-size: 24px;
+    text-decoration: none;
+}
+.submenu > li > a {
+    cursor: pointer;
+    margin-left: 40px;
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+}
+.submenu > li > a:hover {
+    color: #BF9A0B;
+}
+.search-form {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.3); /* opacity 대신 사용 */
+    border-radius: 50px;
+    padding: 5px 15px;
+    width: 225px;
+    height: 40px;
+}
+
+.search-form input {
+    border: 1px solid black;
+    border-radius: 50px;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    box-shadow: none; /* 혹시 기본 그림자가 있다면 제거 */
+}
+
+.search-form button {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    right: 30px;
+}
+
+.search-form button img {
+    width: 20px;
+    height: 20px;
+}
+.gradationline {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+}
+
+.top-banner .prev, .top-banner .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.top-banner .prev {
+    left: 30px;
+    width: 70px;
+}
+
+.top-banner .next {
+    right: 30px;
+    width: 70px;
+}
+
+.top-banner .indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 84%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.top-banner .indicator div {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.top-banner .indicator div.active {
+    width: 30px;
+    background: #d60000;
+    border-radius: 20px;
+}
+
+.play-btn {
+    position: absolute;
+    bottom: 40px;
+    width: 20px;  /* 버튼 크기 */
+    height: 1px;
+    left: 87%;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 2px; /* 모서리 둥글게 */
+}
+.play-btn span {
+    display: inline-block;
+    width: 6px; /* 막대 너비 */
+    height: 20px; /* 막대 높이 */
+    background: white;
+    margin: 0 3px; /* 두 막대 사이 간격 */
+}
+
+
+/* main */
+main {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* onair */
+/* 타이틀 스타일 */
+.on-air {
+    margin-top: 30px;
+    position: relative;
+}
+.onairtitle-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.on-air .red-circle {
+    position: absolute;
+    top: 7%; /* 상단에서의 위치 조정 */
+    left: 10.5%; /* 오른쪽에서의 위치 조정 */
+    width: 10px; /* 원의 크기 */
+    height: 10px; /* 원의 크기 */
+    border-radius: 50%; /* 원 모양으로 만들기 위해 반지름을 50%로 설정 */
+    background-color: red; /* 원의 색상 */
+    animation: scaleAnimation 2s infinite; /* 2초 동안 애니메이션을 무한 반복 */
+}
+/* 원의 크기 애니메이션 정의 */
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(0); /* 처음에는 원이 보이지 않음 */
+    }
+    50% {
+        transform: scale(1); /* 원이 크기 1로 커짐 */
+    }
+    100% {
+        transform: scale(0); /* 다시 원이 작아짐 */
+    }
+}
+
+.onair-title {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.onair-title h2 {
+    font-family: "Lato", serif;
+    font-weight: 900;
+    font-size: 40px;
+    margin-right: 20px;
+}
+
+.onair-title span {
+    font-size: 14px;
+    font-family: "Noto Sans KR", serif;
+    color: #969696;
+}
+
+.onair-menu {
+    display: flex;
+}
+.onair-menu > .table, .table2 {
+    display: flex;
+    background-color: #3a3a3a;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+}
+.onair-menu > .table > img {
+    margin-right: 10px;
+}
+.onair-menu > .table2 > img {
+    margin-right: 10px;
+}
+.onair-menu p {
+    font-size: 15px;
+    font-family: "Noto Sans KR", serif;
+}
+
+
+.onair-menu > .table2 {
+    margin-left: 10px;
+}
+
+
+
+/* NOW/NEXT 방송 섹션 */
+.now-next-playing {
+    display: flex;
+    width: 100%;
+}
+.now-playing::after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 7px; /* 바의 높이 */
+    background-color: red; /* 빨간색 */
+    position: absolute;
+    bottom: 0.70px;
+    left: 10.5px;
+    border-radius: 0 0 0 5px; /* 모서리 둥글게 */
+}
+
+.now-next-playing > .now-playing {
+    display: flex;
+    align-items: center;
+    background-color: #3a3a3a;
+    border-radius: 10px;
+    padding-left: 25px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 65%;
+}
+.now-playing span {
+    font-weight: bold;
+    font-size: 24px;
+    font-family: "Lato", serif;
+    font-weight: 800;
+    color: red;
+    padding-right: 30px;
+}
+.now-next-playing > .now-playing > small {
+    font-family: "Noto Sans KR", serif; 
+    font-size: 18px;
+    padding-right: 30px;
+}
+.now-next-playing > .now-playing > small, .now-program {
+    color: #fff;
+}
+.now-next-playing > .now-playing > .now-program {
+    font-family: "Noto Sans KR", serif; 
+    font-size: 24px;
+    font-weight: 400;
+}
+.now-next-playing > .now-playing > .program-home {
+    padding-left: 320px;
+    color: white;
+}
+.now-next-playing > .now-playing > .program-home,
+.now-next-playing > .now-playing > .again {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    text-align: center; /* 텍스트도 중앙 정렬 */
+    gap: 5px; /* 이미지와 텍스트 간격 */
+}
+
+.now-next-playing > .now-playing > .program-home > img,
+.now-next-playing > .now-playing > .again > img {
+    width: 24px; /* 아이콘 크기 조절 (필요에 따라 변경) */
+    height: 24px;
+}
+
+.now-next-playing > .now-playing > .program-home > p {
+    font-family: "Noto Sans KR", serif;
+    font-size: 14px; 
+}
+.now-next-playing > .now-playing > .again {
+    padding-left: 30px;
+    color: white;
+}
+.now-next-playing > .now-playing > .again > p {
+    font-family: "Noto Sans KR", serif;
+    font-size: 14px; 
+}
+
+.now-next-playing > .next-playing {
+    padding-top: 32px;
+    background-color: #f8f8f8;
+    margin-left: 10px;
+    border-radius: 10px;
+    width: 35%;
+}
+.now-next-playing > .next-playing > .next-playing-box {
+    padding-left: 40px;
+    position: relative;
+}
+.now-next-playing > .next-playing > .next-playing-box > .next-arrow-box {
+    position: absolute;
+    display: flex;
+    top: 30%;
+}
+.now-next-playing > .next-playing > .next-playing-box > .next-arrow-box > img:first-child {
+    position: absolute;
+    right: -5px;
+}
+.now-next-playing > .next-playing > .next-playing-box > .next-arrow-box > img:last-child {
+    position: absolute;
+    left: 425px;
+}
+
+.now-next-playing > .next-playing span {
+    margin-left: 30px;
+    background-color: #3a3a3a;
+    color: white;
+    width: 60px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 3px 10px;
+    font-family: "Lato", serif;
+    font-weight: 600;
+}
+
+.now-playing span, .next-playing small {
+    font-size: 18px;
+}
+
+.now-program, .next-program {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 30px;
+}
+.next-program > small {
+    font-family: "Noto Sans KR", serif;
+    font-size: 18px; 
+    font-weight: 500;
+    color: #3a3a3a;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+.next-program > p {
+    font-family: "Noto Sans KR", serif;
+    font-size: 18px; 
+    font-weight: 500;
+    color: #3a3a3a;
+    margin-top: 5px;
+}
+
+/* new-video */
+.new-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.new-title > h2 {
+    font-family: "Noto Sans KR", serif;
+    font-weight: 800;
+    display: flex;
+    font-size: 40px;
+    margin-top: 70px;
+    margin-bottom: 25px;
+}
+.new-title > .slider-indicator {
+    margin-top: 70px;
+}
+.new-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4열 */
+    grid-template-rows: repeat(2, auto); /* 2행 */
+    gap: 20px; /* 항목 간 간격 */
+}
+
+.new-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer; /* 마우스를 올리면 클릭 가능하게 변경 */
+    transition: transform 0.3s ease;
+}
+
+.new-grid img:hover {
+    transform: scale(1.05); /* 마우스를 올리면 확대 효과 */
+}
+
+.new-grid p {
+    font-size: 18px;
+    font-family: "Noto Sans KR", serif;
+    margin: 10px 0;
+    width: 100%;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 최대 2줄 */
+    -webkit-box-orient: vertical;
+    transition: all 0.3s ease;
+}
+.new-grid span {
+    font-size: 16px;
+    color: #909090;
+}
+
+/* import */
+.import .import-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.import .import-title > h2 {
+    font-size: 40px;
+    margin-top: 70px;
+    padding-bottom: 25px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 800;
+}
+.import-title > .slider-indicator {
+    margin-top: 70px;
+}
+
+/* 슬라이드 인디케이터 (원 3개) */
+.import-title > .slider-indicator {
+    display: flex;
+    gap: 8px;
+}
+.import-title > .slider-indicator .dot {
+    width: 14px;
+    height: 14px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+.import-title > .slider-indicator .dot.active {
+    background-color: #BF9A0B;
+}
+
+/* 슬라이드 인디케이터 (원 3개) */
+.new-title > .slider-indicator {
+    display: flex;
+    gap: 8px;
+}
+.new-title > .slider-indicator .dot {
+    width: 14px;
+    height: 14px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+.new-title > .slider-indicator .dot.active {
+    background-color: #BF9A0B;
+}
+
+.import .import-grid {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+.import .import-grid p {
+    margin-top: 5px;
+    font-family: "Noto Sans KR", serif;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+.import .import-grid small {
+    font-size: 16px;
+    color: #909090;
+    font-family: "Noto Sans KR", serif;
+}
+
+/* TV, 라디오 카테고리 태그 스타일 */
+.import .import-grid .category {
+    display: flex;
+    position: absolute;
+}
+.import .import-grid .tag {
+    border: 1px solid #ccc;
+    color: #909090;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 500;
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* tv */
+.tv-title-menu > .tv-title {
+    margin-top: 70px;
+    margin-bottom: 25px;
+}
+.tv-title-menu > .tv-title > h2 {
+    font-size: 40px;
+    font-weight: 800;
+    font-family: "Noto Sans KR", serif;
+}
+.tv-title-menu > .tv-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tv-title-menu > .tv-menu > li {
+    font-size: 24px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 400;
+    border: 1px solid #e5e5e5;
+    border-radius: 50px;
+    width: 155px;
+    padding: 12px 0;
+    text-align: center;
+    color: #909090;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+/* 활성화된 메뉴 스타일 */
+.tv-title-menu > .tv-menu > li.active {
+    background-color: #BF9A0B;
+    color: white;
+    border: none;
+}
+
+/* 마우스를 올렸을 때 */
+.tv-title-menu > .tv-menu > li:hover {
+    background-color: #BF9A0B;
+    color: white;
+    border: none;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tv-detail-menu {
+    display: flex;
+    text-align: center;
+    margin: 60px 0;
+}
+
+.tv-detail-menu > li {
+    font-family: "Noto Sans KR", serif;
+    font-size: 18px;
+    margin-right: 70px;
+    cursor: pointer;
+    color: #909090;
+    transition: color 0.3s;
+    position: relative;
+    line-height: 1.2; /* 세로 크기 줄이기 */
+}
+/* 'end-program-menu' 항목 */
+.tv-title-menu > .end-program-menu {
+    display: none; /* 처음에는 숨김 */
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.tv-title-menu > .end-program-menu > li {
+    font-family: "Noto Sans KR", serif;
+    font-size: 24px;
+    margin: 60px 30px;
+    cursor: pointer;
+    color: #909090;
+    position: relative; /* 상대적인 위치 설정 */
+    transition: color 0.3s, font-weight 0.3s;
+}
+
+/* 처음 선택된 메뉴 스타일 */
+.tv-title-menu > .end-program-menu > li.active {
+    font-weight: bold;
+    color: black;
+}
+
+/* 밑줄을 아래로 띄우기 위한 가상 요소 */
+.tv-title-menu > .end-program-menu > li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -20px; /* 글자에서 5px 아래로 밑줄을 내려줍니다 */
+    width: 100%;
+    height: 2px;
+    background-color: #BF9A0B; /* 밑줄 색깔 */
+    transform: scaleX(0); /* 초기에는 밑줄이 보이지 않게 설정 */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 메뉴 호버 시 스타일 */
+.tv-title-menu > .end-program-menu > li:hover {
+    font-weight: bold;
+    color: black;
+}
+
+.tv-title-menu > .end-program-menu > li:hover::after {
+    transform: scaleX(1); /* 호버할 때 밑줄이 나타나게 설정 */
+}
+
+/* 클릭 시 스타일 */
+.tv-title-menu > .end-program-menu > li.active::after {
+    transform: scaleX(1); /* 클릭된 항목에서 밑줄을 표시 */
+}
+
+/* 리스트 아이템 사이에 바(|) 추가 */
+.tv-detail-menu > li:not(:last-child)::after {
+    content: "|";
+    position: absolute;
+    right: -35px; /* 기존 -20px → -25px로 변경 */
+    color: #ccc;
+    font-size: 14px; /* 기존 크기보다 줄임 */
+}
+.tv-detail-menu > li:nth-child(3)::after {
+    content: none;
+}
+
+.tv-detail-menu > li.active {
+    font-weight: bold;
+    color: black;
+}
+
+/* 마우스를 올렸을 때 */
+.tv-detail-menu > li:hover {
+    font-weight: bold;
+    color: black;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 300px; /* 고정 너비 유지 */
+}
+
+.category-select {
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    width: 120px;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-right: 10px;
+}
+
+.search-button {
+    background: black;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.tv-content-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+.tv-content-grid article {
+    text-align: left;
+    margin-bottom: 80px;
+}
+
+.tv-content-grid article > p {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-size: 22px;
+    font-family: "Noto Sans KR", serif;
+}
+.tv-content-grid article > small {
+    font-size: 16px;
+    font-family: "Noto Sans KR", serif;
+    color: #909090;
+}
+
+.replay-title > h2 > img {
+    margin-right: 10px;
+}
+.replay-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4열 */
+    grid-template-rows: repeat(2, auto); /* 2행 */
+    gap: 20px; /* 항목 간 간격 */
+    row-gap: 50px;
+    margin: 20px auto; /* 가운데 정렬 */
+}
+
+.replay-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer; /* 마우스를 올리면 클릭 가능하게 변경 */
+    transition: transform 0.3s ease;
+}
+
+.replay-grid img:hover {
+    transform: scale(1.05); /* 마우스를 올리면 확대 효과 */
+}
+
+.replay-grid p {
+    font-size: 22px;
+    font-family: "Noto Sans KR", serif;
+    margin: 10px 0;
+    width: 100%;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 최대 2줄 */
+    -webkit-box-orient: vertical;
+    transition: all 0.3s ease;
+}
+.replay-grid span {
+    color: #909090;
+    font-size: 16px;
+}
+
+.number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+.number > .left-arrow {
+    display: flex;
+    margin-right: 30px;
+}
+.number > .left-arrow > img:nth-child(1) {
+    margin-right: 10px;
+}
+.number > .right-arrow {
+    display: flex;
+    margin-left: 30px;
+}
+.number > .right-arrow > img:nth-child(2) {
+    margin-left: 10px;
+}
+
+.number span {
+    font-size: 20px;
+    font-family: "Noto Sans KR", serif;
+    color: #909090;
+    padding: 10px 15px;
+    margin: 0 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.number span.active,
+.number span:hover {
+    background-color: #3a3a3a;
+    color: white;
+    font-weight: bold;
+}
+
+/* banner */
+.banner {
+    margin: 90px 0;
+}
+
+.banner .banner-img {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.left-banner, .right-banner {
+    width: 50%;
+    position: relative;
+}
+
+.left-banner img, .right-banner img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.indicator-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.left-banner .indicator {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+.right-banner .indicator {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #BF9A0B;
+}
+
+/* notice */
+.notice {
+    padding: 15px 0;
+    margin-top: 70px;
+    background-color: #3a3a3a;
+}
+.notice .notice-content {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+.notice .notice-content > .notice-contentbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notice .notice-content > .notice-contentbox > strong {
+    font-size: 18px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 500;
+}
+.notice .notice-content > .notice-contentbox > p {
+    margin-left: 50px;
+    font-family: "Noto Sans KR", serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+.notice .notice-content > span {
+    font-family: "Noto Sans KR", serif;
+    font-weight: 300;
+}
+
+/* footer */
+footer {
+    width: 100%;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-menu > ul {
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+}
+.footer-menu > ul > li {
+    margin-right: 30px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 400;
+}
+.footer-menu > ul > li:nth-child(even) {
+    font-size: 12px;  /* 글자 크기는 적당히 조정 */
+}
+
+.dropdown2 {
+    position: relative;
+    border: 1px solid #3a3a3a;
+    padding: 10px 20px;
+    border-radius: 10px; /* 초기 상태는 모든 모서리 둥글게 */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: white;
+    z-index: 1000;
+    width: 200px; /* 고정된 너비 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 너비에 포함 */
+}
+
+.dropdown2 a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-family: "Noto Sans KR", serif;
+}
+
+.dropdown2 img {
+    margin-left: 45px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu2 {
+    position: absolute;
+    bottom: 100%;
+    left: -1px; /* 테두리 두께만큼 보정 */
+    right: -1px; /* 테두리 두께만큼 보정 */
+    background: white;
+    border: 1px solid #3a3a3a;
+    border-bottom: none;
+    padding: 10px 20px; /* 버튼과 동일한 패딩 */
+    list-style: none;
+    display: none;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 0 0;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.dropdown-menu2.open {
+    display: block; /* 메뉴가 열릴 때만 표시 */
+    
+}
+
+.dropdown2.menu-open {
+    border-radius: 0 0 10px 10px;
+    border-top-color: transparent; /* 위쪽 테두리 숨기기 */
+}
+
+.dropdown-menu2 li {
+    padding: 5px 0px;
+}
+
+.dropdown-menu2 li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    z-index: 1000;
+    font-family: "Noto Sans KR", serif;
+}
+.footer-logo-contents {
+    display: flex;
+}
+.footer-logo-contents > .footer-logo {
+    margin-right: 30px;
+}
+.footer-logo-contents > .info {
+    font-family: "Noto Sans KR", serif;
+    margin-bottom: 20px;
+}
+.copyright {
+    margin-left: 248px;
+    font-family: "Noto Sans KR", serif;
+    margin-bottom: 60px;
+}

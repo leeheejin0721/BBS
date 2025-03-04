@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .background-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* 화면을 꽉 채우도록 설정 */
+            overflow: hidden; /* 스크롤 방지 */
+        }
+        .background-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        .controls {
+            position: absolute;
+            bottom: 0.5%; /* 이미지 하단에 위치 */
+            left: 50%; /* 중앙 정렬 */
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container">
+        <img id="slider" src="./images/main11.png" alt="배경 이미지">
+        <div class="controls">
+            <button onclick="showImage('main')">메인</button>
+            <button onclick="showImage('tv')">TV 메인</button>
+            <button onclick="showImage('radio')">라디오 메인</button>
+        </div>
+    </div>
+
+    <script>
+        const imageMap = {
+            'main': './images/main11.png',
+            'tv': './images/tvmain.png',
+            'radio': './images/radiomain.png'
+        };
+
+        const slider = document.getElementById('slider');
+
+        function showImage(type) {
+            slider.src = imageMap[type];
+            window.scrollTo({ top: 0, behavior: 'smooth' });  // 페이지를 부드럽게 맨 위로 스크롤
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const menuItems = document.querySelectorAll(".program-menu ul li");
+    const allSections = document.querySelectorAll("section");
+    const detailSection = document.getElementById("program-introduce-detail");
+    const noticeSection = document.querySelector(".notice");
+    const bannerSection = document.querySelector(".banner");
+    const programNotice = document.querySelector(".program-notice");
+    const programReplay = document.querySelector(".program-replay");
+    const noticeBoard = document.querySelector(".notice-board");
+    const programList = document.querySelector(".program-list");
+    const programPhoto = document.querySelector(".program-photo");
+    const replayArticles = document.querySelectorAll(".program-replay article");
+    const replayRows = document.querySelectorAll(".program-replay tbody tr");
+    const noticeRows = document.querySelectorAll(".program-notice tbody tr");
+    const boardRows = document.querySelectorAll(".notice-board tbody tr");
+    const programListRows = document.querySelectorAll(".program-list tbody tr");
+    const photoArticles = document.querySelectorAll(".program-photo article");
+    const numberElements = document.querySelectorAll(".number");
+    const searchContainers = document.querySelectorAll(".search-container");
+
+    const noticeBoardViewAll = document.querySelector(".notice-board p");
+    const noticeBoardWriteButton = document.querySelector(".notice-board a.button");
+
+    function updateVisibility() {
+        const activeMenu = document.querySelector(".program-menu ul li.active").textContent.trim();
+
+        if (activeMenu === "홈") {
+            allSections.forEach(section => section.style.display = "block");
+            detailSection.style.display = "none";
+
+            replayArticles.forEach((article, index) => {
+                article.style.display = index < 8 ? "block" : "none";
+            });
+
+            replayRows.forEach((row, index) => {
+                row.style.display = index < 5 ? "table-row" : "none";
+            });
+
+            programListRows.forEach((row, index) => {
+                row.style.display = index < 5 ? "table-row" : "none";
+            });
+
+            photoArticles.forEach((article, index) => {
+                article.style.display = index < 8 ? "block" : "none";
+            });
+
+            programReplay.style.display = "block";
+            programList.style.display = "block";
+            programPhoto.style.display = "block";
+
+            numberElements.forEach(el => el.style.display = "none");
+            searchContainers.forEach(el => el.style.display = "none");
+
+            noticeRows.forEach((row, index) => {
+                row.style.display = index < 5 ? "table-row" : "none";
+            });
+
+            boardRows.forEach((row, index) => {
+                row.style.display = index < 5 ? "table-row" : "none";
+            });
+
+            // 홈 메뉴일 때 전체보기 표시, 글쓰기 버튼 숨기기
+            if (noticeBoardViewAll) noticeBoardViewAll.style.display = "block";
+            if (noticeBoardWriteButton) noticeBoardWriteButton.style.display = "none";
+
+        } else {
+            allSections.forEach(section => section.style.display = "none");
+
+            document.querySelector(".tvProgram-menu").style.display = "block";
+            bannerSection.style.display = "block";
+            noticeSection.style.display = "block";
+
+            if (activeMenu === "프로그램 소개") {
+                detailSection.style.display = "block";
+                detailSection.querySelector(".container").style.display = "block";
+            } else if (activeMenu === "출연진") {
+                document.querySelector(".program-character").style.display = "block";
+                document.querySelector(".program-character .container").style.display = "block";
+            } else if (activeMenu === "다시듣기") {
+                programReplay.style.display = "block";
+                programReplay.querySelector(".container").style.display = "block";
+                replayRows.forEach(row => row.style.display = "table-row");
+                numberElements.forEach(el => el.style.display = "flex");
+                searchContainers.forEach(el => el.style.display = "flex");
+            } else if (activeMenu === "선곡표") {
+                programList.style.display = "block";
+                programList.querySelector(".container").style.display = "block";
+                programListRows.forEach(row => row.style.display = "table-row");
+                numberElements.forEach(el => el.style.display = "flex");
+                searchContainers.forEach(el => el.style.display = "flex");
+            } else if (activeMenu === "공지사항") {
+                programNotice.style.display = "block";
+                programNotice.querySelector(".container").style.display = "block";
+                noticeRows.forEach(row => row.style.display = "table-row");
+                numberElements.forEach(el => el.style.display = "flex");
+                searchContainers.forEach(el => el.style.display = "flex");
+            } else if (activeMenu === "시청자 게시판") {
+                noticeBoard.style.display = "block";
+                noticeBoard.querySelector(".container").style.display = "block";
+                boardRows.forEach(row => row.style.display = "table-row");
+                numberElements.forEach(el => el.style.display = "flex");
+                searchContainers.forEach(el => el.style.display = "flex");
+
+                // 시청자 게시판 메뉴일 때 전체보기 숨기고 글쓰기 버튼 표시
+                if (noticeBoardViewAll) noticeBoardViewAll.style.display = "none";
+                if (noticeBoardWriteButton) noticeBoardWriteButton.style.display = "block";
+            } else if (activeMenu === "포토 갤러리") {
+                programPhoto.style.display = "block";
+                programPhoto.querySelector(".container").style.display = "block";
+                photoArticles.forEach(article => article.style.display = "block");
+                numberElements.forEach(el => el.style.display = "flex");
+                searchContainers.forEach(el => el.style.display = "flex");
+            } 
+
+            // 다른 메뉴 클릭 시 전체보기 숨기기
+            if (activeMenu !== "홈" && activeMenu !== "시청자 게시판") {
+                if (noticeBoardViewAll) noticeBoardViewAll.style.display = "none";
+                if (noticeBoardWriteButton) noticeBoardWriteButton.style.display = "none";
+            }
+        }
+    }
+
+    updateVisibility();
+
+    menuItems.forEach(item => {
+        item.addEventListener("click", function () {
+            menuItems.forEach(i => i.classList.remove("active"));
+            this.classList.add("active");
+            updateVisibility();
+        });
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // 모든 play-button 이미지를 선택
+    document.querySelectorAll(".notice-table tbody tr td img").forEach(function (img) {
+        img.addEventListener("click", function () {
+            // 새 창을 열기
+            window.open("radio-replay.html", "_blank", "width=860,height=710");
+        });
+    });
+});
+
+const leftImages = ["./images/mainbanner1.png", "./images/mainbanner2.png"];
+const rightImages = ["./images/mainbanner3.png", "./images/mainbanner4.png", "./images/mainbanner5.png"];
+
+let leftIndex = 0;
+let rightIndex = 0;
+
+function changeLeftBanner() {
+    leftIndex = (leftIndex + 1) % leftImages.length;
+    document.getElementById("left-img").src = leftImages[leftIndex];
+    
+    // 왼쪽 배너 인디케이터 업데이트
+    document.querySelectorAll('.left-indicators .indicator').forEach((dot, index) => {
+        dot.classList.toggle('active', index === leftIndex);
+    });
+}
+
+function changeRightBanner() {
+    rightIndex = (rightIndex + 1) % rightImages.length;
+    document.getElementById("right-img").src = rightImages[rightIndex];
+    
+    // 오른쪽 배너 인디케이터 업데이트
+    document.querySelectorAll('.right-indicators .indicator').forEach((dot, index) => {
+        dot.classList.toggle('active', index === rightIndex);
+    });
+}
+
+// 왼쪽 배너는 3초마다 변경
+setInterval(changeLeftBanner, 4000);
+
+// 오른쪽 배너는 3초마다 변경
+setInterval(changeRightBanner, 3000);
+
+
+
+
