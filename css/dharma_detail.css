@@ -252,6 +252,7 @@ header {
     padding: 10px 20px;
     cursor: pointer;
     border: 1px solid transparent;
+    font-family: "Noto Sans KR", serif;
 }
 
 .dharma-menu li.active {
@@ -259,6 +260,7 @@ header {
     border-top: 1px solid black;
     border-right: 1px solid black;
     border-bottom: none;
+    font-weight: 500;
 }
 
 .dharma-menu li:not(.active) {
@@ -266,6 +268,7 @@ header {
     border-top: 1px solid #ddd;
     border-right: 1px solid #ddd;
     border-left: 1px solid #ddd;
+    color: #999999;
 }
 
 .dharma-content {
@@ -330,10 +333,9 @@ header {
     display: inline-block;
     margin-right: 10px;
 }
-.notice-title > .boldline {
+.boldline {
     border: 1.5px solid black;
     margin-top: 50px;
-    margin-bottom: 50px;
 }
 .notice-detail > .grayline {
     border: 1px solid #ddd;
@@ -406,7 +408,7 @@ header {
 
 /* banner */
 .banner {
-    margin: 90px 0;
+    margin-top: 140px;
 }
 
 .banner .banner-img {
@@ -476,16 +478,19 @@ header {
     font-size: 18px;
     font-family: "Noto Sans KR", serif;
     font-weight: 500;
+    cursor: pointer;
 }
 .notice .notice-content > .notice-contentbox > p {
     margin-left: 50px;
     font-family: "Noto Sans KR", serif;
     font-size: 18px;
     font-weight: 300;
+    cursor: pointer;
 }
 .notice .notice-content > span {
     font-family: "Noto Sans KR", serif;
     font-weight: 300;
+    cursor: pointer;
 }
 
 /* footer */

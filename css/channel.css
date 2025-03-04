@@ -476,16 +476,19 @@ h4 {
     font-size: 18px;
     font-family: "Noto Sans KR", serif;
     font-weight: 500;
+    cursor: pointer;
 }
 .notice .notice-content > .notice-contentbox > p {
     margin-left: 50px;
     font-family: "Noto Sans KR", serif;
     font-size: 18px;
     font-weight: 300;
+    cursor: pointer;
 }
 .notice .notice-content > span {
     font-family: "Noto Sans KR", serif;
     font-weight: 300;
+    cursor: pointer;
 }
 
 /* footer */
@@ -592,3 +595,4 @@ footer {
     font-family: "Noto Sans KR", serif;
     margin-bottom: 60px;
 }
+

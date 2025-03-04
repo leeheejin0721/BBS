@@ -256,6 +256,7 @@ header {
     text-align: center; /* 모든 셀 내용 가운데 정렬 */
     vertical-align: middle; /* 세로 중앙 정렬 */
     color: #767676;
+    cursor: pointer;
 }
 .notice-table td:nth-child(2) {
     text-align: left; /* 두 번째 열(제목)만 왼쪽 정렬 */
@@ -315,14 +316,14 @@ header {
     margin-right: 30px;
 }
 .number > .left-arrow > img:nth-child(1) {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 .number > .right-arrow {
     display: flex;
     margin-left: 30px;
 }
 .number > .right-arrow > img:nth-child(2) {
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .number span {
@@ -342,7 +343,6 @@ header {
     color: white;
     font-weight: bold;
 }
-
 .search-container {
     display: flex;
     justify-content: center;
@@ -379,7 +379,7 @@ header {
 
 /* banner */
 .banner {
-    margin: 90px 0;
+    margin-top: 140px;
 }
 
 .banner .banner-img {
@@ -446,17 +446,21 @@ header {
     align-items: center;
 }
 .notice .notice-content > .notice-contentbox > strong {
+    cursor: pointer;
     font-size: 18px;
     font-family: "Noto Sans KR", serif;
     font-weight: 500;
 }
 .notice .notice-content > .notice-contentbox > p {
+    cursor: pointer;
     margin-left: 50px;
     font-family: "Noto Sans KR", serif;
     font-size: 18px;
     font-weight: 300;
+    color: white;
 }
 .notice .notice-content > span {
+    cursor: pointer;
     font-family: "Noto Sans KR", serif;
     font-weight: 300;
 }

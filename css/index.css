@@ -18,7 +18,6 @@ header {
     width: 100%;
     height: 100px;
     display: flex;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
 }
 .main-nav .main-box {
     display: flex;
@@ -27,6 +26,19 @@ header {
     min-width: 1500px; 
     margin: auto; 
 }
+.main-nav .main-box a:first-child {
+    position: relative;
+    display: inline-block;
+    z-index: 15; /* 로고가 그라데이션 위에 보이도록 */
+}
+
+/* 로고 이미지에 대한 스타일 */
+.main-nav .main-box a:first-child img {
+    position: relative;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.9)); /* 이미지에 그림자 효과 */
+    transition: all 0.3s ease; /* 부드러운 호버 효과 */
+}
+
 .main-nav .main-box .img {
     width: 231px;
     height: 37px;
@@ -158,14 +170,22 @@ header {
     color: #BF9A0B;
 }
 
+/* 기존 검색 폼 스타일 유지하면서 수정 */
 .search-form {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.3); /* opacity 대신 사용 */
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 50px;
     padding: 5px 15px;
     width: 200px;
     height: 40px;
+    transition: all 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+/* 접힌 상태의 검색 폼 */
+.search-form.collapsed {
+    width: 40px;
+    background: transparent;
 }
 
 .search-form input {
@@ -174,8 +194,17 @@ header {
     width: 100%;
     font-size: 16px;
     padding: 5px;
-    background: transparent; /* 배경 투명하게 */
-    box-shadow: none; /* 혹시 기본 그림자가 있다면 제거 */
+    background: transparent;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    color: #fff; /* 입력 텍스트 색상 */
+}
+
+/* 접힌 상태에서 입력 필드 숨기기 */
+.search-form.collapsed input {
+    width: 0;
+    padding: 0;
+    opacity: 0;
 }
 
 .search-form button {
@@ -184,11 +213,14 @@ header {
     cursor: pointer;
     padding: 5px;
     order: 1; /* 버튼을 입력창보다 오른쪽에 위치 */
+    min-width: 30px; /* 버튼 최소 너비 설정 */
+    display: flex;
+    justify-content: center;
 }
 
 .search-form button img {
-    width: 20px;
-    height: 20px;
+    width: 23px;
+    height: 23px;
 }
 
 .top-banner {
@@ -197,6 +229,19 @@ header {
     align-items: center;
     overflow: hidden; /* 넘치는 부분 제거 */
     cursor: pointer;
+    position: relative; /* 추가 */
+}
+
+.top-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px; /* 그라데이션 높이 조절 (메뉴 영역보다 조금 더 크게) */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+    z-index: 5; /* .main-nav보다 낮고 이미지보다 높은 z-index */
+    pointer-events: none; /* 클릭 이벤트가 뒤의 요소로 전달되도록 */
 }
 
 .top-banner img {
@@ -1073,16 +1118,19 @@ article p {
     font-size: 18px;
     font-family: "Noto Sans KR", serif;
     font-weight: 500;
+    cursor: pointer;
 }
 .notice .notice-content > .notice-contentbox > p {
     margin-left: 50px;
     font-family: "Noto Sans KR", serif;
     font-size: 18px;
     font-weight: 300;
+    cursor: pointer;
 }
 .notice .notice-content > span {
     font-family: "Noto Sans KR", serif;
     font-weight: 300;
+    cursor: pointer;
 }
 
 /* footer */

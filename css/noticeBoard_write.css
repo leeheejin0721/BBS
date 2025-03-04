@@ -395,7 +395,7 @@ textarea {
 
 /* banner */
 .banner {
-    margin: 90px 0;
+    margin-top: 140px;
 }
 
 .banner .banner-img {
@@ -462,17 +462,21 @@ textarea {
     align-items: center;
 }
 .notice .notice-content > .notice-contentbox > strong {
+    cursor: pointer;
     font-size: 18px;
     font-family: "Noto Sans KR", serif;
     font-weight: 500;
 }
 .notice .notice-content > .notice-contentbox > p {
+    cursor: pointer;
     margin-left: 50px;
     font-family: "Noto Sans KR", serif;
     font-size: 18px;
     font-weight: 300;
+    color: white;
 }
 .notice .notice-content > span {
+    cursor: pointer;
     font-family: "Noto Sans KR", serif;
     font-weight: 300;
 }

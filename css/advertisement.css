@@ -265,7 +265,7 @@ header {
     height: 3px;
     background-color: #BF9A0B;
     position: absolute;
-    bottom: -60px;
+    bottom: -40px;
     left: 0;
 }
 
@@ -279,7 +279,7 @@ header {
 }
 
 .menu-line {
-    margin-top: 60px;
+    margin-top: 40px;
     border: 1px solid #f3f3f3;
 }
 h4 {
@@ -370,7 +370,7 @@ h4 {
 
 /* banner */
 .banner {
-    margin: 90px 0;
+    margin-top: 140px;
 }
 
 .banner .banner-img {
@@ -440,16 +440,19 @@ h4 {
     font-size: 18px;
     font-family: "Noto Sans KR", serif;
     font-weight: 500;
+    cursor: pointer;
 }
 .notice .notice-content > .notice-contentbox > p {
     margin-left: 50px;
     font-family: "Noto Sans KR", serif;
     font-size: 18px;
     font-weight: 300;
+    cursor: pointer;
 }
 .notice .notice-content > span {
     font-family: "Noto Sans KR", serif;
     font-weight: 300;
+    cursor: pointer;
 }
 
 /* footer */
@@ -556,3 +559,4 @@ footer {
     font-family: "Noto Sans KR", serif;
     margin-bottom: 60px;
 }
+
