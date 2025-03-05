@@ -241,7 +241,7 @@ header {
 
 /* notice-board-write */
 .notice-board-write {
-    margin-top: 100px;
+    margin-top: 70px;
 }
 
 h2 {
@@ -391,7 +391,6 @@ textarea {
     align-items: center; /* 세로 중앙 정렬 */
     padding: 0; /* 내부 여백 제거 */
 }
-
 
 /* banner */
 .banner {

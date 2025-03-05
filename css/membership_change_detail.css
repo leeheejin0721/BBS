@@ -307,7 +307,6 @@ header {
     font-size: 16px; /* 글씨 크기 조정 */
     text-align: center;
     margin-top: 60px;
-    margin-bottom: 200px;
 }
 
 .resit {
@@ -321,7 +320,7 @@ header {
 
 /* banner */
 .banner {
-    margin: 90px 0;
+    margin-top: 140px;
 }
 
 .banner .banner-img {

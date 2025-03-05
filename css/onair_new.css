@@ -25,6 +25,7 @@
     padding: 10px 20px;
     cursor: pointer;
     border: 1px solid transparent;
+    font-family: "Noto Sans KR", serif;
 }
 
 .dharma-menu li.active {
@@ -32,6 +33,7 @@
     border-top: 1px solid black;
     border-right: 1px solid black;
     border-bottom: none;
+    font-weight: 500;
 }
 
 .dharma-menu li:not(.active) {
@@ -39,6 +41,7 @@
     border-top: 1px solid #ddd;
     border-right: 1px solid #ddd;
     border-left: 1px solid #ddd;
+    color: #999999;
 }
 
 .video-container {
