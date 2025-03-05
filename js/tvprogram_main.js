@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const boardRows = document.querySelectorAll(".notice-board tbody tr"); // 시청자 게시판 행들
     const numberElements = document.querySelectorAll(".number"); // 페이지네이션
     const searchContainers = document.querySelectorAll(".search-container"); // 검색창
-    const allViewButtons = document.querySelectorAll(".notice-board p"); // "전체보기" 버튼
+    const allViewButtons = document.querySelectorAll(".program-notice p, .program-replay p, .notice-board p"); // "전체보기" 버튼들
     const writeButtons = document.querySelectorAll(".notice-board .button"); // "글쓰기" 버튼
 
     function updateVisibility() {
@@ -41,11 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 row.style.display = index < 5 ? "table-row" : "none";
             });
 
-            // "공지사항"과 "시청자 게시판"의 페이지네이션과 검색창 숨김
-            numberElements.forEach(el => el.style.display = "none");
-            searchContainers.forEach(el => el.style.display = "none");
-
-            // "홈"에서는 "전체보기" 버튼 보이게 하고, "글쓰기" 버튼 숨김
+            // "전체보기" 버튼 처리
             allViewButtons.forEach(btn => btn.style.display = "block");
             writeButtons.forEach(btn => btn.style.display = "none");
 
@@ -58,6 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector(".container").style.display = "block";
             noticeSection.style.display = "block";
             bannerSection.style.display = "block";
+
+            // 모든 "전체보기" 버튼 숨기기
+            allViewButtons.forEach(btn => btn.style.display = "none");
 
             // 선택한 메뉴에 맞는 섹션 표시
             if (activeMenu === "프로그램 소개") {
@@ -80,12 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 numberElements.forEach(el => el.style.display = "flex"); // 페이지네이션 보이기
                 searchContainers.forEach(el => el.style.display = "flex"); // 검색창 보이기
 
-                // "시청자 게시판"에서는 "전체보기" 버튼 숨기고, "글쓰기" 버튼 보이기
-                allViewButtons.forEach(btn => btn.style.display = "none");
+                // "시청자 게시판"에서는 "글쓰기" 버튼 보이기
                 writeButtons.forEach(btn => btn.style.display = "block");
-            } else {
-                // 다른 메뉴 선택 시 "전체보기" 버튼 숨김
-                allViewButtons.forEach(btn => btn.style.display = "none");
             }
         }
     }

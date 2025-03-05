@@ -86,30 +86,3 @@ function changeSpeed(speed) {
     document.querySelector(".speed-menu").style.display = "none";
 }
 
- // ✅ 볼륨 조절 기능
- function toggleVolumeSlider(event) {
-    event.stopPropagation();
-    let slider = document.querySelector(".volume-slider");
-    slider.style.display = slider.style.display === "block" ? "none" : "block";
-}
-
-document.getElementById("volumeControl").addEventListener("input", function () {
-    let volume = this.value;
-    console.log("Volume:", volume); // 실제 오디오 요소 연결 필요
-});
-
-// 메뉴 외부 클릭 시 자동 닫기
-document.addEventListener("click", function(event) {
-    let speedMenu = document.querySelector(".speed-menu");
-    let volumeSlider = document.querySelector(".volume-slider");
-    let speedBtn = document.querySelector(".speed-btn");
-    let soundBtn = document.querySelector(".sound-btn");
-
-    if (speedMenu.style.display === "block" && !speedMenu.contains(event.target) && event.target !== speedBtn) {
-        speedMenu.style.display = "none";
-    }
-
-    if (volumeSlider.style.display === "block" && !volumeSlider.contains(event.target) && event.target !== soundBtn) {
-        volumeSlider.style.display = "none";
-    }
-});

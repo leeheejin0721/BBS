@@ -21,12 +21,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const noticeBoardViewAll = document.querySelector(".notice-board p");
     const noticeBoardWriteButton = document.querySelector(".notice-board a.button");
 
+    // 새로 추가된 부분: 모든 "전체보기" 요소 선택
+    const viewAllElements = document.querySelectorAll(
+        ".replay-title > p, " +
+        ".program-list-title > p, " +
+        ".program-notice-title > p, " +
+        ".program-photo .replay-title > p"
+    );
+
     function updateVisibility() {
         const activeMenu = document.querySelector(".program-menu ul li.active").textContent.trim();
 
         if (activeMenu === "홈") {
             allSections.forEach(section => section.style.display = "block");
             detailSection.style.display = "none";
+
+            // 전체보기 요소 표시
+            viewAllElements.forEach(el => {
+                el.style.display = "block";
+            });
 
             replayArticles.forEach((article, index) => {
                 article.style.display = index < 8 ? "block" : "none";
@@ -59,12 +72,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 row.style.display = index < 5 ? "table-row" : "none";
             });
 
-            // 홈 메뉴일 때 전체보기 표시, 글쓰기 버튼 숨기기
             if (noticeBoardViewAll) noticeBoardViewAll.style.display = "block";
             if (noticeBoardWriteButton) noticeBoardWriteButton.style.display = "none";
 
         } else {
             allSections.forEach(section => section.style.display = "none");
+
+            // 전체보기 요소 숨김
+            viewAllElements.forEach(el => {
+                el.style.display = "none";
+            });
 
             document.querySelector(".tvProgram-menu").style.display = "block";
             bannerSection.style.display = "block";
@@ -101,7 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 numberElements.forEach(el => el.style.display = "flex");
                 searchContainers.forEach(el => el.style.display = "flex");
 
-                // 시청자 게시판 메뉴일 때 전체보기 숨기고 글쓰기 버튼 표시
                 if (noticeBoardViewAll) noticeBoardViewAll.style.display = "none";
                 if (noticeBoardWriteButton) noticeBoardWriteButton.style.display = "block";
             } else if (activeMenu === "포토 갤러리") {
@@ -112,7 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 searchContainers.forEach(el => el.style.display = "flex");
             } 
 
-            // 다른 메뉴 클릭 시 전체보기 숨기기
             if (activeMenu !== "홈" && activeMenu !== "시청자 게시판") {
                 if (noticeBoardViewAll) noticeBoardViewAll.style.display = "none";
                 if (noticeBoardWriteButton) noticeBoardWriteButton.style.display = "none";
@@ -129,6 +144,57 @@ document.addEventListener("DOMContentLoaded", function () {
             updateVisibility();
         });
     });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let slideIndex = 0;
+    let slides = document.querySelectorAll(".top-banner > img:not(.prev):not(.next)");
+    let indicators = document.querySelectorAll(".indicator div");
+    let playBtn = document.querySelector(".play-btn");
+    let isPlaying = true;
+    let slideInterval = setInterval(nextSlide, 3000);
+
+    // 초기 상태 설정 - 처음에는 정지 버튼으로 표시
+    playBtn.classList.add("pause");
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.display = i === index ? "block" : "none";
+        });
+        indicators.forEach((dot, i) => {
+            dot.classList.toggle("active", i === index);
+        });
+    }
+
+    function nextSlide() {
+        slideIndex = (slideIndex + 1) % slides.length;
+        showSlide(slideIndex);
+    }
+
+    document.querySelector(".prev").addEventListener("click", function () {
+        slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+        showSlide(slideIndex);
+    });
+
+    document.querySelector(".next").addEventListener("click", function () {
+        nextSlide();
+    });
+
+    playBtn.addEventListener("click", function () {
+        if (isPlaying) {
+            clearInterval(slideInterval);
+            playBtn.classList.remove("pause");
+            playBtn.classList.add("play");
+        } else {
+            slideInterval = setInterval(nextSlide, 3000);
+            playBtn.classList.remove("play");
+            playBtn.classList.add("pause");
+        }
+        isPlaying = !isPlaying;
+    });
+
+    showSlide(slideIndex);
 });
 
 
@@ -173,6 +239,24 @@ setInterval(changeLeftBanner, 4000);
 
 // 오른쪽 배너는 3초마다 변경
 setInterval(changeRightBanner, 3000);
+
+
+document.getElementById("toggleDropdown").addEventListener("click", function (event) {
+    event.preventDefault();
+    let menu = document.querySelector(".dropdown-menu2");
+    let arrow = document.getElementById("dropdownArrow");
+    let dropdownButton = document.querySelector(".dropdown2");
+
+    if (menu.classList.contains("open")) {
+        menu.classList.remove("open");
+        dropdownButton.classList.remove("menu-open");
+        arrow.style.transform = "rotate(0deg)";
+    } else {
+        menu.classList.add("open");
+        dropdownButton.classList.add("menu-open");
+        arrow.style.transform = "rotate(180deg)";
+    }
+});
 
 
 

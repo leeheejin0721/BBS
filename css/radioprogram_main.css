@@ -18,7 +18,7 @@ header {
     align-items: center;
     text-align: center;
     z-index: 2; /* 메뉴와 로고가 그라데이션 아래로 가리지 않도록 z-index 추가 */
-    margin: 10px 0;
+    margin: 15px 0;
 }
 .mainnav-submenu {
     display: flex;
@@ -37,39 +37,43 @@ header {
     margin: 0;
 }
 
+/* 드롭다운 컨테이너 수정 */
 .dropdown {
     position: relative;
+    z-index: 50;
 }
 
+/* 드롭다운 메뉴 수정 */
 .dropdown-menu {
     display: none;
     position: absolute;
+    z-index: 1000;
     top: 100%;
     left: 0;
-    background: #BF9A0B;
+    background: white;
+    border: 1px solid #BF9A0B;
+    border-radius: 20px;
     list-style: none;
-    padding: 10px 0;
-    margin: 0;
     width: 120px;
+    padding-top: 20px;
 }
 
 .dropdown-menu li {
-    width: 120px; /* 박스 크기 조정 */
     text-align: center;
-    background: #BF9A0B; /* 기본 배경색 */
-    padding: 10px 0; /* 패딩 추가 */
-    border-radius: 5px; /* 둥근 모서리 */
-    margin-bottom: 5px; /* 간격 조정 */
     transition: all 0.3s ease-in-out;
 }
 
+
+
 .dropdown-menu li a {
     font-size: 20px;
-    color: white;
+    color: black;
     text-decoration: none;
     display: block;
-    padding: 10px 0; /* 내부 여백 */
-    border-radius: 5px;
+    font-family: "Noto Sans KR", serif;
+}
+.dropdown-menu li a:first-child {
+    padding-bottom: 20px;
 }
 
 /* 드롭다운 활성화 시 */
@@ -77,30 +81,79 @@ header {
     display: block;
 }
 
-/* 드롭다운 TV, 라디오 호버 효과 */
-.dropdown-menu li:hover {
-    background: white; /* 박스 배경색 변경 */
+
+.dropdown-menu li a:hover {
+    color: #BF9A0B;
 }
 
+/* 메인 메뉴 항목 위치 조정 */
+.main-nav .mainmenu > li {
+    position: relative; /* 추가: 부모 요소 기준 위치 설정 */
+    margin-right: 40px;
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+.main-nav .mainmenu > li > a {
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+.main-nav .mainmenu > li > a:hover {
+    color: #BF9A0B;
+}
+
+/* dropdown 메뉴 밑줄 제거 */
+.main-nav .mainmenu > li.dropdown > a::after {
+    display: none; /* 밑줄 제거 */
+    bottom: 0;
+}
+
+.main-nav .mainmenu > li > a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -26px;
+    width: 0;
+    height: 3px;
+    background-color: #BF9A0B;
+}
+
+.main-nav .mainmenu > li > a:hover::after {
+    width: 100%;
+}
+
+
+/* 드롭다운 활성화 시 삼각형 뒤집기 (▼ → ▲) */
+.mainmenu .dropdown:hover .triangle,
+.mainmenu .dropdown:focus-within .triangle {
+    transform: rotate(180deg);
+}
 
 
 /* 삼각형 ▼ 모양 */
 .triangle {
     display: inline-block;
-    margin-top: 0;
     width: 0;
     height: 0;
-    border-left: 11px solid transparent;  /* 삼각형 크기 키우기 */
-    border-right: 11px solid transparent; /* 삼각형 크기 키우기 */
-    border-top: 15px solid black;         /* 삼각형 크기 키우기 */
-    border-radius: 5px;  /* 라운드 효과 */
-    margin-left: 5px;     /* ▼ 모양과 텍스트 사이 여백 */
+    border-left: 8px solid transparent;  
+    border-right: 8px solid transparent; 
+    border-top: 10px solid black; 
+    margin-left: 6px;
+    vertical-align: middle;
 }
 
-.main-nav .mainmenu > li > a:hover {
-    color: #BF9A0B;
+/* ON AIR 메뉴 호버 시 텍스트 및 삼각형 색상 변경 */
+.mainmenu .dropdown:hover > a,
+.mainmenu .dropdown:focus-within > a {
+    color: #BF9A0B !important;
 }
 
+.mainmenu .dropdown:hover .triangle,
+.mainmenu .dropdown:focus-within .triangle {
+    border-top: 10px solid #BF9A0B !important;
+}
 
 .main-nav .mainmenu > li {
     margin-right: 40px;
@@ -117,10 +170,12 @@ header {
     margin: 0;
     width: 100%;
 }
+.submenu > li > a:hover {
+    color: #BF9A0B;
+}
 
 .main-nav ul li {
     display: inline;
-    margin: 0 15px;
 }
 
 .main-nav > .mainmenu > li > a {
@@ -135,16 +190,13 @@ header {
     font-size: 16px;
     text-decoration: none;
 }
-.submenu > li > a:hover {
-    color: #BF9A0B;
-}
 .search-form {
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.3); /* opacity 대신 사용 */
     border-radius: 50px;
     padding: 5px 15px;
-    width: 200px;
+    width: 225px;
     height: 40px;
 }
 
@@ -154,7 +206,7 @@ header {
     outline: none;
     width: 100%;
     font-size: 16px;
-    padding: 5px;
+    padding: 10px;
     box-shadow: none; /* 혹시 기본 그림자가 있다면 제거 */
 }
 
@@ -264,7 +316,7 @@ header {
 
 .program-menu > ul {
     display: flex;
-    margin: 55px 0;
+    margin: 50px 0;
     padding: 0;
     list-style: none;
     position: relative;
@@ -295,7 +347,7 @@ header {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -56px; /* 밑줄 위치 */
+    bottom: -51px; /* 밑줄 위치 */
     width: 100%;
     height: 4px;
     background-color: #BF9A0B; /* 밑줄 색상 */
@@ -417,7 +469,6 @@ hr {
 .replay-title {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 .replay-title h2 {
     font-family: "Noto Sans KR", serif;
@@ -429,7 +480,6 @@ hr {
 }
 .replay-title > p {
     font-family: "Noto Sans KR", serif;
-    margin-top: 70px;
     font-size: 16px;
 }
 .replay-title > h2 > img {
@@ -497,6 +547,7 @@ td > img {
 .program-list-title > p {
     font-size: 16px;
     font-family: "Noto Sans KR", serif;
+    margin-top: 70px;
 }
 
 
@@ -749,7 +800,7 @@ td > img {
 
 /* banner */
 .banner {
-    margin: 90px 0;
+    margin-top: 140px;
 }
 
 .banner .banner-img {
@@ -816,17 +867,21 @@ td > img {
     align-items: center;
 }
 .notice .notice-content > .notice-contentbox > strong {
+    cursor: pointer;
     font-size: 18px;
     font-family: "Noto Sans KR", serif;
     font-weight: 500;
 }
 .notice .notice-content > .notice-contentbox > p {
+    cursor: pointer;
     margin-left: 50px;
     font-family: "Noto Sans KR", serif;
     font-size: 18px;
     font-weight: 300;
+    color: white;
 }
 .notice .notice-content > span {
+    cursor: pointer;
     font-family: "Noto Sans KR", serif;
     font-weight: 300;
 }

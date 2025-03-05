@@ -128,3 +128,84 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(updateSlide, 3000);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    let slideIndex = 0;
+    let slides = document.querySelectorAll(".top-banner > img:not(.prev):not(.next)");
+    let indicators = document.querySelectorAll(".indicator div");
+    let playBtn = document.querySelector(".play-btn");
+    let isPlaying = true;
+    let slideInterval = setInterval(nextSlide, 3000);
+
+    // 초기 상태 설정 - 처음에는 정지 버튼으로 표시
+    playBtn.classList.add("pause");
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.display = i === index ? "block" : "none";
+        });
+        indicators.forEach((dot, i) => {
+            dot.classList.toggle("active", i === index);
+        });
+    }
+
+    function nextSlide() {
+        slideIndex = (slideIndex + 1) % slides.length;
+        showSlide(slideIndex);
+    }
+
+    document.querySelector(".prev").addEventListener("click", function () {
+        slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+        showSlide(slideIndex);
+    });
+
+    document.querySelector(".next").addEventListener("click", function () {
+        nextSlide();
+    });
+
+    playBtn.addEventListener("click", function () {
+        if (isPlaying) {
+            clearInterval(slideInterval);
+            playBtn.classList.remove("pause");
+            playBtn.classList.add("play");
+        } else {
+            slideInterval = setInterval(nextSlide, 3000);
+            playBtn.classList.remove("play");
+            playBtn.classList.add("pause");
+        }
+        isPlaying = !isPlaying;
+    });
+
+    showSlide(slideIndex);
+});
+
+const leftImages = ["./images/mainbanner1.png", "./images/mainbanner2.png"];
+const rightImages = ["./images/mainbanner3.png", "./images/mainbanner4.png", "./images/mainbanner5.png"];
+
+let leftIndex = 0;
+let rightIndex = 0;
+
+function changeLeftBanner() {
+    leftIndex = (leftIndex + 1) % leftImages.length;
+    document.getElementById("left-img").src = leftImages[leftIndex];
+    
+    // 왼쪽 배너 인디케이터 업데이트
+    document.querySelectorAll('.left-indicators .indicator').forEach((dot, index) => {
+        dot.classList.toggle('active', index === leftIndex);
+    });
+}
+
+function changeRightBanner() {
+    rightIndex = (rightIndex + 1) % rightImages.length;
+    document.getElementById("right-img").src = rightImages[rightIndex];
+    
+    // 오른쪽 배너 인디케이터 업데이트
+    document.querySelectorAll('.right-indicators .indicator').forEach((dot, index) => {
+        dot.classList.toggle('active', index === rightIndex);
+    });
+}
+
+// 왼쪽 배너는 3초마다 변경
+setInterval(changeLeftBanner, 4000);
+
+// 오른쪽 배너는 3초마다 변경
+setInterval(changeRightBanner, 3000);

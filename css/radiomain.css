@@ -279,7 +279,7 @@ header {
 
 .top-banner .indicator div.active {
     width: 30px;
-    background: #d60000;
+    background-color: #BF9A0B;
     border-radius: 20px;
 }
 
@@ -1008,20 +1008,25 @@ main {
     align-items: center;
 }
 .notice .notice-content > .notice-contentbox > strong {
+    cursor: pointer;
     font-size: 18px;
     font-family: "Noto Sans KR", serif;
     font-weight: 500;
 }
 .notice .notice-content > .notice-contentbox > p {
+    cursor: pointer;
     margin-left: 50px;
     font-family: "Noto Sans KR", serif;
     font-size: 18px;
     font-weight: 300;
+    color: white;
 }
 .notice .notice-content > span {
+    cursor: pointer;
     font-family: "Noto Sans KR", serif;
     font-weight: 300;
 }
+
 
 /* footer */
 footer {

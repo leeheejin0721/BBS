@@ -27,12 +27,17 @@
                     <div class="video-controls">
                         <div class="progress-bar"></div>
                         <div class="icons">
-                            <img src="./images/small-pause.png" alt="pause" class="control-pause">
-                            <img src="./images/play-icon.png" alt="play" class="control-play">
-                            <img src="./images/sound.png" alt="sound" class="control-sound">
-                            <img src="./images/sound-mute.png" alt="mute" class="control-mute" style="display: none;">
+                            <div class="icon-sound">
+                                <img src="./images/small-pause.png" alt="pause" class="control-pause">
+                                <img src="./images/play-icon.png" alt="play" class="control-play">
+                                <img src="./images/sound.png" alt="sound" class="control-sound">
+                                <img src="./images/sound-mute.png" alt="mute" class="control-mute" style="display: none;">
+                            </div>
                             <span class="time-display">0:00</span>
                         </div>
+                    </div>
+                    <div class="volume-slider-container" style="display: none;">
+                        <input type="range" class="volume-slider" min="0" max="100" value="100">
                     </div>
                 </div>
                 <div class="onair-vidio-text">
