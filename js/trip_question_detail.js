@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuItems = document.querySelectorAll('.program-menu li');
-    const mainContent = document.querySelector('body');
+    const mainContent = document.querySelector('body'); // 전체 컨텐츠를 감싸는 요소로 변경
     
     // 초기 상태 설정 (홈 메뉴 활성화)
     mainContent.classList.add('menu-home');
-    document.querySelector('.program-menu li:first-child').classList.add('active');
+    document.querySelector('.program-menu li:nth-child(5)').classList.add('active');
     
     menuItems.forEach(item => {
         item.addEventListener('click', function() {

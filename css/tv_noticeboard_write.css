@@ -170,9 +170,6 @@ header {
     margin: 0;
     width: 100%;
 }
-.submenu > li > a:hover {
-    color: #BF9A0B;
-}
 
 .main-nav ul li {
     display: inline;
@@ -190,6 +187,10 @@ header {
     font-size: 16px;
     text-decoration: none;
 }
+.submenu > li > a:hover {
+    color: #BF9A0B;
+}
+
 .search-form {
     display: flex;
     align-items: center;
@@ -216,12 +217,17 @@ header {
     border: none;
     cursor: pointer;
     padding: 5px;
-    right: 30px;
+    left: 1435px;
 }
 
 .search-form button img {
     width: 20px;
     height: 20px;
+}
+.gradationline {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
 }
 
 .top-banner .prev, .top-banner .next {
@@ -244,7 +250,7 @@ header {
     width: 70px;
 }
 
-.indicator {
+.top-banner .indicator {
     position: absolute;
     bottom: 30px;
     left: 84%;
@@ -252,7 +258,7 @@ header {
     display: flex;
 }
 
-.indicator div {
+.top-banner .indicator div {
     width: 10px;
     height: 10px;
     margin: 5px;
@@ -261,9 +267,9 @@ header {
     transition: all 0.3s;
 }
 
-.indicator div.active {
+.top-banner .indicator div.active {
     width: 30px;
-    background: #BF9A0B;
+    background: #d60000;
     border-radius: 20px;
 }
 
@@ -288,20 +294,24 @@ header {
     background: white;
     margin: 0 3px; /* 두 막대 사이 간격 */
 }
-.gradationline {
-    border: 0;
-    height: 2px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-}
 
 /* main */
+
+/* 기본적으로 모든 섹션 숨김 */
+/* .program-introduce, .program-character, .program-replay, .program-notice, .notice-board {
+    display: none;
+} */
+
+/* program-notice 및 notice-board만 보일 때 표 길이 조정 */
+/* .program-notice .notice-table, .notice-board .notice-table {
+    min-height: 500px;
+} */
 
 /* tvProgram-menu */
 /* 메뉴 스타일 */
 .program-menu {
     position: relative; /* 밑줄 위치 조정을 위한 relative */
 }
-
 
 /* 배너 이전 섹션 하단 여백 */
 .banner:not(:first-child) {
@@ -312,7 +322,6 @@ header {
 #program-introduce-detail {
     margin-bottom: 120px;
 }
-
 
 .program-menu > ul {
     display: flex;
@@ -347,7 +356,7 @@ header {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -51px; /* 밑줄 위치 */
+    bottom: -50px; /* 밑줄 위치 */
     width: 100%;
     height: 4px;
     background-color: #BF9A0B; /* 밑줄 색상 */
@@ -358,6 +367,8 @@ header {
     color: black;
     font-weight: bold;
 }
+
+
 
 hr {
     border: 1px solid #f3f3f3;
@@ -399,6 +410,7 @@ hr {
     font-size: 16px;
     font-family: "Noto Sans KR", serif;
     color: white;
+    margin-bottom: 110px;
 }
 .intro > .program-progress > p {
     display: flex;
@@ -412,7 +424,6 @@ hr {
 
 #program-introduce-detail {
     display: none; /* 기본적으로 숨김 */
-    margin-bottom: 100px;
 }
 .detail-intro h2 {
     font-size: 40px;
@@ -432,27 +443,24 @@ hr {
     margin-right: 32px;
     font-weight: 500;
 }
-.program-content {
-    margin-bottom: 100px;
-}
 .program-content > p {
     margin-bottom: 70px;
 }
 
-/* program-character */
 
+/* program-character */
 .program-character {
     margin-bottom: 80px;
 }
 
+.character {
+    margin-top: 65px;
+}
 .character h2 {
     font-size: 40px;
-    font-weight: 800;
     font-family: "Noto Sans KR", serif;
-    margin-top: 70px;
-}
-.character-content {
-    margin-top: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
 }
 .character-content > p {
     font-size: 22px;
@@ -465,21 +473,22 @@ hr {
 .program-replay {
     margin-bottom: 80px;
 }
-
 .replay-title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
-.replay-title h2 {
+.replay-title > h2 {
     font-family: "Noto Sans KR", serif;
-    font-weight: 200;
+    font-weight: 800;
     display: flex;
-    font-size: 20px;
+    font-size: 40px;
     margin-top: 70px;
     margin-bottom: 10px;
 }
 .replay-title > p {
     font-family: "Noto Sans KR", serif;
+    margin-top: 70px;
     font-size: 16px;
 }
 .replay-title > h2 > img {
@@ -490,7 +499,8 @@ hr {
     grid-template-columns: repeat(4, 1fr); /* 4열 */
     grid-template-rows: repeat(2, auto); /* 2행 */
     gap: 20px; /* 항목 간 간격 */
-    margin: 50px auto; /* 가운데 정렬 */
+    row-gap: 50px;
+    margin: 20px auto; /* 가운데 정렬 */
 }
 
 .replay-grid img {
@@ -522,40 +532,7 @@ hr {
     color: #909090;
     font-size: 16px;
 }
-td > img {
-    cursor: pointer;
-}
 
-/* program-list */
-
-.program-list {
-    margin-bottom: 80px;
-}
-
-.program-list-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.program-list-title > h2 {
-    font-size: 40px;
-    font-weight: 800;
-    margin-top: 70px;
-    margin-bottom: 10px;
-    font-family: "Noto Sans KR", serif;
-}
-.program-list-title > p {
-    font-size: 16px;
-    font-family: "Noto Sans KR", serif;
-    margin-top: 70px;
-}
-
-
-/* program-notice */
-
-.program-notice {
-    margin-bottom: 80px;
-}
 
 .program-notice-title {
     display: flex;
@@ -575,6 +552,8 @@ td > img {
     margin-top: 70px;
     font-size: 16px;
 }
+
+
 
 .notice-container {
     max-width: 800px;
@@ -615,162 +594,6 @@ td > img {
     margin-right: 10px;
 }
 .boldline {
-    border: 1.5px solid black;
-}
-.notice-detail > .grayline {
-    border: 1px solid #ddd;
-}
-.notice-detail > .file {
-    margin: 30px 0;
-}
-.notice-detail > .file > a {
-    display: flex;
-    font-size: 18px;
-    font-family: "Noto Sans KR", serif;
-}
-.notice-detail > .file > a:first-child {
-    margin-bottom: 20px;
-}
-.notice-detail > .notice-content {
-    margin: 50px 0;
-}
-.notice-detail > .notice-content > p {
-    font-size: 18px;
-    font-family: "Noto Sans KR", serif;
-    margin-bottom: 47px;
-    line-height: 2.3;
-}
-
-.contact {
-    margin-top: 20px;
-    font-size: 14px;
-}
-.button {
-    font-family: "Noto Sans KR", serif;
-    display: block;
-    width: 180px;
-    text-align: center;
-    background: #333;
-    color: white;
-    padding: 15px 0;
-    text-decoration: none;
-    margin: 20px auto 0;
-    margin-top: 50px;
-}
-
-/* 공지사항과 시청자 게시판 표 길이 조정 */
-.notice-table {
-    transition: height 0.3s ease-in-out;
-}
-
-.notice-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-.notice-table th, .notice-table td {
-    padding: 27px;
-    text-align: center;
-    border-bottom: 1px solid #dbdbdb;
-    font-family: "Noto Sans KR", serif;
-}
-.notice-table th {
-    font-weight: bold;
-    border-top: 2px solid #333;
-    font-size: 18px;
-}
-.notice-table td {
-    font-size: 16px;
-    text-align: center; /* 모든 셀 내용 가운데 정렬 */
-    vertical-align: middle; /* 세로 중앙 정렬 */
-    color: #767676;
-}
-.notice-table td:nth-child(2) {
-    text-align: left; /* 두 번째 열(제목)만 왼쪽 정렬 */
-    font-size: 20px;
-    font-weight: 400;
-    color: #000000;
-}
-
-.notice-table td img {
-    display: block; /* 블록 요소로 변경 */
-    margin: 0 auto; /* 가로 중앙 정렬 */
-}
-.badge {
-    background-color: #333;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size: 16px;
-    display: inline-block; /* 텍스트 크기에 맞춰 박스 크기 조정 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-}
-
-/* notice-board */
-
-.notice-board {
-    margin-bottom: 80px;
-}
-
-.notice-board-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.notice-board-title > h2 {
-    font-family: "Noto Sans KR", serif;
-    font-weight: 800;
-    display: flex;
-    font-size: 42px;
-    margin-top: 70px;
-    margin-bottom: 30px;
-}
-.button2 {
-    font-family: "Noto Sans KR", serif;
-    display: block;
-    width: 150px;
-    text-align: center;
-    background: #333;
-    color: white;
-    padding: 15px 0;
-    text-decoration: none;
-    margin-top: 50px;
-}
-
-.notice-container {
-    max-width: 800px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    margin: auto;
-}
-
-.notice-title > .badge {
-    font-family: "Noto Sans KR", serif;
-    background-color: #333;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size: 16px;
-    display: inline-block; /* 텍스트 크기에 맞춰 박스 크기 조정 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-}
-
-.notice-title > .sub-title {
-    display: flex;
-    font-size: 14px;
-    margin-bottom: 50px;
-}
-.notice-title > .sub-title > p {
-    font-size: 18px;
-    font-family: "Noto Sans KR", serif;
-    margin-right: 50px;
-}
-.notice-title > .sub-title > p > strong {
-    display: inline-block;
-    margin-right: 10px;
-}
-.notice-detail > .boldline {
     border: 1.5px solid black;
 }
 .notice-detail > .grayline {
@@ -923,6 +746,70 @@ td > img {
     margin-top: 50px;
 }
 
+/* 공지사항과 시청자 게시판 표 길이 조정 */
+.notice-table {
+    transition: height 0.3s ease-in-out;
+}
+
+
+.notice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.notice-table th, .notice-table td {
+    padding: 27px;
+    text-align: center;
+    border-bottom: 1px solid #dbdbdb;
+    font-family: "Noto Sans KR", serif;
+}
+.notice-table th {
+    font-weight: bold;
+    border-top: 2px solid #333;
+    font-size: 18px;
+}
+.notice-table td {
+    font-size: 16px;
+    text-align: center; /* 모든 셀 내용 가운데 정렬 */
+    vertical-align: middle; /* 세로 중앙 정렬 */
+    color: #767676;
+}
+.notice-table td:nth-child(2) {
+    text-align: left; /* 두 번째 열(제목)만 왼쪽 정렬 */
+    font-size: 20px;
+    font-weight: 400;
+    color: #000000;
+}
+.badge {
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    display: inline-block; /* 텍스트 크기에 맞춰 박스 크기 조정 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+/* notice-board */
+.notice-board-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notice-board-title > h2 {
+    font-family: "Noto Sans KR", serif;
+    font-weight: 800;
+    display: flex;
+    font-size: 40px;
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+.notice-board-title > p {
+    font-family: "Noto Sans KR", serif;
+    margin-top: 70px;
+    font-size: 16px;
+}
+
 .notice-board-title > .button {
     font-family: "Noto Sans KR", serif;
     display: block;
@@ -934,6 +821,170 @@ td > img {
     text-decoration: none;
     margin-top: 70px;
 }
+
+
+.boldline {
+    border: 1.5px solid black;
+    margin: 10px 0;
+}
+.grayline {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+/* notice-board-write */
+.notice-board-write {
+    margin-top: 70px;
+}
+
+h3 {
+    margin-top: 10px;
+    font-family: "Noto Sans KR", serif;
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+.notice-board-content > .title-content, .content-text {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    font-family: "Noto Sans KR", serif;
+    text-align: center;
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    width: 15%;
+}
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+textarea {
+    height: 600px;
+}
+.public-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.public-option .public-disclosure {
+    width: 13%;
+    text-align: center;
+}
+.public-option .public {
+    width: auto;
+    font-weight: 400;
+    margin-right: 20px;
+}
+.public-option .private {
+    width: auto;
+    font-weight: 400;
+}
+.public-option input[type="radio"] {
+    width: auto; /* 라디오 버튼 크기 조정 */
+    margin: 0 5px; /* 라벨과 간격 조정 */
+}
+.public-option input[type="password"] {
+    width: 300px; /* 라디오 버튼 크기 조정 */
+    margin: 0 5px; /* 라벨과 간격 조정 */
+}
+
+
+.file-upload {
+    margin: 15px;
+}
+.file-upload > .file-attach {
+    display: flex;
+    align-items: center;
+}
+.file-upload > .file-attach > label {
+    margin-left: 20px;
+    background-color: #3a3a3a;
+    display: block;
+    width: 120px;
+    color: white;
+    font-family: "Noto Sans KR", serif;
+    padding: 5px 10px;
+    margin-right: 35px;
+    font-size: 16px;
+}
+.file-upload > .file-attach > p {
+    font-family: "Noto Sans KR", serif;
+    font-size: 16px;
+}
+.file-list {
+    margin-left: 165px;
+    margin-top: 10px;
+    padding: 10px;
+}
+.file-list p {
+    font-family: "Noto Sans KR", serif;
+    display: flex;
+    align-items: center;
+}
+.file-list p:first-child {
+    margin-bottom: 10px;
+}
+.file-list p > strong {
+    margin-right: 10px;
+}
+.file-list p > button {
+    width: 25px;
+    background: #3a3a3a;
+    border: none;
+    color: white;
+}
+.button-group {
+    display: flex;
+    justify-content: center; /* 버튼을 화면 중앙에 정렬 */
+    align-items: center;
+    margin-top: 40px;
+    width: 100%; /* 부모 요소 기준으로 가운데 정렬 */
+}
+.button-group button {
+    width: 150px; /* 버튼 크기 조정 */
+    height: 50px; /* 높이를 조정하여 직사각형 모양 */
+    cursor: pointer;
+    border-radius: 0; /* 모서리를 직각으로 */
+    font-size: 16px; /* 글씨 크기 조정 */
+    text-align: center;
+}
+
+.cancell {
+    font-family: "Noto Sans KR", serif;
+    background-color: white;
+    color: #3a3a3a;
+    border: 1px solid #3a3a3a;
+    margin-right: 10px;
+}
+
+.resit {
+    font-family: "Noto Sans KR", serif;
+    background-color: #3a3a3a;
+    color: white;
+    border: 1px solid #3a3a3a;
+}
+
+.file-list p > button {
+    margin-left: 10px;
+    width: 20px; /* 버튼 크기 유지 */
+    height: 20px; /* 정사각형 유지 */
+    background: #3a3a3a;
+    border: none;
+    color: white;
+    font-size: 10px; /* X 글자 크기 줄이기 */
+    border-radius: 0; /* 모서리를 뾰족하게 */
+    display: flex; /* 텍스트 정렬을 위한 flex 설정 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    padding: 0; /* 내부 여백 제거 */
+}
+
 
 .number {
     display: flex;
@@ -1006,71 +1057,6 @@ td > img {
     padding: 8px 16px;
     border: none;
     cursor: pointer;
-}
-
-/* program-photo */
-
-.program-photo {
-    margin-bottom: 80px;
-}
-
-.replay-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.replay-title > h2 {
-    font-family: "Noto Sans KR", serif;
-    font-weight: 800;
-    display: flex;
-    font-size: 42px;
-    margin-top: 70px;
-}
-.replay-title > p {
-    font-family: "Noto Sans KR", serif;
-    margin-top: 70px;
-    font-size: 16px;
-}
-.replay-title > h2 > img {
-    margin-right: 10px;
-}
-.replay-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4열 */
-    grid-template-rows: repeat(2, auto); /* 2행 */
-    gap: 20px; /* 항목 간 간격 */
-    row-gap: 50px;
-    margin: 10px auto; /* 가운데 정렬 */
-}
-
-.replay-grid img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    cursor: pointer; /* 마우스를 올리면 클릭 가능하게 변경 */
-    transition: transform 0.3s ease;
-}
-
-.replay-grid img:hover {
-    transform: scale(1.05); /* 마우스를 올리면 확대 효과 */
-}
-
-.replay-grid p {
-    font-size: 22px;
-    font-family: "Noto Sans KR", serif;
-    margin: 10px 0;
-    width: 100%;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* 최대 2줄 */
-    -webkit-box-orient: vertical;
-    transition: all 0.3s ease;
-}
-.replay-grid span {
-    color: #909090;
-    font-size: 16px;
 }
 
 /* banner */
