@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const tvMenu = document.querySelector(".tv-radio-menu .tv");
     const radioMenu = document.querySelector(".tv-radio-menu .radio");
@@ -219,6 +221,7 @@ setInterval(changeLeftBanner, 4000);
 
 // 오른쪽 배너는 3초마다 변경
 setInterval(changeRightBanner, 3000);
+
 
 
 
