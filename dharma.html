@@ -41,10 +41,17 @@
                                 <button type="submit">
                                     <img src="./images/search-black.png" alt="검색">
                                 </button>
-                                <input type="text" placeholder="">
                             </form>
                         </li>
                     </ul>
+                </div>
+                <!-- 검색 모달 -->
+                <div id="searchModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <input type="text" placeholder="검색어를 입력해주세요">
+                        <button class="search-button"><img src="./images/search-black.png" alt="검색"></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,17 +64,17 @@
                 <div class="dharma-title">
                     <h2>법회</h2>
                     <ul class="dharma-menu">
-                        <li class="active">법회</li>
-                        <li>연등</li>
+                        <div class="menu-box">
+                            <li class="active">법회</li>
+                            <li>연등</li>
+                        </div>
+                        <div class="content-menu">
+                            <a href="#">BBS 정기법회 다시보기</a>
+                        </div>
                     </ul>
                 </div>
                 <div class="dharma-content">
                     <img src="./images/dharma.png" alt="dharma">
-                    <ul class="content-menu">
-                        <li class="active">BBS 정기법회 다시보기</li>
-                        <li>다보원 지도</li>
-                        <li>상암선원 지도</li>
-                    </ul>
                     <div class="dharma-grid">
                         <article>
                             <span class="date">2024-08-02</span>
@@ -263,8 +270,8 @@
                         </article>
                     </div>
 
-                    <div class="modal" id="shareModal">
-                        <div class="modal-content">
+                    <div class="modal2" id="shareModal">
+                        <div class="modal-content2">
                             <span class="close-btn" id="closeModal">&times;</span>
                             <span class="date">2024-08-02</span>
                             <h3>만공회 가족 축원기도법회</h3>
@@ -301,7 +308,7 @@
                             <option>본문</option>
                         </select>
                         <input type="text" class="search-input" placeholder="검색어를 입력하세요">
-                        <button class="search-button">검색</button>
+                        <button class="search-button2">검색</button>
                     </div>
                 </div>
 
