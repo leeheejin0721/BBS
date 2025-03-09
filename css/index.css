@@ -22,16 +22,6 @@ header {
     background-color: transparent; /* 초기 배경색은 투명 */
 }
 
-.main-nav.scrolled {
-    background-color: white !important; /* 배경을 흰색으로 변경 */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 살짝 그림자 효과 추가 */
-}
-
-.main-nav.scrolled .mainmenu > li > a,
-.main-nav.scrolled .submenu > li > a {
-    color: black !important; /* 스크롤 시 글자색을 검정으로 변경 */
-}
-
 .main-nav .main-box {
     display: flex;
     justify-content: center;
@@ -172,7 +162,7 @@ header {
     font-family: "Noto Sans KR", serif;
     font-optical-sizing: auto;
     font-weight: 600;
-    padding-right: 20px;
+    padding-right: 40px;
     color: #fff;
     font-size: 16px;
     text-decoration: none;
@@ -181,43 +171,6 @@ header {
 
 .main-nav .main-box > .submenu > li > a:hover {
     color: #BF9A0B;
-}
-
-/* 기존 검색 폼 스타일 유지하면서 수정 */
-.search-form {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50px;
-    padding: 5px 15px;
-    width: 200px;
-    height: 40px;
-    transition: all 0.3s ease; /* 부드러운 전환 효과 */
-}
-
-/* 접힌 상태의 검색 폼 */
-.search-form.collapsed {
-    width: 40px;
-    background: transparent;
-}
-
-.search-form input {
-    border: none;
-    outline: none;
-    width: 100%;
-    font-size: 16px;
-    padding: 5px;
-    background: transparent;
-    box-shadow: none;
-    transition: all 0.3s ease;
-    color: #fff; /* 입력 텍스트 색상 */
-}
-
-/* 접힌 상태에서 입력 필드 숨기기 */
-.search-form.collapsed input {
-    width: 0;
-    padding: 0;
-    opacity: 0;
 }
 
 .search-form button {
@@ -359,6 +312,73 @@ header {
     height: 20px;
     background: white;
     margin: 0 3px;
+}
+
+.modal {
+    display: none;  /* 처음에는 안 보이도록 설정 */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+/* 모달 내부 컨텐츠 스타일 */
+.modal-content {
+    bottom: 150px;
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 1200px;
+    height: 300px;
+    position: relative;
+}
+.modal-content > ::placeholder {
+    font-size: 40px;
+    font-family: "Noto Sans KR", serif;
+    color: #cdcdcd;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+/* 입력창 스타일 */
+.modal-content input {
+    width: 100%;
+    margin: 100px 0;
+    height: 80px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 40px; /* 검색 입력 글자 크기 설정 */
+    outline: none; /* 클릭해도 테두리가 생기지 않도록 설정 */
+}
+
+/* 검색 버튼 스타일 */
+.search-button {
+    position: absolute;
+    background-color: transparent;
+    top: 135px;
+    right: 32px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.search-button > img {
+    width: 38px;
+}
+
+/* 닫기 버튼 스타일 */
+.close {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    font-size: 40px;
+    cursor: pointer;
 }
 
 

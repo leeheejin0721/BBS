@@ -8,8 +8,8 @@
 }
 
 header {
-    position: fixed; /* 부모 요소에 relative 추가 */
-    width: 100%;
+    position: fixed;
+    width: calc(100% - 17px); /* 스크롤바 너비(보통 17px)만큼 줄임 */
     background-color: white;
     z-index: 100000;
 }

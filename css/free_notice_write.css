@@ -8,8 +8,8 @@
 }
 
 header {
-    position: fixed; /* 부모 요소에 relative 추가 */
-    width: 100%;
+    position: fixed;
+    width: calc(100% - 17px); /* 스크롤바 너비(보통 17px)만큼 줄임 */
     background-color: white;
     z-index: 100000;
 }
@@ -178,8 +178,7 @@ header {
     width: 120px;
 }
 .submenu > li:nth-child(3) {
-    width: 30px;
-    margin-left: 30px;
+    width: 60px;
 }
 .submenu > li > a:hover {
     color: #BF9A0B;
@@ -202,7 +201,7 @@ header {
     text-decoration: none;
 }
 .search-form {
-    height: 49px;
+    height: 20px;
 }
 
 
@@ -271,7 +270,7 @@ header {
     position: absolute;
     background-color: transparent;
     top: 135px;
-    left: 1110px;
+    right: 32px;
     border: none;
     border-radius: 5px;
     cursor: pointer;

@@ -1,4 +1,20 @@
-
+document.addEventListener('DOMContentLoaded', function() {
+    // 메인 네비게이션 요소 선택
+    const mainNav = document.querySelector('.main-nav');
+    
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener('scroll', function() {
+        // 현재 스크롤 위치 확인
+        const scrollPosition = window.scrollY;
+        
+        // 스크롤 위치에 따라 배경색 변경
+        if (scrollPosition > 10) { // 스크롤이 조금이라도 내려갔을 때
+            mainNav.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; // 검은색 반투명 배경
+        } else { // 스크롤이 맨 위에 있을 때
+            mainNav.style.backgroundColor = 'transparent'; // 투명 배경
+        }
+    });
+});
 
 document.addEventListener("DOMContentLoaded", function () {
     const tvMenu = document.querySelector(".tv-radio-menu .tv");
@@ -70,33 +86,6 @@ document.addEventListener("click", function (event) {
         dropdown.classList.remove("menu-open");
         arrow.style.transform = "rotate(0deg)";
     }
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const searchForm = document.querySelector('.search-form');
-    const searchButton = searchForm.querySelector('button');
-    const searchInput = searchForm.querySelector('input');
-    
-    // 초기 상태 설정: 검색 폼 숨기고 버튼만 보이게
-    searchForm.classList.add('collapsed');
-    
-    // 검색 버튼 클릭 이벤트
-    searchButton.addEventListener('click', function(event) {
-        // 폼이 접혀있을 때만 이벤트 중지하고 펼치기
-        if (searchForm.classList.contains('collapsed')) {
-            event.preventDefault();
-            searchForm.classList.remove('collapsed');
-            searchInput.focus(); // 입력 필드에 포커스
-        }
-    });
-    
-    // 검색창 외부 클릭 시 접기
-    document.addEventListener('click', function(event) {
-        // 클릭된 요소가 검색 폼이나 그 자식 요소가 아니라면
-        if (!searchForm.contains(event.target)) {
-            searchForm.classList.add('collapsed');
-        }
-    });
 });
 
 
@@ -246,6 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
 
 
 

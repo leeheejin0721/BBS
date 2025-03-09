@@ -8,8 +8,8 @@
 }
 
 header {
-    position: fixed; /* 부모 요소에 relative 추가 */
-    width: 100%;
+    position: fixed;
+    width: calc(100% - 17px); /* 스크롤바 너비(보통 17px)만큼 줄임 */
     background-color: white;
     z-index: 100000;
 }
@@ -201,7 +201,7 @@ header {
     text-decoration: none;
 }
 .search-form {
-    height: 113px;
+    height: 20px;
 }
 
 
@@ -292,13 +292,13 @@ header {
 .login {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: csenter;
 }
 
 
 .login-box {
     width: 600px; /* 크기 조정 */
-    padding: 190px 0;
+    padding-top: 200px;
     border-radius: 10px;
     text-align: center;
     margin: auto;
@@ -373,7 +373,7 @@ input::placeholder {
 }
 
 /* 로그인 버튼 스타일 */
-button {
+.login-form button {
     background-color: #BF9A0B;
     margin-top: 35px;
     color: white;
@@ -387,7 +387,7 @@ button {
     font-size: 24px;
 }
 
-button:hover {
+.login-form button:hover {
     background-color: #a88707;
 }
 
@@ -425,7 +425,7 @@ button:hover {
 
 /* banner */
 .banner {
-    margin: 90px 0;
+    margin-top: 140px;
 }
 
 .banner .banner-img {
