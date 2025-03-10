@@ -120,3 +120,27 @@ const shareBtn = document.getElementById('shareBtn');
                 arrow.style.transform = "rotate(0deg)";
             }
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchBtn = document.querySelector(".search-form button"); // 검색 버튼
+            const modal = document.getElementById("searchModal"); // 모달
+            const closeBtn = document.querySelector(".close"); // 닫기 버튼
+        
+            // 검색 버튼 클릭 시 모달 보이기
+            searchBtn.addEventListener("click", function (event) {
+                event.preventDefault();
+                modal.style.display = "flex";
+            });
+        
+            // 닫기 버튼 클릭 시 모달 숨기기
+            closeBtn.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+        
+            // 모달 외부 영역 클릭 시 닫기
+            window.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });

@@ -41,35 +41,27 @@
                                 <button type="submit">
                                     <img src="./images/search-black.png" alt="검색">
                                 </button>
-                                <input type="text" placeholder="">
                             </form>
                         </li>
                     </ul>
                 </div>
+                <!-- 검색 모달 -->
+                <div id="searchModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <input type="text" placeholder="검색어를 입력해주세요">
+                        <button class="search-button"><img src="./images/search-black.png" alt="검색"></button>
+                    </div>
+                </div>
             </div>
         </div>
         <hr class="gradationline">
-
-
-        <div class="top-banner">
-            <img src="./images/header-leftarrow.svg" alt="header-leftarrow" class="prev">
-            <img src="./images/radiobanner.png" alt="달콤한 나의 라디오">
-            <img src="./images/tvmainimg.png" alt="배너2" style="display: none;">
-            <img src="./images/tvmainimg.png" alt="배너3" style="display: none;">
-            <img src="./images/header-rightarrow.svg" alt="header-rightarrow" class="next">
-            <div class="indicator">
-                <div class="active"></div>
-                <div></div>
-                <div></div>
-            </div>
-            <button class="play-btn">
-                <span></span>
-                <span></span>
-            </button>
-        </div>
     </header>
-
+    
     <main>
+        <div class="top-banner">
+            <img src="./images/radiobanner.png" alt="">
+        </div>
         <section class="tvProgram-menu">
             <div class="container"> 
                 <div class="program-menu">
@@ -692,7 +684,7 @@
                         <option>본문</option>
                     </select>
                     <input type="text" class="search-input" placeholder="검색어를 입력하세요">
-                    <button class="search-button">검색</button>
+                    <button class="search-button2">검색</button>
                 </div>
             </div>
         </section>

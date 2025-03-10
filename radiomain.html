@@ -41,20 +41,30 @@
                                 <button type="submit">
                                     <img src="./images/search-black.png" alt="검색">
                                 </button>
-                                <input type="text" placeholder="">
                             </form>
                         </li>
                     </ul>
                 </div>
+                <!-- 검색 모달 -->
+                <div id="searchModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <input type="text" placeholder="검색어를 입력해주세요">
+                        <button class="search-button"><img src="./images/search-black.png" alt="검색"></button>
+                    </div>
+                </div>
             </div>
         </div>
         <hr class="gradationline">
-
-
+    </header>
+    
+    <main>
         <div class="top-banner">
+            <img src="./images/header-leftarrow.svg" alt="header-leftarrow" class="prev">
             <img src="./images/radiobanner.png" alt="달콤한 나의 라디오">
             <img src="./images/radiobanner.png" alt="배너2" style="display: none;">
             <img src="./images/radiobanner.png" alt="배너3" style="display: none;">
+            <img src="./images/header-rightarrow.svg" alt="header-rightarrow" class="next">
             <div class="indicator">
                 <div class="active"></div>
                 <div></div>
@@ -65,10 +75,6 @@
                 <span></span>
             </button>
         </div>
-        <hr class="gradationline">
-    </header>
-
-    <main>
         <section class="on-air">
             <div class="container">
                 <div class="onairtitle-menu">
@@ -221,13 +227,12 @@
                     </ul>
                     <div class="search">
                         <ul class="radio-detail-menu">
-                            <li class="active">기본</li>
-                            <li>최신</li>
-                            <li>가나다</li> 
+                            <li class="active">방송시간 순</li>
+                            <li>가나다 순</li> 
                         </ul>
                         <div class="search-container">
                             <input type="text" class="search-input" placeholder="검색어를 입력하세요">
-                            <button class="search-button">검색</button>
+                            <button class="search-button2">검색</button>
                         </div>                   
                     </div>
                 </div>

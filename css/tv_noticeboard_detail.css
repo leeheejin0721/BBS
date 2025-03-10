@@ -8,12 +8,14 @@
 }
 
 header {
-    position: relative; /* 부모 요소에 relative 추가 */
-    width: 100%;
-    overflow: hidden;
+    position: fixed;
+    width: calc(100% - 15px); /* 스크롤바 너비(보통 17px)만큼 줄임 */
+    background-color: white;
+    z-index: 100000;
 }
 
 .main-nav {
+    position: relative;
     display: flex;
     align-items: center;
     text-align: center;
@@ -165,10 +167,21 @@ header {
 .submenu {
     display: flex;
     align-items: center;
+    justify-content: space-around;
     list-style: none;
     padding: 10px 0;
     margin: 0;
-    width: 100%;
+}
+
+.submenu > li {
+    text-align: right;
+    width: 120px;
+}
+.submenu > li:nth-child(3) {
+    width: 60px;
+}
+.submenu > li > a:hover {
+    color: #BF9A0B;
 }
 
 .main-nav ul li {
@@ -187,37 +200,15 @@ header {
     font-size: 16px;
     text-decoration: none;
 }
-.submenu > li > a:hover {
-    color: #BF9A0B;
-}
-
 .search-form {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.3); /* opacity 대신 사용 */
-    border-radius: 50px;
-    padding: 5px 15px;
-    width: 225px;
-    height: 40px;
+    height: 20px;
 }
 
-.search-form input {
-    border: 1px solid black;
-    border-radius: 50px;
-    outline: none;
-    width: 100%;
-    font-size: 16px;
-    padding: 10px;
-    box-shadow: none; /* 혹시 기본 그림자가 있다면 제거 */
-}
 
 .search-form button {
-    position: absolute;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
-    right: 30px;
 }
 
 .search-form button img {
@@ -230,72 +221,80 @@ header {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
 }
 
-.top-banner .prev, .top-banner .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 24px;
-}
-
-.top-banner .prev {
-    left: 30px;
-    width: 70px;
-}
-
-.top-banner .next {
-    right: 30px;
-    width: 70px;
-}
-
-.top-banner .indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 84%;
-    transform: translateX(-50%);
-    display: flex;
-}
-
-.top-banner .indicator div {
-    width: 10px;
-    height: 10px;
-    margin: 5px;
-    background: white;
-    border-radius: 50%;
-    transition: all 0.3s;
-}
-
-.top-banner .indicator div.active {
-    width: 30px;
-    background: #d60000;
-    border-radius: 20px;
-}
-
-.play-btn {
-    position: absolute;
-    bottom: 40px;
-    width: 20px;  /* 버튼 크기 */
-    height: 1px;
-    left: 87%;
-    background: transparent;
-    border: none;
-    display: flex;
-    align-items: center;
+.modal {
+    display: none;  /* 처음에는 안 보이도록 설정 */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
-    cursor: pointer;
-    border-radius: 2px; /* 모서리 둥글게 */
+    align-items: center;
 }
-.play-btn span {
-    display: inline-block;
-    width: 6px; /* 막대 너비 */
-    height: 20px; /* 막대 높이 */
-    background: white;
-    margin: 0 3px; /* 두 막대 사이 간격 */
+
+/* 모달 내부 컨텐츠 스타일 */
+.modal-content {
+    bottom: 150px;
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 1200px;
+    height: 300px;
+    position: relative;
+}
+.modal-content > ::placeholder {
+    font-size: 40px;
+    font-family: "Noto Sans KR", serif;
+    color: #cdcdcd;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+/* 입력창 스타일 */
+.modal-content input {
+    width: 100%;
+    margin: 100px 0;
+    height: 80px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 40px; /* 검색 입력 글자 크기 설정 */
+    outline: none; /* 클릭해도 테두리가 생기지 않도록 설정 */
+}
+
+/* 검색 버튼 스타일 */
+.search-button {
+    position: absolute;
+    background-color: transparent;
+    top: 135px;
+    right: 32px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.search-button > img {
+    width: 38px;
+}
+
+/* 닫기 버튼 스타일 */
+.close {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    font-size: 40px;
+    cursor: pointer;
 }
 
 /* main */
+
+/* tvProgram-menu */
+/* 메뉴 스타일 */
+.top-banner > img {
+    margin-top: 92px;
+}
 
 /* 기본적으로 모든 섹션 숨김 */
 /* .program-introduce, .program-character, .program-replay, .program-notice, .notice-board {
@@ -887,7 +886,7 @@ hr {
     margin-right: 10px;
 }
 
-.search-button {
+.search-button2 {
     background: black;
     color: white;
     padding: 8px 16px;

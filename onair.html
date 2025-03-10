@@ -41,10 +41,17 @@
                                 <button type="submit">
                                     <img src="./images/search-black.png" alt="검색">
                                 </button>
-                                <input type="text" placeholder="">
                             </form>
                         </li>
                     </ul>
+                </div>
+                <!-- 검색 모달 -->
+                <div id="searchModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <input type="text" placeholder="검색어를 입력해주세요">
+                        <button class="search-button"><img src="./images/search-black.png" alt="검색"></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -86,8 +93,8 @@
                     </div>
                 </div>
 
-                <div class="modal" id="shareModal">
-                    <div class="modal-content">
+                <div class="modal2" id="shareModal">
+                    <div class="modal-content2">
                         <span class="close-btn" id="closeModal">&times;</span>
                         <h3>공유하기</h3>
                         <div class="share-icons">
@@ -168,7 +175,7 @@
         <section class="new-video">
             <div class="container">
                 <div class="new-title">
-                    <h2>추천 동영상</h2>
+                    <h2>관련 동영상</h2>
                     <div class="slider-indicator">
                         <span class="dot active"></span>
                         <span class="dot"></span>

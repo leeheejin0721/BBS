@@ -41,10 +41,17 @@
                                 <button type="submit">
                                     <img src="./images/search-black.png" alt="검색">
                                 </button>
-                                <input type="text" placeholder="">
                             </form>
                         </li>
                     </ul>
+                </div>
+                <!-- 검색 모달 -->
+                <div id="searchModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <input type="text" placeholder="검색어를 입력해주세요">
+                        <button class="search-button"><img src="./images/search-black.png" alt="검색"></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,8 +89,8 @@
                     </div>
                 </div>
 
-                <div class="modal" id="shareModal">
-                    <div class="modal-content">
+                <div class="modal2" id="shareModal">
+                    <div class="modal-content2">
                         <span class="close-btn" id="closeModal">&times;</span>
                         <h3>공유하기</h3>
                         <div class="share-icons">
@@ -108,10 +115,6 @@
                 <div class="replay">
                     <div class="replay-title">
                         <h2>다시보기</h2>
-                        <ul class="order">
-                            <li class="active">최신순</li>
-                            <li>오래된순</li>
-                        </ul>
                     </div>
                     <div class="replay-grid">
                         <article>
@@ -200,7 +203,7 @@
                         <option>본문</option>
                     </select>
                     <input type="text" class="search-input" placeholder="검색어를 입력하세요">
-                    <button class="search-button">검색</button>
+                    <button class="search-button2">검색</button>
                 </div>
                 
             </div>

@@ -41,10 +41,17 @@
                                 <button type="submit">
                                     <img src="./images/search-black.png" alt="검색">
                                 </button>
-                                <input type="text" placeholder="">
                             </form>
                         </li>
                     </ul>
+                </div>
+                <!-- 검색 모달 -->
+                <div id="searchModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <input type="text" placeholder="검색어를 입력해주세요">
+                        <button class="search-button"><img src="./images/search-black.png" alt="검색"></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,28 +61,28 @@
     <main>
         <section class="onair-video">
             <div class="container">
-                <div class="dharma-title">
-                    <h2>편성표</h2>
-                    <div class="schedule-icon">
-                        <div class="download">
-                            <img src="./images/download-icon.png" alt="download">
-                            <p>TV 주간 편성표 다운로드</p>
-                        </div>
-                        <div class="today">
-                            <p>오늘</p>
-                        </div>
-                        <div class="calender">
-                            <img src="./images/calendar-black.png" alt="calender">
+                <div class="schedule-box">
+                    <div class="dharma-title">
+                        <h2>편성표</h2>
+                        <ul class="dharma-menu">
+                            <li class="active">TV</li>
+                            <li>라디오</li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu">
+                        <div class="schedule-icon">
+                            <div class="today">
+                                <p>오늘</p>
+                            </div>
+                            <div class="calender">
+                                <img src="./images/calendar-black.png" alt="calender">
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="schedule">
                     <img src="./images/schedule-icon.png" alt="schedule-icon">
                 </div>
-                <ul class="dharma-menu">
-                    <li class="active">TV</li>
-                    <li>라디오</li>
-                </ul>
             </div>
             <div class="day-box">
                 <div class="container">
@@ -89,11 +96,11 @@
                             <h3>01.01</h3>
                             <p>수</p>
                         </div>
-                        <div class="day selected">
+                        <div class="day">
                             <h3>01.02</h3>
                             <p>목</p>
                         </div>
-                        <div class="day">
+                        <div class="day selected">
                             <h3>01.03</h3>
                             <p>금</p>
                         </div>
