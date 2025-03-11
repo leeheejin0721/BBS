@@ -19,7 +19,7 @@ header {
     height: 100px;
     display: flex;
     transition: background-color 0.3s ease; /* 배경색 전환 효과 */
-    background-color: transparent; /* 초기 배경색은 투명 */
+    background-color: transparent; /* 기본 배경색을 투명으로 변경 */
 }
 
 .main-nav .main-box {
@@ -386,6 +386,28 @@ header {
 main {
     width: 100%;
     overflow: hidden;
+    position: relative;
+}
+
+/* left-banner */
+
+.banner-ad {
+    position: absolute;
+    left: 57px;
+    top: 400px;
+    width: 100px;
+}
+.banner-ad img:first-child {
+    margin-bottom: 30px;
+}
+
+/* fixed-banner */
+.banner-ad2 {
+    cursor: pointer;
+    position: fixed;
+    right: 52px;
+    bottom: 60px;
+    z-index: 10000;
 }
 
 /* onair */
@@ -445,6 +467,7 @@ main {
     top: 60px;
 }
 .onair-menu > .table, .table2 {
+    cursor: pointer;
     display: flex;
     background-color: #3a3a3a;
     padding: 10px 20px;
@@ -951,6 +974,11 @@ main {
     font-weight: 800;
     font-size: 40px;
     padding-bottom: 25px;
+}
+.content-title > a {
+    font-size: 16px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 400;
 }
 
 .content-grid {

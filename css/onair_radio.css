@@ -291,11 +291,15 @@ header {
 
 /* main */
 
+.dharma-title {
+    display: flex;
+    align-items: center;
+    margin-top: 170px;
+}
+
 .dharma-title > h2 {
     font-family: "Noto Sans KR", serif;
     font-size: 48px;
-    margin-top: 170px;
-    margin-bottom: 30px;
     margin-right: 30px;
 }
 .dharma-menu {
@@ -306,18 +310,19 @@ header {
 }
 
 .dharma-menu li {
-    font-size: 24px;
+    font-size: 22px;
     font-family: "Noto Sans KR", serif;
     font-weight: 400;
     border: 1px solid #e5e5e5;
     border-radius: 50px;
-    width: 155px;
-    padding: 12px 0;
+    width: 175px;
+    padding: 7px 0;
     text-align: center;
     color: #909090;
     background-color: transparent;
     cursor: pointer;
     transition: background-color 0.3s, border 0.3s;
+    margin-top: 10px;
     margin-right: 10px;
 }
 

@@ -290,6 +290,15 @@ header {
 
 /* main */
 
+/* fixed-banner */
+.banner-ad2 {
+    cursor: pointer;
+    position: fixed;
+    right: 52px;
+    bottom: 60px;
+    z-index: 10000;
+}
+
 /* 공지사항과 시청자 게시판 표 길이 조정 */
 .notice-table {
     transition: height 0.3s ease-in-out;

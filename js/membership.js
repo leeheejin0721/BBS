@@ -48,6 +48,80 @@ document.addEventListener("DOMContentLoaded", function () {
     errorText.style.display = "none";
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // 체크박스 요소들 가져오기
+    const allAgreeCheckbox = document.querySelector('.form-box label:first-of-type input[type="checkbox"]');
+    const individualCheckboxes = document.querySelectorAll('.form-box .terms-box + label input[type="checkbox"]');
+    const nextButton = document.querySelector('.resit');
+    
+    // "모두 동의합니다" 체크박스 이벤트 처리
+    allAgreeCheckbox.addEventListener('change', function() {
+        // 모든 개별 체크박스의 상태를 "모두 동의합니다" 체크박스와 동일하게 설정
+        individualCheckboxes.forEach(checkbox => {
+            checkbox.checked = allAgreeCheckbox.checked;
+        });
+    });
+    
+    // 개별 체크박스 이벤트 처리
+    individualCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            // 모든 개별 체크박스가 체크되었는지 확인
+            const allChecked = Array.from(individualCheckboxes).every(cb => cb.checked);
+            // "모두 동의합니다" 체크박스 상태 업데이트
+            allAgreeCheckbox.checked = allChecked;
+        });
+    });
+    
+    // 다음 버튼 클릭 이벤트 처리
+    nextButton.addEventListener('click', function(event) {
+        // 모든 개별 체크박스 확인
+        const anyUnchecked = Array.from(individualCheckboxes).some(cb => !cb.checked);
+        
+        // 체크되지 않은 항목이 있으면 경고 메시지 표시 및 페이지 이동 취소
+        if (anyUnchecked) {
+            event.preventDefault(); // 기본 동작 취소 (링크 이동 방지)
+            alert('이용약관에 동의하셔야 회원가입을 하실 수 있습니다.');
+        }
+        // 모두 체크되었으면 기본 동작 실행 (페이지 이동)
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchBtn = document.querySelector(".search-form button"); // 검색 버튼
+    const modal = document.getElementById("searchModal"); // 모달
+    const closeBtn = document.querySelector(".close"); // 닫기 버튼
+
+    // 검색 버튼 클릭 시 모달 보이기
+    searchBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        modal.style.display = "flex";
+    });
+
+    // 닫기 버튼 클릭 시 모달 숨기기
+    closeBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    // 모달 외부 영역 클릭 시 닫기
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+
+document.addEventListener("click", function (event) {
+    let dropdown = document.querySelector(".dropdown2");
+    let menu = document.querySelector(".dropdown-menu2");
+    let arrow = document.getElementById("dropdownArrow");
+
+    if (!dropdown.contains(event.target)) {
+        menu.classList.remove("open");
+        dropdown.classList.remove("menu-open");
+        arrow.style.transform = "rotate(0deg)";
+    }
+});
+
 const leftImages = ["./images/mainbanner1.png", "./images/mainbanner2.png"];
 const rightImages = ["./images/mainbanner3.png", "./images/mainbanner4.png", "./images/mainbanner5.png"];
 
@@ -79,104 +153,3 @@ setInterval(changeLeftBanner, 4000);
 
 // 오른쪽 배너는 3초마다 변경
 setInterval(changeRightBanner, 3000);
-
-
-document.getElementById("toggleDropdown").addEventListener("click", function (event) {
-    event.preventDefault();
-    let menu = document.querySelector(".dropdown-menu2");
-    let arrow = document.getElementById("dropdownArrow");
-    let dropdownButton = document.querySelector(".dropdown2");
-
-    if (menu.classList.contains("open")) {
-        menu.classList.remove("open");
-        dropdownButton.classList.remove("menu-open");
-        arrow.style.transform = "rotate(0deg)";
-    } else {
-        menu.classList.add("open");
-        dropdownButton.classList.add("menu-open");
-        arrow.style.transform = "rotate(180deg)";
-    }
-});
-
-document.addEventListener("click", function (event) {
-    let dropdown = document.querySelector(".dropdown2");
-    let menu = document.querySelector(".dropdown-menu2");
-    let arrow = document.getElementById("dropdownArrow");
-
-    if (!dropdown.contains(event.target)) {
-        menu.classList.remove("open");
-        dropdown.classList.remove("menu-open");
-        arrow.style.transform = "rotate(0deg)";
-    }
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const searchBtn = document.querySelector(".search-form button"); // 검색 버튼
-    const modal = document.getElementById("searchModal"); // 모달
-    const closeBtn = document.querySelector(".close"); // 닫기 버튼
-
-    // 검색 버튼 클릭 시 모달 보이기
-    searchBtn.addEventListener("click", function (event) {
-        event.preventDefault();
-        modal.style.display = "flex";
-    });
-
-    // 닫기 버튼 클릭 시 모달 숨기기
-    closeBtn.addEventListener("click", function () {
-        modal.style.display = "none";
-    });
-
-    // 모달 외부 영역 클릭 시 닫기
-    window.addEventListener("click", function (event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    // 체크박스 요소들 가져오기
-    const allAgreeCheckbox = document.querySelector('.form-box label:first-of-type input[type="checkbox"]');
-    const individualCheckboxes = document.querySelectorAll('.form-box .terms-box + label input[type="checkbox"]');
-    const nextButton = document.querySelector('.resit');
-    
-    // "모두 동의합니다" 체크박스 이벤트 처리
-    allAgreeCheckbox.addEventListener('change', function() {
-        // 모든 개별 체크박스의 상태를 "모두 동의합니다" 체크박스와 동일하게 설정
-        individualCheckboxes.forEach(checkbox => {
-            checkbox.checked = allAgreeCheckbox.checked;
-        });
-    });
-    
-    // 개별 체크박스 이벤트 처리
-    individualCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-            // 모든 개별 체크박스가 체크되었는지 확인
-            const allChecked = Array.from(individualCheckboxes).every(cb => cb.checked);
-            // "모두 동의합니다" 체크박스 상태 업데이트
-            allAgreeCheckbox.checked = allChecked;
-        });
-    });
-    
-    // HTML에서 onclick 속성 제거하고 JavaScript에서만 처리하도록 설정
-    // 기존 onclick 이벤트 제거
-    nextButton.removeAttribute('onclick');
-    
-    // 다음 버튼 클릭 이벤트 처리
-    nextButton.addEventListener('click', function(event) {
-        // 기본 동작 항상 취소
-        event.preventDefault();
-        
-        // 모든 개별 체크박스 확인
-        const anyUnchecked = Array.from(individualCheckboxes).some(cb => !cb.checked);
-        
-        // 체크되지 않은 항목이 있으면 경고 메시지 표시
-        if (anyUnchecked) {
-            alert('이용약관에 동의하셔야 회원가입을 하실 수 있습니다.');
-        } else {
-            // 모두 체크되었을 때만 페이지 이동
-            window.location.href = 'membership_identity.html';
-        }
-    });
-});

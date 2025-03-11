@@ -510,6 +510,7 @@ hr {
 }
 
 .trip-item {
+    cursor: pointer;
     display: flex;
     overflow: hidden;
     margin-bottom: 20px;
@@ -616,6 +617,9 @@ hr {
     text-align: center;
     border-bottom: 1px solid #dbdbdb;
     font-family: "Noto Sans KR", serif;
+}
+.notice-table tr {
+    cursor: pointer;
 }
 .notice-table th {
     font-weight: bold;
