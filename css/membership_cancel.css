@@ -290,6 +290,14 @@ header {
 
 /* main */
 
+/* fixed-banner */
+.banner-ad2 {
+    cursor: pointer;
+    position: fixed;
+    right: 52px;
+    bottom: 60px;
+    z-index: 10000;
+}
 
 .membership_desc h2 {
     margin-top: 170px;

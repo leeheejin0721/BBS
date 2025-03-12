@@ -291,6 +291,15 @@ header {
 
 /* main */
 
+/* fixed-banner */
+.banner-ad2 {
+    cursor: pointer;
+    position: fixed;
+    right: 52px;
+    bottom: 60px;
+    z-index: 10000;
+}
+
 .boldline {
     border: 1.5px solid black;
     margin: 10px 0;

@@ -364,6 +364,15 @@ main {
     overflow: hidden;
 }
 
+/* fixed-banner */
+.banner-ad2 {
+    cursor: pointer;
+    position: fixed;
+    right: 52px;
+    bottom: 60px;
+    z-index: 10000;
+}
+
 /* onair */
 /* 타이틀 스타일 */
 .on-air {
@@ -784,6 +793,8 @@ main {
 }
 
 .tv-detail-menu > li {
+    display: flex;
+    align-items: center;
     font-family: "Noto Sans KR", serif;
     font-size: 18px;
     margin-right: 70px;
@@ -793,6 +804,13 @@ main {
     position: relative;
     line-height: 1.2; /* 세로 크기 줄이기 */
 }
+.tv-detail-menu > li > img {
+    margin-top: 1px;
+    margin-left: 4px;
+    opacity: 40%;
+    width: 20px;
+}
+
 /* 'end-program-menu' 항목 */
 .tv-title-menu > .end-program-menu {
     display: none; /* 처음에는 숨김 */

@@ -295,6 +295,15 @@ header {
 
 /* main */
 
+/* fixed-banner */
+.banner-ad2 {
+    cursor: pointer;
+    position: fixed;
+    right: 52px;
+    bottom: 60px;
+    z-index: 10000;
+}
+
 /* 기본적으로 모든 섹션 숨김 */
 .program-introduce, .program-character, .program-replay, .program-notice, .notice-board {
     display: none;

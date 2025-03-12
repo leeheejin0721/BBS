@@ -290,6 +290,15 @@ header {
 
 /* main */
 
+/* fixed-banner */
+.banner-ad2 {
+    cursor: pointer;
+    position: fixed;
+    right: 52px;
+    bottom: 60px;
+    z-index: 10000;
+}
+
 /* tvProgram-menu */
 /* 메뉴 스타일 */
 .top-banner > img {
@@ -477,6 +486,10 @@ hr {
     font-size: 20px;
     margin-top: 70px;
     margin-bottom: 10px;
+}
+.replay-title > .search-container {
+    margin: 50px 0 0 auto; /* 상단 여백 40px, 오른쪽 정렬 */
+    width: 400px;
 }
 .replay-title > p {
     font-family: "Noto Sans KR", serif;
@@ -767,7 +780,13 @@ td > img {
     row-gap: 50px;
     margin: 10px auto; /* 가운데 정렬 */
 }
-
+.spans {
+    display: flex;
+    font-family: "Noto Sans KR", serif;
+}
+.spans > span {
+    margin-right: 10px;
+}
 .replay-grid img {
     width: 100%;
     height: auto;

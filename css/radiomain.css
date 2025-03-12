@@ -363,6 +363,15 @@ main {
     overflow: hidden;
 }
 
+/* fixed-banner */
+.banner-ad2 {
+    cursor: pointer;
+    position: fixed;
+    right: 52px;
+    bottom: 60px;
+    z-index: 10000;
+}
+
 /* onair */
 /* 타이틀 스타일 */
 .on-air {
@@ -785,7 +794,7 @@ main {
 .radio-detail-menu {
     display: flex;
     text-align: center;
-    margin: 60px 0;
+    margin: 20px 0;
 }
 .radio-detail-menu > li {
     font-family: "Noto Sans KR", serif;
@@ -794,6 +803,8 @@ main {
 }
 
 .radio-detail-menu > li {
+    display: flex;
+    align-items: center;
     font-family: "Noto Sans KR", serif;
     font-size: 18px;
     margin-right: 70px;
@@ -802,6 +813,16 @@ main {
     transition: color 0.3s;
     position: relative;
     line-height: 1.2; /* 세로 크기 줄이기 */
+}
+.radio-detail-menu > li > img {
+    margin-top: 1px;
+    margin-left: 4px;
+    opacity: 40%;
+    width: 20px;
+}
+.radio-detail-menu li:hover img,
+.radio-detail-menu li.active img {
+    opacity: 1; /* 호버 또는 클릭 시 100% */
 }
 
 /* 리스트 아이템 사이에 바(|) 추가 */
@@ -838,6 +859,7 @@ main {
     display: flex;
     align-items: center;
     width: 300px; /* 고정 너비 유지 */
+    margin: 60px 0;
 }
 
 .category-select {

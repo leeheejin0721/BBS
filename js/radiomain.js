@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const radioContent = document.querySelector(".radio-content-grid"); // 방영 콘텐츠
     const replayGrid = document.querySelector(".replay-grid"); // 종영 콘텐츠
     const numberPagination = document.querySelector(".number"); // 페이지네이션
-    const detailMenus = document.querySelectorAll(".radio-detail-menu li"); // 기본, 최신, 가나다 메뉴
+    const detailMenus = document.querySelector(".radio-detail-menu"); // 정렬 메뉴
+    const timeSort = document.querySelector(".radio-detail-menu li:nth-child(1)"); // 방송시간 순
 
     // 초기 상태 설정 (방영 선택)
     replayGrid.style.display = "none";
@@ -17,6 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
         radioContent.style.display = "grid";
         replayGrid.style.display = "none";
         numberPagination.style.display = "none";
+
+        // 방송시간 순 다시 보이게
+        timeSort.style.display = "inline-block";
     });
 
     // "종영" 클릭 시
@@ -26,12 +30,15 @@ document.addEventListener("DOMContentLoaded", function () {
         radioContent.style.display = "none";
         replayGrid.style.display = "grid";
         numberPagination.style.display = "flex";
+
+        // 방송시간 순 숨기기
+        timeSort.style.display = "none";
     });
 
     // "기본", "최신", "가나다" 메뉴 클릭 이벤트 추가
-    detailMenus.forEach(menu => {
+    document.querySelectorAll(".radio-detail-menu li").forEach(menu => {
         menu.addEventListener("click", function () {
-            detailMenus.forEach(item => item.classList.remove("active")); // 모든 메뉴에서 active 제거
+            document.querySelectorAll(".radio-detail-menu li").forEach(item => item.classList.remove("active")); 
             this.classList.add("active"); // 클릭한 메뉴에 active 추가
         });
     });

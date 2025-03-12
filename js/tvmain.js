@@ -1,40 +1,41 @@
-// 종영 메뉴를 클릭하면 'end-program-menu'를 보이게 하고, 다시 클릭하면 숨기게 함함.
-document.querySelector('.end-program-toggle').addEventListener('click', function(event) {
-    event.stopPropagation(); // 클릭 이벤트가 상위 요소로 전파되지 않도록 막음
-    var endProgramMenu = document.querySelector('.end-program-menu');
-    
-    if (endProgramMenu.style.display === 'none' || endProgramMenu.style.display === '') {
-        endProgramMenu.style.display = 'flex'; // 메뉴를 보이게 설정
-    } else {
-        endProgramMenu.style.display = 'none'; // 메뉴를 숨김
-    }
-});
-
-// 'end-program-menu' 항목 클릭 시 스타일 적용
-const endProgramMenuItems = document.querySelectorAll('.end-program-menu > li');
-
-// 각 항목에 클릭 이벤트 추가
-endProgramMenuItems.forEach(item => {
-    item.addEventListener('click', function() {
-        // 기존에 선택된 'active' 클래스를 제거
-        endProgramMenuItems.forEach(menuItem => menuItem.classList.remove('active'));
-        
-        // 클릭된 항목에 'active' 클래스 추가
-        item.classList.add('active');
-    });
-});
-
-// 다른 메뉴를 클릭하면 'end-program-menu'를 숨김
-const tvMenuItems = document.querySelectorAll('.tv-menu > li:not(.end-program-toggle)');
-
-tvMenuItems.forEach(item => {
-    item.addEventListener('click', function() {
-        document.querySelector('.end-program-menu').style.display = 'none';
-    });
-});
-
 document.addEventListener("DOMContentLoaded", function () {
-    const tvMenuItems = document.querySelectorAll(".tv-menu li"); // TV 메뉴 항목
+    // 종영 메뉴를 클릭하면 'end-program-menu'를 보이게 하고, 다시 클릭하면 숨기게 함
+    document.querySelector('.end-program-toggle').addEventListener('click', function(event) {
+        event.stopPropagation(); // 클릭 이벤트가 상위 요소로 전파되지 않도록 막음
+        var endProgramMenu = document.querySelector('.end-program-menu');
+        
+        if (endProgramMenu.style.display === 'none' || endProgramMenu.style.display === '') {
+            endProgramMenu.style.display = 'flex'; // 메뉴를 보이게 설정
+        } else {
+            endProgramMenu.style.display = 'none'; // 메뉴를 숨김
+        }
+    });
+
+    // 'end-program-menu' 항목 클릭 시 스타일 적용
+    const endProgramMenuItems = document.querySelectorAll('.end-program-menu > li');
+
+    // 각 항목에 클릭 이벤트 추가
+    endProgramMenuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // 기존에 선택된 'active' 클래스를 제거
+            endProgramMenuItems.forEach(menuItem => menuItem.classList.remove('active'));
+            
+            // 클릭된 항목에 'active' 클래스 추가
+            item.classList.add('active');
+        });
+    });
+
+    // 다른 메뉴를 클릭하면 'end-program-menu'를 숨김
+    const tvMenuItems = document.querySelectorAll('.tv-menu > li:not(.end-program-toggle)');
+
+    tvMenuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            document.querySelector('.end-program-menu').style.display = 'none';
+        });
+    });
+
+    // TV 메뉴 관련 요소들
+    const allTvMenuItems = document.querySelectorAll(".tv-menu li"); // TV 메뉴 항목
     const replayGrid = document.querySelector(".replay-grid"); // 다시보기 콘텐츠
     const numberPagination = document.querySelector(".number"); // 페이지네이션
     const tvContentGrid = document.querySelector(".tv-content-grid"); // TV 콘텐츠
@@ -44,15 +45,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const specialMenu = document.querySelector(".tv-menu li:nth-child(8)"); // "특집"
     const endProgramMenu = document.querySelector(".tv-menu .end-program-toggle"); // "종영"
 
+    // 정렬 메뉴 요소
+    const latestSort = document.querySelector('.tv-detail-menu li:first-child'); // 최신 순
+    const alphaDescSort = document.querySelector('.tv-detail-menu li:nth-child(2)'); // 가나다 순(내림차순)
+    const alphaAscSort = document.querySelector('.tv-detail-menu li:nth-child(3)'); // 가나다 순(오름차순)
+    
+    // 정렬 아이콘 이미지
+    const sortIcons = document.querySelectorAll('.tv-detail-menu li img');
+    
     // 기본 상태 설정 (일반 TV 콘텐츠 보이기)
     replayGrid.style.display = "none";
     numberPagination.style.display = "none";
 
     // TV 메뉴 클릭 이벤트 추가
-    tvMenuItems.forEach(item => {
+    allTvMenuItems.forEach(item => {
         item.addEventListener("click", function () {
             // 모든 메뉴에서 active 클래스 제거
-            tvMenuItems.forEach(menu => menu.classList.remove("active"));
+            allTvMenuItems.forEach(menu => menu.classList.remove("active"));
 
             // 현재 클릭한 메뉴에 active 클래스 추가
             this.classList.add("active");
@@ -62,10 +71,33 @@ document.addEventListener("DOMContentLoaded", function () {
                 tvContentGrid.style.display = "none"; // TV 콘텐츠 숨김
                 replayGrid.style.display = "grid"; // 다시보기 콘텐츠 표시
                 numberPagination.style.display = "flex"; // 페이지네이션 표시
+                
+                // 최신 순 숨기기
+                latestSort.style.display = 'none';
+                
+                // 가나다 순 두 개만 표시하고 첫 번째 가나다순 활성화
+                latestSort.classList.remove('active');
+                alphaDescSort.classList.add('active');
+                
+                // 첫 번째 가나다 순 아이콘 opacity 100%로 설정
+                if (alphaDescSort.querySelector('img')) {
+                    alphaDescSort.querySelector('img').style.opacity = '1';
+                }
             } else {
                 tvContentGrid.style.display = "grid"; // TV 콘텐츠 표시
                 replayGrid.style.display = "none"; // 다시보기 콘텐츠 숨김
                 numberPagination.style.display = "none"; // 페이지네이션 숨김
+                
+                // 최신 순 다시 표시하고 활성화
+                latestSort.style.display = 'flex';
+                latestSort.classList.add('active');
+                alphaDescSort.classList.remove('active');
+                alphaAscSort.classList.remove('active');
+                
+                // 모든 아이콘 opacity 초기화
+                sortIcons.forEach(icon => {
+                    icon.style.opacity = '0.4';
+                });
             }
         });
     });
@@ -74,10 +106,45 @@ document.addEventListener("DOMContentLoaded", function () {
     detailMenus.forEach(menu => {
         menu.addEventListener("click", function () {
             // 모든 상세 메뉴에서 active 클래스 제거
-            detailMenus.forEach(item => item.classList.remove("active"));
+            detailMenus.forEach(item => item.classList.remove('active'));
 
             // 클릭한 메뉴에 active 클래스 추가
-            this.classList.add("active");
+            this.classList.add('active');
+        });
+    });
+    
+    // 가나다 순 아이콘 호버/클릭 시 opacity 조정
+    sortIcons.forEach(icon => {
+        // 기본 opacity 설정
+        icon.style.opacity = '0.4';
+        
+        // 호버 시 opacity 변경
+        icon.parentElement.addEventListener('mouseenter', function() {
+            icon.style.opacity = '1';
+        });
+        
+        // 마우스 떠날 때 원래대로 (active가 아닌 경우)
+        icon.parentElement.addEventListener('mouseleave', function() {
+            if (!this.classList.contains('active')) {
+                icon.style.opacity = '0.4';
+            }
+        });
+        
+        // 클릭 시 opacity 유지 및 active 클래스 관리
+        icon.parentElement.addEventListener('click', function() {
+            // 모든 메뉴 아이템에서 active 클래스 제거
+            document.querySelectorAll('.tv-detail-menu li').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // 모든 아이콘 opacity 초기화
+            sortIcons.forEach(img => {
+                img.style.opacity = '0.4';
+            });
+            
+            // 현재 클릭한 아이템에 active 클래스 추가 및 아이콘 opacity 설정
+            this.classList.add('active');
+            icon.style.opacity = '1';
         });
     });
 });

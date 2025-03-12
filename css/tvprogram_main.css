@@ -289,6 +289,14 @@ header {
 }
 
 /* main */
+/* fixed-banner */
+.banner-ad2 {
+    cursor: pointer;
+    position: fixed;
+    right: 52px;
+    bottom: 60px;
+    z-index: 10000;
+}
 
 /* tvProgram-menu */
 /* 메뉴 스타일 */
@@ -296,6 +304,19 @@ header {
     margin-top: 92px;
 }
 
+/* .update {
+    position: absolute;
+    left: 536px;
+    top: -10px;
+}
+.update > span {
+    background-color: red;
+    border-radius: 50px;
+    color: white;
+    font-family: "Noto Sans KR", serif;
+    font-size: 10px;
+    padding: 0 4px;
+} */
 
 /* 기본적으로 모든 섹션 숨김 */
 .program-introduce, .program-character, .program-replay, .program-notice, .notice-board {
@@ -490,6 +511,10 @@ hr {
     font-family: "Noto Sans KR", serif;
     margin-top: 70px;
     font-size: 16px;
+}
+.replay-title > .search-container {
+    margin: 50px 0 0 auto; /* 상단 여백 40px, 오른쪽 정렬 */
+    width: 400px;
 }
 .replay-title > h2 > img {
     margin-right: 10px;
