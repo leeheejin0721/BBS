@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("비밀번호에 특수문자를 포함해야 합니다.");
         } else {
             // 비밀번호가 유효할 때만 페이지 이동
-            window.location.href = 'membership_change_detail.html';
+            window.location.href = 'membership_success.html';
         }
     });
 

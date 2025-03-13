@@ -430,20 +430,23 @@ main {
     display: flex;
 }
 .onair-menu > .table, .table2 {
+    cursor: pointer;
     display: flex;
+    align-items: center;
     background-color: #3a3a3a;
-    padding: 10px 20px;
+    padding: 8px 22px;
     border-radius: 50px;
     color: white;
 }
 .onair-menu > .table > img {
     margin-right: 10px;
+    width: 20px;
 }
 .onair-menu > .table2 > img {
     margin-right: 10px;
 }
 .onair-menu p {
-    font-size: 15px;
+    font-size: 13px;
     font-family: "Noto Sans KR", serif;
 }
 
@@ -706,6 +709,18 @@ main {
     display: flex;
     justify-content: space-between;
 }
+.arrow-box > img:first-child {
+    position: absolute;
+    top: 300px;
+    left: -80px;
+    width: 40px;
+}
+.arrow-box > img:nth-child(2) {
+    position: absolute;
+    top: 300px;
+    right: -80px;
+    width: 40px;
+}
 .import .import-grid p {
     margin-top: 5px;
     font-family: "Noto Sans KR", serif;
@@ -738,7 +753,7 @@ main {
 
 /* tv */
 .tv-title-menu > .tv-title {
-    margin-top: 70px;
+    margin-top: 100px;
     margin-bottom: 25px;
 }
 .tv-title-menu > .tv-title > h2 {
@@ -789,15 +804,15 @@ main {
 .tv-detail-menu {
     display: flex;
     text-align: center;
-    margin: 60px 0;
+    margin: 50px 0;
 }
 
 .tv-detail-menu > li {
     display: flex;
     align-items: center;
     font-family: "Noto Sans KR", serif;
-    font-size: 18px;
-    margin-right: 70px;
+    font-size: 16px;
+    margin-right: 50px;
     cursor: pointer;
     color: #909090;
     transition: color 0.3s;
@@ -808,7 +823,7 @@ main {
     margin-top: 1px;
     margin-left: 4px;
     opacity: 40%;
-    width: 20px;
+    width: 15px;
 }
 
 /* 'end-program-menu' 항목 */
@@ -821,8 +836,9 @@ main {
 
 .tv-title-menu > .end-program-menu > li {
     font-family: "Noto Sans KR", serif;
-    font-size: 24px;
-    margin: 60px 30px;
+    font-size: 22px;
+    margin: 0 30px;
+    margin-bottom: 50px;
     cursor: pointer;
     color: #909090;
     position: relative; /* 상대적인 위치 설정 */
@@ -842,7 +858,7 @@ main {
     left: 0;
     bottom: -20px; /* 글자에서 5px 아래로 밑줄을 내려줍니다 */
     width: 100%;
-    height: 2px;
+    height: 3px;
     background-color: #BF9A0B; /* 밑줄 색깔 */
     transform: scaleX(0); /* 초기에는 밑줄이 보이지 않게 설정 */
     transition: transform 0.3s ease-in-out;
@@ -867,7 +883,7 @@ main {
 .tv-detail-menu > li:not(:last-child)::after {
     content: "|";
     position: absolute;
-    right: -35px; /* 기존 -20px → -25px로 변경 */
+    right: -28px; /* 기존 -20px → -25px로 변경 */
     color: #ccc;
     font-size: 14px; /* 기존 크기보다 줄임 */
 }
@@ -923,7 +939,6 @@ main {
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     row-gap: 80px;
-    margin-top: 20px;
 }
 .tv-content-grid article {
     text-align: left;

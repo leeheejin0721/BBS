@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function openSmallWindow() {
-    window.open("onair_new.html", "onairNew", "width=850,height=760,left=100,top=100");
+    window.open("onair_new.html", "onairNew", "width=688,height=690,left=100,top=100");
 }
 
 const leftImages = ["./images/mainbanner1.png", "./images/mainbanner2.png"];

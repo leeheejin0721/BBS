@@ -122,3 +122,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+const shareBtn = document.querySelector('.icon-box img'); // 공유 아이콘 선택
+const shareModal = document.getElementById('shareModal');
+const closeModal = document.getElementById('closeModal');
+
+shareBtn.addEventListener('click', () => {
+    shareModal.style.display = 'flex';
+});
+
+closeModal.addEventListener('click', () => {
+    shareModal.style.display = 'none';
+});
+
+window.addEventListener('click', (event) => {
+    if (event.target === shareModal) {
+        shareModal.style.display = 'none';
+    }
+});

@@ -322,7 +322,7 @@ header {
 
 .program-menu > ul {
     display: flex;
-    margin: 50px 0;
+    margin: 35px 0;
     padding: 0;
     list-style: none;
     position: relative;
@@ -353,7 +353,7 @@ header {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -51px; /* 밑줄 위치 */
+    bottom: -35px; /* 밑줄 위치 */
     width: 100%;
     height: 4px;
     background-color: #BF9A0B; /* 밑줄 색상 */
@@ -563,6 +563,10 @@ td > img {
     margin-bottom: 80px;
 }
 
+.notice-box {
+    margin-top: 70px;
+}
+
 .program-notice-title {
     display: flex;
     justify-content: space-between;
@@ -621,6 +625,7 @@ td > img {
     margin-right: 10px;
 }
 .boldline {
+    margin-bottom: 20px;
     border: 1.5px solid black;
 }
 .notice-detail > .grayline {

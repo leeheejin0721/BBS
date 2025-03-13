@@ -346,7 +346,7 @@ header {
 
 .program-menu > ul {
     display: flex;
-    margin: 50px 0;
+    margin: 35px 0;
     padding: 0;
     list-style: none;
     position: relative;
@@ -377,7 +377,7 @@ header {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -50px; /* 밑줄 위치 */
+    bottom: -35px; /* 밑줄 위치 */
     width: 100%;
     height: 4px;
     background-color: #BF9A0B; /* 밑줄 색상 */
@@ -397,7 +397,7 @@ hr {
 
 /* program-introduce */
 .program-introduce {
-    margin-bottom: 120px;
+    margin-bottom: 70px;
 }
 
 .intro {
@@ -464,15 +464,10 @@ hr {
     margin-right: 32px;
     font-weight: 500;
 }
-.program-content > p {
-    margin-bottom: 70px;
-}
 
 
 /* program-character */
-.program-character {
-    margin-bottom: 80px;
-}
+
 
 .character {
     margin-top: 65px;
@@ -491,9 +486,7 @@ hr {
 
 /* program-replay */
 
-.program-replay {
-    margin-bottom: 80px;
-}
+
 .replay-title {
     display: flex;
     justify-content: space-between;
@@ -559,9 +552,6 @@ hr {
 }
 
 /* program-notice */
-.program-notice {
-    margin-bottom: 80px;
-}
 
 .program-notice-title {
     display: flex;

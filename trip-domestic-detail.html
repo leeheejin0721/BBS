@@ -87,7 +87,26 @@
                 <div class="trip-detail-title">
                     <h3>국내 성지순례</h3>
                     <div class="icon-box">
-                        <img src="./images/share.png" alt="share">
+                        <img src="./images/share.png" alt="share" id="shareBtn">
+                    </div>
+                </div>
+
+                <div class="modal2" id="shareModal">
+                    <div class="modal-content2">
+                        <span class="close-btn" id="closeModal">&times;</span>
+                        <h3>공유하기</h3>
+                        <div class="share-icons">
+                            <img src="./images/facebook.png" alt="페이스북">
+                            <img src="./images/tweezer.png" alt="X(트위터)">
+                            <img src="./images/blog.png" alt="네이버 블로그">
+                            <img src="./images/band.png" alt="네이버 밴드">
+                            <img src="./images/kakao-story.png" alt="카카오 스토리">
+                            <img src="./images/kakaotalk.png" alt="카카오톡">
+                        </div>
+                        <div class="url-box">
+                            <input type="text" id="shareUrl" value="https://onair.kbs.co.kr/index.html?sname=onair&type=l" readonly>
+                            <button onclick="copyUrl()">URL 복사</button>
+                        </div>
                     </div>
                 </div>
                 <div class="tour-info">

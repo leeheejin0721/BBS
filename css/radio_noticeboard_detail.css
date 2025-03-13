@@ -325,7 +325,7 @@ header {
 
 .program-menu > ul {
     display: flex;
-    margin: 50px 0;
+    margin: 35px 0;
     padding: 0;
     list-style: none;
     position: relative;
@@ -356,7 +356,7 @@ header {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -51px; /* 밑줄 위치 */
+    bottom: -35px; /* 밑줄 위치 */
     width: 100%;
     height: 4px;
     background-color: #BF9A0B; /* 밑줄 색상 */
@@ -625,6 +625,7 @@ td > img {
 }
 .boldline {
     border: 1.5px solid black;
+    margin-bottom: 20px;
 }
 .notice-detail > .grayline {
     border: 1px solid #ddd;
@@ -726,12 +727,10 @@ td > img {
     justify-content: space-between;
     align-items: center;
 }
-.notice-board-title > h2 {
-    font-family: "Noto Sans KR", serif;
-    font-weight: 800;
-    display: flex;
-    font-size: 42px;
+.notice-board-title > h3 {
     margin-top: 70px;
+    font-family: "Noto Sans KR", serif;
+    font-size: 36px;
     margin-bottom: 30px;
 }
 .button2 {

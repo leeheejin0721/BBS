@@ -16,7 +16,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 100%;
+    width: 80%;
 }
 
 .dharma-menu li {
@@ -53,7 +53,7 @@
 }
 
 .video-container > img {
-    width: 100%;
+    width: 80%;
     transition: filter 0.3s ease;
 }
 
@@ -62,7 +62,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 80%;
     height: 100%;
     background: rgba(0, 0, 0, 0);
     transition: background 0.3s ease;
@@ -201,6 +201,7 @@
     font-size: 18px;
     color: #909090;
     font-family: "Noto Sans KR", serif;
+    margin-bottom: 50px;
 }
 
 .volume-slider-container {
@@ -242,8 +243,8 @@
 
 /* banner */
 .banner {
-    margin: 70px 0;
-    width: 810px;
+    margin-top: 100px;
+    width: 648px;
     margin: 20px;
 }
 
