@@ -343,13 +343,14 @@ header {
 }
 .form-group input {
     font-family: "Noto Sans KR", serif;
+    font-size: 18px;
     flex: 1;
     padding: 15px;
     border: 1px solid #ddd;
 }
 .form-group button {
     font-family: "Noto Sans KR", serif;
-    padding: 15px;
+    padding: 18px;
     border: none;
     background-color: #333;
     color: #fff;

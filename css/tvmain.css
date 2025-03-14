@@ -965,7 +965,6 @@ main {
     grid-template-rows: repeat(2, auto); /* 2행 */
     gap: 20px; /* 항목 간 간격 */
     row-gap: 50px;
-    margin: 20px auto; /* 가운데 정렬 */
 }
 
 .replay-grid img {

@@ -3,22 +3,38 @@ document.addEventListener("DOMContentLoaded", function() {
     const lanternMenu = document.querySelector(".dharma-menu li:last-child"); // 연등 메뉴
     const dharmaContent = document.querySelector(".dharma-content"); // 법회 콘텐츠
     const lanternContent = document.querySelector(".lantern-content"); // 연등 콘텐츠
+    const contentMenu = document.querySelector(".content-menu"); // BBS 정기법회 다시보기
+    const contentMenu2 = document.querySelector(".content-menu2"); // 연등 접수 신청서 다운로드
 
-    // 메뉴 클릭 이벤트
+    // 초기 상태 설정 (법회 선택)
+    dharmaContent.style.display = "block";
+    lanternContent.style.display = "none";
+    contentMenu.style.display = "block";  // BBS 정기법회 다시보기 보이기
+    contentMenu2.style.display = "none";  // 연등 접수 신청서 숨기기
+
+    // 법회 클릭 이벤트
     dharmaMenu.addEventListener("click", function() {
         dharmaMenu.classList.add("active");
         lanternMenu.classList.remove("active");
         dharmaContent.style.display = "block";
-        lanternContent.style.display = "none"; // 연등 콘텐츠 숨김
+        lanternContent.style.display = "none";
+
+        contentMenu.style.display = "block";  // BBS 정기법회 다시보기 보이기
+        contentMenu2.style.display = "none";  // 연등 접수 신청서 숨기기
     });
 
+    // 연등 클릭 이벤트
     lanternMenu.addEventListener("click", function() {
         lanternMenu.classList.add("active");
         dharmaMenu.classList.remove("active");
-        dharmaContent.style.display = "none"; // 법회 콘텐츠 숨김
-        lanternContent.style.display = "block"; // 연등 콘텐츠 표시
+        dharmaContent.style.display = "none";
+        lanternContent.style.display = "block";
+
+        contentMenu.style.display = "none";  // BBS 정기법회 다시보기 숨기기
+        contentMenu2.style.display = "block";  // 연등 접수 신청서 보이기
     });
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const articles = document.querySelectorAll(".dharma-grid article");

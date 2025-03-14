@@ -358,7 +358,7 @@ header {
     left: 0;
     bottom: -35px; /* 밑줄 위치 */
     width: 100%;
-    height: 4px;
+    height: 3px;
     background-color: #BF9A0B; /* 밑줄 색상 */
 }
 
@@ -448,16 +448,58 @@ hr {
 /* program-character */
 
 
-.character h2 {
-    font-size: 40px;
-    font-weight: 800;
-    font-family: "Noto Sans KR", serif;
+.character {
     margin-top: 70px;
 }
-.character-content {
-    margin-top: 20px;
+.character h2 {
+    font-size: 40px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 800;
+    margin-bottom: 20px;
 }
-.character-content > p {
+.character-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.character-title > p {
+    font-family: "Noto Sans KR", serif;
+    font-size: 16px;
+}
+.character-content {
+    display: flex;
+    align-items: center;
+}
+.profile {
+    margin-right: 30px;
+}
+.character-content2 {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.profile-detail {
+    margin-left: 50px;
+    margin-bottom: 80px;
+}
+.name {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.profile-detail > p {
+    display: flex;
+    font-size: 22px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.profile-detail .strong {
+    margin-right: 32px;
+    font-weight: 500;
+}
+.anchor {
     font-size: 22px;
     font-family: "Noto Sans KR", serif;
     margin-top: 25px;
@@ -470,14 +512,14 @@ hr {
     display: flex;
     justify-content: space-between;
 }
-.replay-title h2 {
+.program-replay .replay-title > h2 {
     font-family: "Noto Sans KR", serif;
-    font-weight: 200;
-    display: flex;
-    font-size: 20px;
     margin-top: 70px;
-    margin-bottom: 10px;
+    font-weight: 800;
+    display: flex;
+    font-size: 42px;
 }
+
 .replay-title > .search-container {
     margin: 50px 0 0 auto; /* 상단 여백 40px, 오른쪽 정렬 */
     width: 400px;
@@ -595,6 +637,9 @@ td > img {
     border-top: 2px solid #333;
     font-size: 18px;
 }
+.notice-table tr {
+    cursor: pointer;
+}
 .notice-table td {
     font-size: 16px;
     text-align: center; /* 모든 셀 내용 가운데 정렬 */
@@ -659,7 +704,7 @@ td > img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 70px;
 }
 .number > .left-arrow {
     display: flex;
@@ -735,7 +780,7 @@ td > img {
     justify-content: space-between;
     align-items: center;
 }
-.replay-title > h2 {
+.program-photo .replay-title > h2 {
     font-family: "Noto Sans KR", serif;
     font-weight: 800;
     display: flex;

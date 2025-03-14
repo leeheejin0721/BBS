@@ -303,7 +303,7 @@ header {
     margin-top: 170px;
     font-family: "Noto Sans KR", serif;
     font-size: 48px;
-    margin-bottom: 80px;
+    margin-bottom: 35px;
 }
 .adver-title > .adver-sub-title {
     display: flex;
@@ -314,13 +314,14 @@ header {
     font-size: 24px;
     cursor: pointer;
     padding-bottom: 5px;
-    font-weight: bold;
     color: #888;
     position: relative;
+    font-weight: 500;
 }
 
 .adver-sub-title li.active {
     color: #000;
+    font-weight: 700;
 }
 
 .adver-sub-title li.active::after {
@@ -330,7 +331,7 @@ header {
     height: 3px;
     background-color: #BF9A0B;
     position: absolute;
-    bottom: -40px;
+    bottom: -35px;
     left: 0;
 }
 
@@ -344,7 +345,7 @@ header {
 }
 
 .menu-line {
-    margin-top: 40px;
+    margin-top: 35px;
     border: 1px solid #f3f3f3;
 }
 h4 {

@@ -332,10 +332,10 @@ h3 {
 input[type="text2"],
 input[type="password"] {
     width: 600px;
-    padding: 12px;
+    padding: 14px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    font-size: 14px;
+    font-size: 18px;
     outline: none;
     margin: auto;
 }

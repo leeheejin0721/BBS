@@ -836,7 +836,7 @@ main {
 .radio-detail-menu > li:not(:last-child)::after {
     content: "|";
     position: absolute;
-    right: -28px; /* 기존 -20px → -25px로 변경 */
+    right: -23px; /* 기존 -20px → -25px로 변경 */
     color: #ccc;
     font-size: 14px; /* 기존 크기보다 줄임 */
 }

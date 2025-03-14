@@ -357,6 +357,7 @@ header {
     margin-top: 10px;
 }
 .onair-vidio-text h4 {
+    margin-top: 10px;
     font-size: 48px;
     font-family: "Noto Sans KR", serif;
 }
@@ -814,6 +815,19 @@ header {
 }
 .import-title > .slider-indicator {
     margin-top: 70px;
+}
+
+.arrow-box > img:first-child {
+    position: absolute;
+    top: 300px;
+    left: -80px;
+    width: 40px;
+}
+.arrow-box > img:nth-child(2) {
+    position: absolute;
+    top: 300px;
+    right: -80px;
+    width: 40px;
 }
 
 /* 슬라이드 인디케이터 (원 3개) */

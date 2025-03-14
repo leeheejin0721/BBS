@@ -383,7 +383,7 @@ section.domestic-trip {
 
 .program-menu > ul {
     display: flex;
-    margin: 50px 0;
+    margin: 35px 0;
     padding: 0;
     list-style: none;
     position: relative;
@@ -414,7 +414,7 @@ section.domestic-trip {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -50px; /* 밑줄 위치 */
+    bottom: -35px; /* 밑줄 위치 */
     width: 100%;
     height: 4px;
     background-color: #BF9A0B; /* 밑줄 색상 */
@@ -570,25 +570,21 @@ hr {
 
 /* program-notice */
 
-.program-notice {
-    margin-bottom: 70px;
-}
 
 .program-notice-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.program-notice-title > h2 {
+.program-notice-title > h3 {
     font-family: "Noto Sans KR", serif;
     font-weight: 800;
     display: flex;
     font-size: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .program-notice-title > p {
     font-family: "Noto Sans KR", serif;
-    margin-top: 70px;
     font-size: 16px;
 }
 .button2 {
@@ -600,8 +596,7 @@ hr {
     color: white;
     padding: 15px 0;
     text-decoration: none;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 
@@ -627,8 +622,7 @@ hr {
     display: inline-block; /* 텍스트 크기에 맞춰 박스 크기 조정 */
     text-align: center; /* 텍스트 중앙 정렬 */
 }
-.notice-title > h3 {
-    margin-top: 10px;
+.program-notice-title > h3 {
     font-family: "Noto Sans KR", serif;
     font-size: 36px;
     margin-bottom: 30px;
@@ -648,14 +642,11 @@ hr {
     margin-right: 10px;
 }
 .program-notice-title {
-    margin-top: 50px;
+    margin-top: 70px;
 }
-.program-notice-title h2 {
-    font-family: "Noto Sans KR", serif;
-    font-size: 40px;
-    margin-bottom: 10px;
-}
+
 .boldline {
+    margin-bottom: 20px;
     border: 1.5px solid black;
 }
 .notice-detail > .grayline {
@@ -666,11 +657,18 @@ hr {
 }
 .notice-detail > .file > a {
     display: flex;
-    font-size: 18px;
+    align-items: center;
+    font-size: 16px;
     font-family: "Noto Sans KR", serif;
 }
+.notice-detail > .file > a > img {
+    margin-top: 2px;
+    margin-right: 15px;
+    width: 14px;
+    height: 14px;
+}
 .notice-detail > .file > a:first-child {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .notice-detail > .notice-content {
     margin: 50px 0;

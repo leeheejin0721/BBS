@@ -463,6 +463,7 @@ header {
 }
 
 .program {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -480,7 +481,7 @@ header {
     border-radius: 2px;
     text-align: center;
     font-size: 16px;
-    width: 100px;
+    width: 140px;
 }
 .date-box {
     display: flex;
@@ -505,6 +506,9 @@ header {
     font-size: 18px;
 }
 .onair > span {
+    color: red;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 500;
     font-size: 18px;
 }
 .program >.onair-box {
@@ -519,7 +523,7 @@ header {
 .red-circle {
     position: absolute;
     top: 0; /* 상단에서의 위치 조정 */
-    left: 27%; /* 오른쪽에서의 위치 조정 */
+    left: 65px; /* 오른쪽에서의 위치 조정 */
     width: 5px; /* 원의 크기 */
     height: 5px; /* 원의 크기 */
     border-radius: 50%; /* 원 모양으로 만들기 위해 반지름을 50%로 설정 */

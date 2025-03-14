@@ -14,19 +14,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchContainers = document.querySelectorAll(".search-container"); // 검색창
     const allViewButtons = document.querySelectorAll(".program-notice-title p, .replay-title p, .notice-board-title p"); // "전체보기" 버튼들
     const writeButtons = document.querySelectorAll(".notice-board .button"); // "글쓰기" 버튼
+    const characterDetailSection = document.querySelector(".program-character-detail"); // 출연진 상세 섹션
 
     function updateVisibility() {
         const activeMenu = document.querySelector(".program-menu ul li.active").textContent.trim();
 
         // 항상 보이는 섹션들 (메뉴, 배너, 공지사항)
         document.querySelector(".tvProgram-menu").style.display = "block";
-        noticeSection.style.display = "block";
-        bannerSection.style.display = "block";
+        
+        // 배너와 공지 섹션이 존재할 경우에만 표시
+        if (noticeSection) noticeSection.style.display = "block";
+        if (bannerSection) bannerSection.style.display = "block";
 
         if (activeMenu === "홈") {
-            // 모든 섹션 표시 (단, program-introduce-detail은 숨김)
+            // 모든 섹션 표시 (단, program-introduce-detail과 program-character-detail은 숨김)
             allSections.forEach(section => section.style.display = "block");
             detailSection.style.display = "none";
+            if (characterDetailSection) characterDetailSection.style.display = "none";
 
             // "다시보기" 섹션에서 article 8개만 보이게 함
             replayArticles.forEach((article, index) => {
@@ -34,8 +38,12 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             // "다시보기"의 페이지네이션과 검색창 숨김
-            programReplay.querySelector(".number").style.display = "none";
-            programReplay.querySelector(".search-container").style.display = "none";
+            if (programReplay) {
+                const numberElement = programReplay.querySelector(".number");
+                const searchContainer = programReplay.querySelector(".search-container");
+                if (numberElement) numberElement.style.display = "none";
+                if (searchContainer) searchContainer.style.display = "none";
+            }
 
             // "공지사항"과 "시청자 게시판"에서 tr 5개까지만 보이게 함
             noticeRows.forEach((row, index) => {
@@ -46,10 +54,19 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             // "공지사항"과 "시청자 게시판"의 페이지네이션과 검색창 숨김
-            programNotice.querySelector(".number").style.display = "none";
-            programNotice.querySelector(".search-container").style.display = "none";
-            noticeBoard.querySelector(".number").style.display = "none";
-            noticeBoard.querySelector(".search-container").style.display = "none";
+            if (programNotice) {
+                const numberElement = programNotice.querySelector(".number");
+                const searchContainer = programNotice.querySelector(".search-container");
+                if (numberElement) numberElement.style.display = "none";
+                if (searchContainer) searchContainer.style.display = "none";
+            }
+            
+            if (noticeBoard) {
+                const numberElement = noticeBoard.querySelector(".number");
+                const searchContainer = noticeBoard.querySelector(".search-container");
+                if (numberElement) numberElement.style.display = "none";
+                if (searchContainer) searchContainer.style.display = "none";
+            }
 
             // "전체보기" 버튼 처리
             allViewButtons.forEach(btn => btn.style.display = "block");
@@ -58,7 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             // 모든 섹션 숨김 (배너와 공지 섹션은 제외)
             allSections.forEach(section => {
-                if (section !== bannerSection && section !== noticeSection && 
+                if ((bannerSection && section !== bannerSection) && 
+                    (noticeSection && section !== noticeSection) && 
                     !section.classList.contains("tvProgram-menu")) {
                     section.style.display = "none";
                 }
@@ -71,25 +89,41 @@ document.addEventListener("DOMContentLoaded", function () {
             if (activeMenu === "프로그램 소개") {
                 detailSection.style.display = "block";
             } else if (activeMenu === "출연진") {
-                document.querySelector(".program-character").style.display = "block";
+                if (characterDetailSection) characterDetailSection.style.display = "block";
+                document.querySelector(".program-character").style.display = "none";
             } else if (activeMenu === "다시보기") {
-                programReplay.style.display = "block";
-                replayArticles.forEach(article => article.style.display = "block"); // 모든 article 보이기
-                programReplay.querySelector(".number").style.display = "flex"; // 페이지네이션 보이기
-                programReplay.querySelector(".search-container").style.display = "flex"; // 검색창 보이기
+                if (programReplay) {
+                    programReplay.style.display = "block";
+                    replayArticles.forEach(article => article.style.display = "block"); // 모든 article 보이기
+                    
+                    const numberElement = programReplay.querySelector(".number");
+                    const searchContainer = programReplay.querySelector(".search-container");
+                    if (numberElement) numberElement.style.display = "flex"; // 페이지네이션 보이기
+                    if (searchContainer) searchContainer.style.display = "flex"; // 검색창 보이기
+                }
             } else if (activeMenu === "공지사항") {
-                programNotice.style.display = "block";
-                noticeRows.forEach(row => row.style.display = "table-row"); // 모든 tr 보이기
-                programNotice.querySelector(".number").style.display = "flex"; // 페이지네이션 보이기
-                programNotice.querySelector(".search-container").style.display = "flex"; // 검색창 보이기
+                if (programNotice) {
+                    programNotice.style.display = "block";
+                    noticeRows.forEach(row => row.style.display = "table-row"); // 모든 tr 보이기
+                    
+                    const numberElement = programNotice.querySelector(".number");
+                    const searchContainer = programNotice.querySelector(".search-container");
+                    if (numberElement) numberElement.style.display = "flex"; // 페이지네이션 보이기
+                    if (searchContainer) searchContainer.style.display = "flex"; // 검색창 보이기
+                }
             } else if (activeMenu === "시청자 게시판") {
-                noticeBoard.style.display = "block";
-                boardRows.forEach(row => row.style.display = "table-row"); // 모든 tr 보이기
-                noticeBoard.querySelector(".number").style.display = "flex"; // 페이지네이션 보이기
-                noticeBoard.querySelector(".search-container").style.display = "flex"; // 검색창 보이기
+                if (noticeBoard) {
+                    noticeBoard.style.display = "block";
+                    boardRows.forEach(row => row.style.display = "table-row"); // 모든 tr 보이기
+                    
+                    const numberElement = noticeBoard.querySelector(".number");
+                    const searchContainer = noticeBoard.querySelector(".search-container");
+                    if (numberElement) numberElement.style.display = "flex"; // 페이지네이션 보이기
+                    if (searchContainer) searchContainer.style.display = "flex"; // 검색창 보이기
 
-                // "시청자 게시판"에서는 "글쓰기" 버튼 보이기
-                writeButtons.forEach(btn => btn.style.display = "block");
+                    // "시청자 게시판"에서는 "글쓰기" 버튼 보이기
+                    writeButtons.forEach(btn => btn.style.display = "block");
+                }
             }
         }
     }

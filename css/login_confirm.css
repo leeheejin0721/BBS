@@ -309,12 +309,13 @@ header {
     font-size: 24px;
     font-family: "Noto Sans KR", serif;
     margin-top: 50px;
+    margin-bottom: 100px;
 }
 
 .form-box {
     max-width: 800px;
     margin: auto;
-    margin-top: 100px;
+    margin-bottom: 30px;
 }
 .form-group {
     display: flex;
@@ -335,10 +336,11 @@ header {
     flex: 1;
     padding: 15px;
     border: 1px solid #ddd;
+    font-size: 18px;
 }
 .form-group button {
     font-family: "Noto Sans KR", serif;
-    padding: 15px;
+    padding: 18px;
     border: none;
     background-color: #333;
     color: #fff;

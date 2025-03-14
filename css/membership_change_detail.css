@@ -339,10 +339,11 @@ header {
     flex: 1;
     padding: 15px;
     border: 1px solid #ddd;
+    font-size: 18px;
 }
 .form-group button {
     font-family: "Noto Sans KR", serif;
-    padding: 15px;
+    padding: 18px;
     border: none;
     background-color: #333;
     color: #fff;
@@ -368,20 +369,17 @@ header {
 }
 
 .button-group button {
-    width: 130px; /* 버튼 크기 조정 */
-    height: 40px; /* 높이를 조정하여 직사각형 모양 */
     cursor: pointer;
-    border-radius: 50px; /* 모서리를 직각으로 */
     font-size: 16px; /* 글씨 크기 조정 */
     text-align: center;
-    margin-top: 60px;
+    background-color: transparent;
+    padding-bottom: 4px;
 }
 
 .resit {
     font-family: "Noto Sans KR", serif;
-    background-color: #3a3a3a;
-    color: white;
-    border: 1px solid #3a3a3a;
+    border: none;
+    border-bottom: 1px solid #3a3a3a;
 }
 
 

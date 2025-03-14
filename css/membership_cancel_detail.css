@@ -355,6 +355,7 @@ header {
     flex: 1;
     padding: 15px;
     border: 1px solid #ddd;
+    font-size: 18px;
 }
 
 .button-group {

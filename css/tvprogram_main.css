@@ -379,7 +379,7 @@ header {
     left: 0;
     bottom: -35px; /* 밑줄 위치 */
     width: 100%;
-    height: 4px;
+    height: 3px;
     background-color: #BF9A0B; /* 밑줄 색상 */
 }
 
@@ -478,7 +478,50 @@ hr {
     font-weight: 800;
     margin-bottom: 20px;
 }
-.character-content > p {
+.character-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.character-title > p {
+    font-family: "Noto Sans KR", serif;
+    font-size: 16px;
+}
+.character-content {
+    display: flex;
+    align-items: center;
+}
+.profile {
+    margin-right: 30px;
+}
+.character-content2 {
+    display: flex;
+    align-items: center;
+}
+.character-content .anchor {
+    margin-bottom: 50px;
+}
+.profile-detail {
+    margin-left: 50px;
+    margin-bottom: 80px;
+}
+.name {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.profile-detail > p {
+    display: flex;
+    font-size: 22px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.profile-detail .strong {
+    margin-right: 32px;
+    font-weight: 500;
+}
+.anchor {
     font-size: 22px;
     font-family: "Noto Sans KR", serif;
     margin-top: 25px;
@@ -655,7 +698,7 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 70px;
 }
 .number > .left-arrow {
     display: flex;

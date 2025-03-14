@@ -301,20 +301,25 @@ header {
     margin-top: 100px;
 }
 h3 {
-    margin-top: 10px;
+    margin-top: 170px;
     font-family: "Noto Sans KR", serif;
-    font-size: 36px;
+    font-size: 48px;
     margin-bottom: 30px;
 }
 
 p {
     font-family: "Noto Sans KR", serif;
     font-size: 18px;
+    margin-bottom: 30px;
 }
+.public1 {
+    margin-bottom: 30px;
+}
+
 h4 {
     font-family: "Noto Sans KR", serif;
     font-size: 30px;
-    margin-bottom: 35px;
+    margin: 35px 0;
 }
 
 .data-table {

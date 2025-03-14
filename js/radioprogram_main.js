@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const noticeBoardViewAll = document.querySelector(".notice-board p");
     const noticeBoardWriteButton = document.querySelector(".notice-board a.button");
 
+    // 출연진 관련 요소
+    const programCharacter = document.querySelector(".program-character");
+    const programCharacterDetail = document.querySelector(".program-character-detail");
+
     // 새로 추가된 부분: 모든 "전체보기" 요소 선택
     const viewAllElements = document.querySelectorAll(
         ".replay-title > p, " +
@@ -35,6 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (activeMenu === "홈") {
             allSections.forEach(section => section.style.display = "block");
             detailSection.style.display = "none";
+
+            // 출연진 관련 변경 사항
+            programCharacter.style.display = "block";  // 기본 출연진 보이기
+            programCharacterDetail.style.display = "none"; // 상세 출연진 숨기기
 
             // 전체보기 요소 표시
             viewAllElements.forEach(el => {
@@ -89,10 +97,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (activeMenu === "프로그램 소개") {
                 detailSection.style.display = "block";
-                detailSection.querySelector(".container").style.display = "block";
             } else if (activeMenu === "출연진") {
-                document.querySelector(".program-character").style.display = "block";
-                document.querySelector(".program-character .container").style.display = "block";
+                programCharacter.style.display = "none";  // 기본 출연진 숨기기
+                programCharacterDetail.style.display = "block"; // 상세 출연진 보이기
             } else if (activeMenu === "다시듣기") {
                 programReplay.style.display = "block";
                 programReplay.querySelector(".container").style.display = "block";
@@ -126,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 photoArticles.forEach(article => article.style.display = "block");
                 numberElements.forEach(el => el.style.display = "flex");
                 searchContainers.forEach(el => el.style.display = "flex");
-            } 
+            }
 
             if (activeMenu !== "홈" && activeMenu !== "시청자 게시판") {
                 if (noticeBoardViewAll) noticeBoardViewAll.style.display = "none";
@@ -145,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
