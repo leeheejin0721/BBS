@@ -306,7 +306,7 @@ h3 {
     font-size: 48px;
 }
 
-p {
+.notice-box p {
     font-family: "Noto Sans KR", serif;
     font-size: 18px;
     margin-bottom: 30px;
@@ -314,6 +314,9 @@ p {
 .public1 {
     margin-bottom: 30px;
     font-weight: bold;
+}
+.public2 {
+    margin-bottom: 30px;
 }
 
 h4 {
@@ -431,12 +434,13 @@ th:last-child, td:last-child {
 
 /* notice */
 .notice {
+    padding: 15px 0;
+    margin-top: 70px;
     background-color: #3a3a3a;
 }
 .notice .notice-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     color: white;
 }
 .notice .notice-content > .notice-contentbox {
