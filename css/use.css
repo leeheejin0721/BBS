@@ -304,7 +304,6 @@ h3 {
     margin-top: 170px;
     font-family: "Noto Sans KR", serif;
     font-size: 48px;
-    margin-bottom: 30px;
 }
 
 p {
@@ -314,12 +313,13 @@ p {
 }
 .public1 {
     margin-bottom: 30px;
+    font-weight: bold;
 }
 
 h4 {
     font-family: "Noto Sans KR", serif;
     font-size: 30px;
-    margin: 35px 0;
+    margin-top: 50px;
 }
 
 .data-table {
@@ -431,13 +431,12 @@ th:last-child, td:last-child {
 
 /* notice */
 .notice {
-    padding: 15px 0;
-    margin-top: 70px;
     background-color: #3a3a3a;
 }
 .notice .notice-content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: white;
 }
 .notice .notice-content > .notice-contentbox {
@@ -446,17 +445,21 @@ th:last-child, td:last-child {
     align-items: center;
 }
 .notice .notice-content > .notice-contentbox > strong {
+    cursor: pointer;
     font-size: 18px;
     font-family: "Noto Sans KR", serif;
     font-weight: 500;
 }
 .notice .notice-content > .notice-contentbox > p {
+    cursor: pointer;
     margin-left: 50px;
     font-family: "Noto Sans KR", serif;
     font-size: 18px;
     font-weight: 300;
+    color: white;
 }
 .notice .notice-content > span {
+    cursor: pointer;
     font-family: "Noto Sans KR", serif;
     font-weight: 300;
 }

@@ -1,0 +1,168 @@
+<?	
+	//헤더
+	 include_once($_SERVER['DOCUMENT_ROOT']."/HOME/common/lib/header.php");
+
+	//설정변수
+  	include_once($_SERVER['DOCUMENT_ROOT']."/HOME/common/lib/config.php");
+	  	 
+  	//라이브러리
+  	include_once($_SERVER['DOCUMENT_ROOT']."/HOME/common/lib/func.php");
+
+	//프로세스모듈
+  	include_once($_SERVER['DOCUMENT_ROOT']."/HOME/common/lib/module.php");
+
+	//PARAM
+?>
+
+<? include_once($_SERVER['DOCUMENT_ROOT']."/HOME/Include/header.html"); ?>
+
+<body>
+
+	<!-- Skip Navigation -->
+	<div class="skip"><a href="#startCont" title="반복되는 내용을 건너뜁니다.">반복내용 건너뛰기</a></div>
+
+	<!-- TOP  S //-->
+	<? include_once($_SERVER['DOCUMENT_ROOT']."/HOME/Include/top.html"); ?>
+	<!-- TOP E //-->
+
+	<div class="container">
+		<div class="wrap">
+			<div class="side">
+				<? include_once("include/leftMenu.html"); ?>
+	        </div>
+			<div class="contents bg" id="startCont">
+				<div class="pack">
+					<div class="title">
+						<h3><img src="../img/common/ttlPage08_03.png" alt="지역국 및 중계소" /></h3>
+						<div class="location">
+							<span class="image"><img src="../img/common/icnHome.png" alt="홈" /></span>
+							<span>&gt;</span>
+							<span>BBS 소개</span>
+							<span>&gt;</span>
+							<span class="current">지역국 및 중계소</span>
+						</div>
+					</div>
+
+
+					<div class="about about03">
+						<div class="head">BBS불교방송은&nbsp;<span style="color: #ed8014;">1본사</span>&nbsp;/&nbsp;<span style="color: #3ca0bf;">7지방사</span>&nbsp;/&nbsp;<span style="color: #bf9b31;">10중계소</span>가 있습니다.
+							<a class="button" href="../download/dn.php?dnFile=relaystation.hwp"><img src="../img/common/btnDownloadBranch.png" alt="지역국 및 중계소 표 다운로드" /></a>
+						</div>
+						<div class="float">
+							<div class="left"><img src="../img/common/imgAbout03_2.png" alt="지역국 및 중계소" border="0" usemap="#Map" />
+									<map name="Map" id="Map">
+										<area shape="circle" coords="102,125,21" href="javascript:getBranch(16);" />
+									  <area shape="circle" coords="276,81,19" href="javascript:getBranch(15);" />
+									  <!--<area shape="circle" coords="221,135,20" href="javascript:getBranch(14);" />-->
+									  <area shape="circle" coords="250,59,18" href="javascript:getBranch(13);" />
+									  <area shape="circle" coords="223,34,20" href="javascript:getBranch(12);" />
+									  <area shape="circle" coords="351,225,21" href="javascript:getBranch(11);" />
+									  <area shape="circle" coords="282,201,21" href="javascript:getBranch(10);" />
+									  <area shape="circle" coords="225,350,22" href="javascript:getBranch(9);" />
+									  <area shape="circle" coords="273,353,22" href="javascript:getBranch(8);" />
+									  <area shape="circle" coords="350,297,22" href="javascript:getBranch(7);" />
+									  <area shape="circle" coords="188,80,21" href="javascript:getBranch(6);" />
+									  <area shape="circle" coords="166,207,20" href="javascript:getBranch(5);" />
+									  <area shape="circle" coords="267,258,20" href="javascript:getBranch(4);" />
+									  <area shape="circle" coords="133,340,21" href="javascript:getBranch(3);" />
+									  <area shape="circle" coords="326,355,22" href="javascript:getBranch(2);" />
+									  <area shape="circle" coords="136,104,22" href="javascript:getBranch(1);" />
+									  <area shape="circle" coords="160,391,20" href="javascript:getBranch(17);" />
+									  <area shape="circle" coords="122,481,20" href="javascript:getBranch(19);" />
+									  <area shape="circle" coords="200,390,20" href="javascript:getBranch(20);" />
+									</map>
+							</div>
+							<div class="right">
+								<ul class="tab float">
+                					<a name="#topDiv"></a>
+									<li id="branchBox1" class="on"><a href="javascript:;"><img src="../img/common/lbTabAbout03_01On.png" alt="본사" /></a></li>
+									<li id="branchBox2"><a href="javascript:;"><img src="../img/common/lbTabAbout03_02.png" alt="지방사(7)" /></a></li>
+									<li id="branchBox3" class="last"><a href="javascript:;"><img src="../img/common/lbTabAbout03_03.png" alt="중계소(10)" /></a></li>
+								</ul>
+								<ul class="listBranch">                	
+								  <li class="branchBox1 on">
+									<ul>
+										<li><a href="javascript:getBranch(1);" id="area1">서울 마포 본사</a></li>
+									</ul>                  	
+								  </li>
+								  <li class="branchBox2">
+									<ul>
+										<li><a href="javascript:getBranch(2);" id="area2">부산불교방송</a></li>
+									  <li><a href="javascript:getBranch(3);" id="area3">광주불교방송</a></li>
+									  <li><a href="javascript:getBranch(4);" id="area4">대구불교방송</a></li>
+									  <li><a href="javascript:getBranch(5);" id="area5"">청주불교방송</a></li>
+									  <li><a href="javascript:getBranch(6);" id="area6">춘천불교방송</a></li>
+									  <li><a href="javascript:getBranch(7);" id="area7">울산불교방송</a></li>
+									  <li><a href="javascript:getBranch(19);" id="area19">제주불교방송</a></li>
+									</ul> 
+								  </li>
+								  <li class="branchBox3">
+									<ul>
+										<li><a href="javascript:getBranch(8);" id="area8">창원 중계소</a></li>
+									  <li><a href="javascript:getBranch(9);" id="area9">진주 중계소</a></li>
+									  <li><a href="javascript:getBranch(10);" id="area10">안동 중계소</a></li>
+									  <li><a href="javascript:getBranch(11);" id="area11">포항 중계소</a></li>
+									  <li><a href="javascript:getBranch(12);" id="area12">속초 중계소</a></li>
+									  <li><a href="javascript:getBranch(13);" id="area13">양양 중계소</a></li>
+									  <!--<li><a href="javascript:getBranch(14);">대관령 중계소</a></li>-->
+									  <li><a href="javascript:getBranch(15);" id="area15">강릉 중계소</a></li>
+									  <li><a href="javascript:getBranch(16);" id="area16">인천 중계소</a></li>
+									  <li><a href="javascript:getBranch(17);" id="area17">광양 중계소</a></li>
+									  <li><a href="javascript:getBranch(20);" id="area20">여수 중계소</a></li>
+									</ul> 
+								  </li>
+								</ul>
+							</div>
+						</div>
+						<div id="detailContent"></div>
+            	
+            
+					</div>
+				</div>
+			</div>
+			<div class="sideR">
+			</div>
+		</div>
+	</div>
+<style>
+.listBranch{}
+.listBranch > li {display:none}
+.listBranch > li.on {display:block}
+</style>
+<script>
+function getBranch(str,IsInit) {
+
+	if(str=="1") {
+		color="#e48156";
+	} else if (str=="6" || str=="5" || str=="4" || str=="7" || str=="3" || str=="2" || str=="19" ) {
+		color="#42a1bf";
+	} else {
+		color="#a9882c";
+	}
+	for(i=1;i<=20;i++) {
+		$("#area"+i).css("font-weight","normal").css("color","#666");
+	}
+	$("#area"+str).css("font-weight","bold").css("color",color);
+	$("#detailContent").load("ajax_branch.html?str="+str);
+
+	if(IsInit!="Y") {
+		fnMove();
+	}
+}
+
+//초기로딩
+getBranch(1,'Y');
+
+
+function fnMove(){
+	var offset = $("#detailContent").offset();
+	$('html, body').animate({scrollTop : offset.top}, 400);
+}
+
+
+</script>
+
+<!-- FOOTER  S //-->
+<? include_once($_SERVER['DOCUMENT_ROOT']."/HOME/Include/footer.html"); ?>
+<!-- FOOTER E //-->
+</html>
