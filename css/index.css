@@ -1132,6 +1132,7 @@ main {
     justify-content: space-between;
 }
 .youtube-grid > article {
+    cursor: pointer;
     position: relative;
     text-align: center;
 }

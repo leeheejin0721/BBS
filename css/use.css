@@ -382,7 +382,7 @@ th:last-child, td:last-child {
 
 /* banner */
 .banner {
-    margin: 90px 0;
+    margin-top: 140px;
 }
 
 .banner .banner-img {
